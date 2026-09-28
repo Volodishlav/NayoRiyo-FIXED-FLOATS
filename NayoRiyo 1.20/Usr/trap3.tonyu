@@ -1,0 +1,31 @@
+extends SpriteChar;
+a=0;
+b=0;
+n=1;
+while(1){
+  if($die_riyona.i==0){
+    if(n==1){
+      a++;
+      if ( $die_riyona.x-x<5  && $die_riyona.x-x>-10){
+        $die_riyona.n=3;  
+      }  
+    }
+    if(a==100){
+      n=2;
+      p=$pat_item+14;
+      a=0;
+    }
+    if(n==2){
+      b++;
+    }
+    if(b==100){
+      n=1;
+      p=$pat_item+15;
+      b=0;
+    }
+  }
+  if($die_riyona.i==1){
+    p=$pat_item+14;
+  }
+  update();
+}

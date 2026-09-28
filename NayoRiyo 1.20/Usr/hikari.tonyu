@@ -1,0 +1,8 @@
+extends SpriteChar;
+anim=newAnimation();
+zOrder=-10;
+while(1){
+wait(5);
+die();
+update();
+}

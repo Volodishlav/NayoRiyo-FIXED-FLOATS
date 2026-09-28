@@ -1,0 +1,30 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_gomonroom" src="gomonroom.png"/>
+<cpattern name="$pat_die_riyona" src="die_riyona.png"/>
+<cpattern name="$pat_kao" src="kao.png"/>
+<cpattern name="$pat_gomongu" src="gomongu.png"/>
+<cpattern name="$pat_die_nayori" src="die_nayori.png"/>
+<cpattern name="$pat_target" src="target.png"/>
+<cpattern name="$pat_sonota" src="sonota.png"/>
+<cpattern name="$pat_kao2" src="kao2.png"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="gomonroom" name="$gomonroom" inst_p="$pat_gomonroom+0" inst_zOrder="1000" inst_x="250" inst_y="170"/>
+<generator className="gomonkan2" name="$gomonkan2" inst_zOrder="500" inst_p="4" inst_bold="1" inst_text="%22テキスト%22" inst_x="519" inst_y="259"/>
+<generator className="die_nayori" name="$die_nayori" inst_p="$pat_die_nayori+5" inst_x="105" inst_y="220" inst_zOrder="50"/>
+<generator className="gomonkan" name="$gomonkan" inst_p="$pat_sonota+2" inst_zOrder="10" inst_x="522" inst_y="100"/>
+<generator className="haribote" name="$haribote" inst_p="$pat_gomongu+3" inst_zOrder="50" inst_y="185" inst_x="200"/>
+<generator className="haribote2" name="$haribote2" inst_p="$pat_gomongu+0" inst_y="200" inst_x="330" inst_zOrder="50"/>
+<generator className="haribote2" name="$haribote2_1" inst_zOrder="50" inst_y="200" inst_p="$pat_gomongu+2" inst_x="260"/>
+<generator className="die_riyona" name="$die_riyona" inst_x="174" inst_y="262" inst_zOrder="10" inst_p="$pat_die_riyona+2"/>
+<generator className="mouse" name="$mouse" inst_x="530" inst_y="210" inst_p="$pat_target+0"/>
+<generator className="kao" name="$kao" inst_y="50" inst_p="$pat_kao2+0" inst_x="41"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="560"/>
+  <globalvalue name="$screenHeight" value="381"/>
+ </resourcelist>
+</resourcelist>

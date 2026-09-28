@@ -1,0 +1,103 @@
+extends SpriteChar;
+anim=newAnimation();
+heart=1;
+zOrder=-10;
+while(1){
+  anim.loop($pat_enemy2+0,$pat_enemy2+3,20);
+  
+  if($nanido==0){
+    x=x+1;
+  }
+  
+  if($nanido==1 || $nanido==2){
+    if($score>=0 && $score<100){x=x+(7/10);
+    if(heart==0)x=x+(3/2);}
+    if($score>=100 && $score<200){x=x+1;
+    if(heart==0)x=x+(8/5);}
+    if($score>=200){x=x+(6/5);
+    if(heart==0)x=x+(9/5);}
+  }
+  if($nanido==3){x=x+2;}
+  if($buki==0){
+    if (crashTo( $target ) && $target.x-x<-2 && $target.x-x>-33 && $target.y-y<-18 && $target.y-y>-50) {
+      if ( $target.shoot == 1 ) {
+        if(heart==1){
+          anim.play($pat_enemy2+4,5);
+          anim.pause();
+          wait(30); 
+          heart=0;  
+        }
+        else if(heart==0){
+          zOrder=-100;
+          $score=$score+1;
+          x=x-20;
+          y=y+5;
+          anim.play($pat_enemy2+5,5);
+          wait(5);
+          x=x-20;
+          y=y+5;
+          anim.play($pat_enemy2+6,5);
+          wait(5);
+          x=x-20;
+          y=y+13;
+          anim.play($pat_enemy2+7,5);
+          anim.pause();
+          wait(30);
+          die();
+        }
+    }}
+  }
+  if($buki==1){
+    if (crashTo( $target ) && $target.x-x<30 && $target.x-x>-100 && $target.x>=200 && $riyona.si==0) {
+      if ( $target.shoot == 1 ) {
+        zOrder=-100;
+        $score=$score+1;
+        x=x-40;
+        anim.play($pat_enemy2+8,5);
+        wait(5);
+        x=x-40;
+        anim.play($pat_enemy2+9,5);
+        wait(5);
+        x=x-40;
+        y=y+23;
+        anim.play($pat_enemy2+10,5);
+        anim.pause();
+        wait(30);
+        die();
+      }
+    }
+  }
+  if($buki==2){
+    if ( $target.a == 1 ) {
+      zOrder=100;
+      x=x-50;
+      y=y+23;
+      anim.play($pat_enemy2+11,5);
+      anim.pause();
+      wait(30);
+      die();
+      $target.shoot=0;
+    $score=$score+1;}
+  }
+  if($nayori.jigai<2 && $riyona.si<1){
+    if(crashTo($nayori) && $nayori.x-x<15 && $nayori.x-x>-15){
+      if($riyona.asi==1){
+        $message=1;
+        $projectmanager.loadpage($page_gameover);
+      }
+      if($score>=70){
+        $end=2;
+        $projectmanager.loadpage($page_gomon2);
+        if($score>=150 && $nanido!=0){
+          $end=5;
+          $projectmanager.loadpage($page_gomon5);
+        }
+      }
+      else{
+        $message=1;
+        $projectmanager.loadpage($page_gameover);
+      }  
+    }
+  }
+  update();
+}

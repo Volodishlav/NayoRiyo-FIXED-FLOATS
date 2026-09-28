@@ -1,0 +1,22 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_goki01" src="goki01.png"/>
+<cpattern name="$pat_goki02" src="goki02.png"/>
+<cpattern name="$pat_goki03" src="goki03.png"/>
+<cpattern name="$pat_goki04" src="goki04.png"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="end1" name="$end1" inst_p="3" inst_x="693" inst_y="54"/>
+<generator className="endmoji" name="$endmoji" inst_font="%22‚l‚r ƒSƒVƒbƒN%22" inst_col="$clWhite" inst_text="%22ƒNƒŠƒA%22" inst_bold="1" inst_x="134" inst_y="142" inst_size="50"/>
+<generator className="illust1" name="$illust1" inst_p="$pat_goki01+0" inst_x="850" inst_y="378"/>
+<generator className="illust2" name="$illust2" inst_p="$pat_goki02+0" inst_x="959" inst_y="288"/>
+<generator className="illust3" name="$illust3" inst_p="$pat_goki03+0" inst_x="682" inst_y="586"/>
+<generator className="illust4" name="$illust4" inst_p="$pat_goki04+0" inst_x="382" inst_y="590"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="745"/>
+  <globalvalue name="$screenHeight" value="452"/>
+ </resourcelist>
+</resourcelist>

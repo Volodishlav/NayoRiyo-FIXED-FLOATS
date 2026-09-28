@@ -1,0 +1,28 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_gomonroom" src="gomonroom.png"/>
+<cpattern name="$pat_die_nayori" src="die_nayori.png"/>
+<cpattern name="$pat_sonota" src="sonota.png"/>
+<cpattern name="$pat_die_riyona" src="die_riyona.png"/>
+<cpattern name="$pat_gomonroom2" src="gomonroom2.png"/>
+<cpattern name="$pat_item" src="item.png"/>
+<cpattern name="$pat_blood" src="blood.png"/>
+<cpattern name="$pat_blood2" src="blood2.png"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="gomonroom" name="$gomonroom" inst_zOrder="1000" inst_p="$pat_gomonroom2+0" inst_y="170" inst_x="250"/>
+<generator className="gomonkan3" name="$gomonkan3" inst_p="4" inst_x="526" inst_y="174" inst_zOrder="-300" inst_bold="1"/>
+<generator className="gomonkan" name="$gomonkan" inst_f="-1" inst_p="$pat_sonota+2" inst_x="275" inst_y="265" inst_zOrder="50"/>
+<generator className="die_nayori" name="$die_nayori" inst_p="$pat_die_nayori+29" inst_x="165" inst_y="218" inst_zOrder="50"/>
+<generator className="die_riyona" name="$die_riyona" inst_p="$pat_die_riyona+41" inst_x="383" inst_y="215" inst_zOrder="50"/>
+<generator className="haribote" name="$haribote" inst_p="$pat_item+17" inst_x="524" inst_y="126" inst_zOrder="40"/>
+<generator className="blood" name="$blood" inst_p="$pat_blood+0" inst_x="523" inst_y="231"/>
+<generator className="blood2" name="$blood2" inst_p="$pat_blood2+0" inst_x="525" inst_y="260" inst_zOrder="70"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="560"/>
+  <globalvalue name="$screenHeight" value="427"/>
+ </resourcelist>
+</resourcelist>

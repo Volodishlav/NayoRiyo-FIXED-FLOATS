@@ -1,0 +1,7 @@
+extends SpriteChar;
+sw=0;
+while(1){
+  if(sw==0)p=$pat_kao+0;
+  if(sw==1)p=$pat_kao+4; 
+  update(); 
+}

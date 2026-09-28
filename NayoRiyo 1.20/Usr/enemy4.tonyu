@@ -1,0 +1,58 @@
+extends SpriteChar;
+anim=newAnimation();
+a=0;
+time=0;
+ono=0;
+life=5;
+zOrder=100;
+while(1){
+  if(a==0){
+    anim.play($pat_enemy4+0);
+    anim.pause();
+  }
+  if(a==1){
+    anim.play($pat_enemy4+1);
+    anim.pause();
+    if(ono==0 && $nayori.jigai<=1){
+      $mplayer.play($se_swing);
+      appear(new ono(this.x+32,this.y-50,$pat_item+19));
+    }
+    ono=1;
+  }
+  if($buki==0){
+    if ($target.x-x<15 && $target.x-x>-33 && $target.y>170 && $target.y<270) {
+      if ( $target.shoot == 1 ) {
+        appear(new blood($target.x,$target.y,$pat_blood+9));
+        life--;
+        x=x-2;
+        wait(5);
+        x=x+2;
+  }}}
+  if(a==0 && time<200)time++;
+  if(a==0 && time>=200){
+    a=1;
+    ono=0;
+  }
+  if(a==1 && time>0)time--;
+  if(a==1 && time<=0)a=0;  
+  
+  if(life<=0 && a!=3){
+    anim.play($pat_enemy4+2);
+    y=y+5;
+    updateEx(40);
+    anim.play($pat_enemy4+3);
+    y=y+5;
+    x=x+20;
+    updateEx(20);
+    anim.play($pat_enemy4+4);
+    anim.pause();
+    a=3;
+  }
+  if(a==3){
+    $score=$score+1;
+    wait(30);
+    die();
+  }
+  
+  update();
+}

@@ -1,0 +1,14 @@
+extends SpriteChar;
+zOrder=-20;
+p=$pat_item+4;
+while(1){
+  if($tokuten>=2){
+    p=$pat_item+3;
+  }
+  x=$G.x-130;
+  y=$G.y-300;
+  if($G.S!=0){
+    die();
+  }
+  update();
+}

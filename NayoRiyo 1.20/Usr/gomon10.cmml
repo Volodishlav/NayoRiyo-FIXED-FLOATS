@@ -1,0 +1,39 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_stage" src="stage.png"/>
+<cpattern name="$pat_nayori" src="nayori.png"/>
+<cpattern name="$pat_riyona" src="riyona.png"/>
+<cpattern name="$pat_room" src="room.png"/>
+<cpattern name="$pat_target" src="target.png"/>
+<cpattern name="$pat_black" src="black.png"/>
+<cpattern name="$pat_item" src="item.png"/>
+<cpattern name="$pat_gomongu" src="gomongu.png"/>
+<cpattern name="$pat_sonota" src="sonota.png"/>
+<cpattern name="$pat_kao2" src="kao2.png"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="gomonroom" name="$gomonroom" inst_p="$pat_room+0" inst_zOrder="100" inst_x="250" inst_y="170"/>
+<generator className="room10" name="$room10" inst_font="%22ＭＳ ゴシック%22" inst_text="%22テキスト%22" inst_col="$clWhite" inst_size="20" inst_zOrder="-250" inst_x="510" inst_y="152"/>
+<generator className="denki" name="$denki" inst_angle="0" inst_scalex="1" inst_p="$pat_black" inst_alpha="255" inst_zOrder="-100" inst_x="759" inst_y="360"/>
+<generator className="haribote" name="$haribote" inst_p="$pat_gomongu+4" inst_anim="$pat_nayori+6" inst_x="441" inst_y="331" inst_zOrder="-50"/>
+<generator className="haribote2" name="$haribote2" inst_y="285" inst_x="118" inst_p="$pat_sonota+28" inst_zOrder="-20"/>
+<generator className="riyona2" name="$riyona2" inst_zOrder="-10" inst_p="$pat_riyona+42" inst_x="123" inst_y="244"/>
+<generator className="haribote3" name="$haribote3" inst_p="$pat_sonota+30" inst_x="189" inst_y="269"/>
+<generator className="riyo" name="$riyo" inst_p="3" inst_x="519" inst_y="8"/>
+<generator className="tokei" name="$tokei" inst_p="5" inst_x="522" inst_y="50"/>
+<generator className="switch" name="$switch" inst_p="6" inst_x="542" inst_y="15"/>
+<generator className="game" name="$game" inst_p="7" inst_x="546" inst_y="50"/>
+<generator className="gamen" name="$gamen" inst_p="8" inst_x="525" inst_y="91"/>
+<generator className="nayori2" name="$nayori2" inst_p="10" inst_x="189" inst_y="390"/>
+<generator className="kuma" name="$kuma" inst_p="3" inst_x="518" inst_y="137"/>
+<generator className="carsol" name="$carsol" inst_p="4" inst_x="398" inst_y="371"/>
+<generator className="diary" name="$diary" inst_p="5" inst_x="546" inst_y="130"/>
+<generator className="kao" name="$kao" inst_y="50" inst_x="41" inst_p="$pat_kao2+0"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="560"/>
+  <globalvalue name="$screenHeight" value="388"/>
+ </resourcelist>
+</resourcelist>

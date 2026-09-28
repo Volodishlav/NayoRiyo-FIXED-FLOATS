@@ -1,0 +1,24 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_target" src="target.png"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="bk1" name="$bk1" inst_width="50" inst_height="50" inst_angle="0" inst_alpha="255" inst_text="%22‰£%22" inst_col="$clRed" inst_bold="1" inst_italic="0" inst_size="35" inst_x="258" inst_y="146"/>
+<generator className="title" name="$title" inst_p="7" inst_x="558" inst_y="126"/>
+<generator className="mouse" name="$mouse" inst_x="282" inst_y="186" inst_p="$pat_target+1"/>
+<generator className="bk2" name="$bk2" inst_width="50" inst_height="50" inst_angle="0" inst_alpha="255" inst_col="$clRed" inst_text="%22™ø%22" inst_bold="1" inst_italic="0" inst_size="40" inst_x="94" inst_y="286"/>
+<generator className="bk3" name="$bk3" inst_width="50" inst_height="50" inst_angle="0" inst_alpha="255" inst_col="$clRed" inst_text="%22Ž”%22" inst_bold="1" inst_italic="0" inst_size="45" inst_x="378" inst_y="282"/>
+<generator className="bk4" name="$bk4" inst_width="50" inst_height="50" inst_angle="0" inst_alpha="255" inst_col="$clRed" inst_bold="1" inst_text="%22Ÿ¯%22" inst_size="50" inst_x="150" inst_y="206"/>
+<generator className="bk5" name="$bk5" inst_width="50" inst_height="50" inst_angle="0" inst_alpha="255" inst_col="$clRed" inst_bold="1" inst_text="%22‘I%22" inst_size="55" inst_x="425" inst_y="191"/>
+<generator className="bk6" name="$bk6" inst_width="50" inst_height="50" inst_angle="0" inst_alpha="255" inst_bold="1" inst_col="$clRed" inst_text="%22‹ò%22" inst_size="60" inst_x="58" inst_y="130"/>
+<generator className="bk7" name="$bk7" inst_width="50" inst_height="50" inst_angle="0" inst_alpha="255" inst_col="$clRed" inst_bold="1" inst_text="%22‘l%22" inst_size="65" inst_x="190" inst_y="62"/>
+<generator className="bk8" name="$bk8" inst_width="50" inst_height="50" inst_angle="0" inst_alpha="255" inst_col="$clRed" inst_bold="1" inst_text="%22ï%22" inst_size="70" inst_x="370" inst_y="58"/>
+<generator className="bk10" name="$bk10" inst_width="50" inst_height="50" inst_angle="0" inst_alpha="255" inst_col="$clRed" inst_bold="1" inst_text="%22–²%22" inst_size="75" inst_x="270" inst_y="262"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="590"/>
+  <globalvalue name="$screenHeight" value="397"/>
+ </resourcelist>
+</resourcelist>

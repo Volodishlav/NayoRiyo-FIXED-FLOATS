@@ -1,0 +1,46 @@
+extends SpriteChar;
+anim=newAnimation();
+a=0;
+tx=x;
+time=0;
+state=0;
+zOrder=30;
+while(1){
+  if(state==0){
+    anim.loop($pat_enemy1+12,$pat_enemy1+13,25);
+    if(f==-1){
+      this.x=this.x-1;
+      if(tx-30>=x)f=1;
+    }
+    if(f==1){
+      this.x=this.x+1;
+      if(tx+30<=this.x)f=-1;
+    }
+    if($G.x-this.x<13 && $G.x-this.x>-10 && $G.y-this.y>=-30 && $G.y-this.y<-10){
+      state=1;
+    }
+  }
+  
+  if(state==1){
+    $mplayer.play($se_gucha,0,20);
+    anim.play($pat_enemy1+14);
+    anim.pause();
+    $arigorosi+=1;
+    state=2;
+  }
+  
+  if($arigorosi>=5 && $G.x-this.x<50 && $G.x-this.x>-50 && $G.y-this.y>=-20 && state==0){
+    $mplayer.play($se_ari,0,20);
+    wait(10);
+    $mplayer.play($se_ari,0,20);
+    wait(10);
+    $mplayer.play($se_ari,0,20);
+    state=2;
+    $G.S=5;
+    if(f==-1)appear(new mark(x-10,y-10,$pat_item+1));
+    if(f==1)appear(new mark(x-20,y-10,$pat_item+1));
+    appear(new ariguntai(this.x-300,this.y-5,$pat_enemy1+15,-1));
+  }
+  
+  update();
+}

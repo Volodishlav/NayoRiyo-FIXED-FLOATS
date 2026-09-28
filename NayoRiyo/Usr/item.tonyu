@@ -1,0 +1,17 @@
+extends SpriteChar;
+anim=newAnimation();
+zOrder=401;
+n=0;
+while(1){
+  anim.loop($pat_item+8,$pat_item+9,5);
+  x=x+3;
+  if($score==2)n=0;
+  if ( crashTo( $target )) {
+    if ( $target.shoot == 1 ) {
+      anim.play($pat_item+10,5);
+      anim.pause();
+      wait(10);
+      die();
+  }}
+  update();
+}

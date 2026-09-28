@@ -1,0 +1,21 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_end8_1" src="end8_1.png"/>
+<cpattern name="$pat_end8_2" src="end8_2.png"/>
+<cpattern name="$pat_end8_3" src="end8_3.png"/>
+<cpattern name="$pat_end8_4" src="end8_4.png"/>
+<cpattern name="$pat_end8_5" src="end8_5.png"/>
+<cpattern name="$pat_end8_6" src="end8_6.png"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="gomonkan4" name="$gomonkan4" inst_font="%22ＭＳ ゴシック%22" inst_text="%22テキスト%22" inst_col="$clWhite" inst_size="20" inst_bold="1" inst_x="516" inst_y="130"/>
+<generator className="cg" name="$cg" inst_angle="0" inst_alpha="255" inst_scalex="1" inst_p="$pat_end8_1" inst_x="250" inst_y="170"/>
+<generator className="cg2" name="$cg2" inst_angle="0" inst_alpha="255" inst_scalex="1" inst_x="250" inst_y="170" inst_p="$pat_end8_2"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="560"/>
+  <globalvalue name="$screenHeight" value="381"/>
+ </resourcelist>
+</resourcelist>

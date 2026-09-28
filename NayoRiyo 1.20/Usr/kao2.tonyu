@@ -1,0 +1,31 @@
+extends SpriteChar;
+sw=0;
+while(1){
+  if($end==3){
+    if(sw==0)p=$pat_kao+0;
+    if(sw==1)p=$pat_kao+4;
+    if(sw==2)p=$pat_kao+5;
+    if(sw==3)p=$pat_kao+6;
+  }
+  if($end==4){
+    if(sw==0)p=$pat_kao2+0;
+    if(sw==1)p=$pat_kao2+12;
+    if(sw==2)p=$pat_kao2+13;
+    if(sw==3)p=$pat_kao2+14;
+    if(sw==4)p=$pat_kao2+15;
+    if(sw==5)p=$pat_kao2+16;
+  }
+  if($end==5){
+    if(sw==0)p=$pat_kao2+0;
+    if(sw==1)p=$pat_kao2+17;
+    if(sw==2)p=$pat_kao2+18;
+    if(sw==3)p=$pat_kao2+19;
+    if(sw==4)p=$pat_kao2+20;
+    if(sw==5)p=$pat_kao2+21;
+    if(sw==6)p=$pat_kao2+22;
+    if(sw==7)p=$pat_kao2+23;
+    if(sw==8)p=$pat_kao2+24;
+    if(sw==9)p=$pat_kao2+25;
+  }
+  update(); 
+}

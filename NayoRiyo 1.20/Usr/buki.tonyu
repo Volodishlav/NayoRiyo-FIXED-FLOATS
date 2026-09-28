@@ -1,0 +1,11 @@
+extends SpriteChar;
+$buki=0;
+while(1){
+  if((getkey(83)==1 || getkey(2)==1) && $nayori.jigai<2 && $riyona.si<1){$buki++;$mplayer.play($se_cursor2);
+    if($buki>2)$buki=0;
+  }
+  if($buki==0)p=$pat_buki+0;
+  if($buki==1)p=$pat_buki+1;
+  if($buki==2)p=$pat_buki+2;
+  update();
+}

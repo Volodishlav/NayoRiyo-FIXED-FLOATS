@@ -1,0 +1,17 @@
+extends DxChar;
+a=0;
+alpha=0;
+while(1){
+  
+  if($end==7){
+    zOrder=500;
+    if(a==1){
+      while(alpha<255){
+        alpha=alpha+(5/2);
+        update();
+      }
+    }
+  }
+  
+  update();
+}

@@ -1,0 +1,18 @@
+extends SpriteChar;
+time=50;
+switch=0;
+i=0;
+while(1){
+      i++;
+    if(i>130){
+      $mplayer.play($se_pi);
+      i=0;
+    }
+    if(getkey(82)==1){
+    $projectmanager.loadpage($page_title);
+  }
+  x=250;
+  y=170;
+  zOrder=10;
+  update();
+}

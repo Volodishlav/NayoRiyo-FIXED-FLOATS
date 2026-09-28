@@ -1,0 +1,45 @@
+extends SpriteChar;
+zOrder=1000;
+function message3(text,speed){
+  var x1,y1,x2,y2,textOP,textCNT,i;
+  textOP="";
+  CR=0;danraku=0;tim=0;
+  
+  y1=10;
+  x1=81 ;  
+  x2=x1+331;y2=y1+80;
+  //x1,y1：ウインドウ左上座標　x2,y2：ウインドウ右下座標
+  
+  updateEx(1);
+  $panel.fillrect(x1  ,y1  ,x2  ,y2  ,color(150,0,0), 0);
+  $panel.fillrect(x1+3,y1+3,x2-3,y2-3,color(1,0,0),-1);
+  
+  for (i=0;i<=text.length();i++){   //テキスト表示
+    textCNT=text.substring(i,i+1);  //テキストを１文字ずつ代入
+    if (textCNT=="%") {break;}             //「%」であれば中断
+    if (textCNT=="#") {CR=i+1;danraku++;}  //「#」であれば改行
+    if (textCNT=="@") {                    //「@」であれば改ページ
+      while(getkey(90)!=1 && getkey(1)!=1){
+        if (tim<40) 
+        {$panel.drawtext(x2-20,y2-20,"▼",color(255,255,255),8,-2);}
+        if (tim<80 && tim>40)
+        {$panel.drawtext(x2-20,y2-20,"▼",color(  1,  0,  0),8,-2);}
+        if (tim>81)   tim=0;
+        tim++;update();
+      }
+      CR=i+1;danraku=0;
+      $panel.fillrect(x1+3,y1+3,x2-3,y2-3,color(1,0,0),-1); //テキスト消去
+    }
+    textOP=text.substring(CR,i+1);
+    $panel.drawText(x1+7,y1+7+danraku*16,textOP,$clWhite,13);
+    //テキストを指定位置に書く
+    if (speed!=null) updateEx(speed);
+    //ウェイト処理
+  }
+  
+  while(1){
+    if (textCNT=="%"){break;}
+    if(getkey(90)==1 || getkey(1)==1){$panel.clear();break;}//Zか左クリックで抜ける
+    update();
+  }
+}

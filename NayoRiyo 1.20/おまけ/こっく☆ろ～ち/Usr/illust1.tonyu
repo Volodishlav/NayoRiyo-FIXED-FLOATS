@@ -1,0 +1,11 @@
+extends SpriteChar;
+zOrder=50;
+while(1){
+  if($end1.flg==0 ||$end1.flg==1){
+    y=700; 
+  }else{
+    x=288;
+    y=209;
+  }
+  update();
+}

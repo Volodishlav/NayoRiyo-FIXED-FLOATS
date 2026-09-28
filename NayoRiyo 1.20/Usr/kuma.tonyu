@@ -1,0 +1,17 @@
+extends SpriteChar;
+x=290;
+y=210;
+p=$pat_item+27;
+a=0;
+anim=newAnimation();
+while(1){
+  if(a==1){
+      anim.play($pat_item+28);
+      anim.pause();
+      wait(20);
+      anim.play($pat_item+29);
+      anim.pause();
+      wait();
+  }
+update();
+}

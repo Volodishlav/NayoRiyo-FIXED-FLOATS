@@ -1,0 +1,45 @@
+extends SpriteChar;
+$screenWidth = 32*18;
+$screenHeight = 32*13;
+flg=0;
+while(1){
+   $mplayer.play($se_bell,0,20);
+  wait(150);
+  flg=1;
+  fade_out(100);
+  wait(10);
+  flg=2;
+  fade_in(100);
+  wait(100);
+  flg=3;
+  wait();
+  update();
+}
+
+// ­‚µ‚Ã‚ÂˆÃ‚­ 
+
+function fade_out(_time){
+  
+  var i;
+  $panel.zOrder=1;
+  $panel.setTransparentColor(color(255,255,255));
+  for(i=0;i<255;i+=255/_time){
+    $panel.alpha=i;
+    update();
+  }
+  $panel.alpha=255;
+}
+
+// ­‚µ‚Ã‚Â–¾‚é‚­
+
+function fade_in(_time){
+  
+  var i;
+  for(i=255;i>0;i-=255/_time){
+    $panel.alpha=i;
+    update();
+  }
+  $panel.setTransparentColor(color(0,0,0));
+  $panel.alpha=255;
+  $panel.zOrder=null;
+}

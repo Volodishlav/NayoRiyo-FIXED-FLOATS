@@ -1,0 +1,143 @@
+extends SpriteChar;
+anim=newAnimation();
+n=0;
+a=0;
+while(1){
+  if($end==1){
+    zOrder=20;
+    if($n==1){
+      anim.play($pat_sonota+0,$pat_sonota+1,15);
+      $n=0;
+    }
+  }
+  if($end==2){
+    zOrder=10;
+    x=220;
+    y=245;
+    anim.loop($pat_sonota+2,$pat_sonota+3,70);
+    if(n==1 && a==0){
+      x=210;
+      anim.play($pat_sonota+4);
+      updateEx(50);
+      a=1;
+    }
+    if(a==1){
+      x=205;
+      anim.loop($pat_sonota+5);
+    }
+  }
+  if($end==(5/2)){
+    x=260;
+    y=245;
+    anim.loop($pat_sonota+2,$pat_sonota+3,70);
+    if (crashTo( $mouse ) && getkey(1)==1 && $mouse.x-x<25 && $mouse.x-x>0 && $mouse.y-y>-43){
+      $gomonkan2.n=2;
+    }
+  }
+  if($end==3){
+    if(n==1){
+      x=288;
+      y=250;
+    }
+    if(n==2){
+      x=310;
+      n=3;
+    }
+    if(n==3 && x<380){
+      x=x+(3/5);
+      anim.loop($pat_enemy3+20,$pat_enemy3+23,23);
+    }
+    if(n==3 && x>=340){
+      $die_riyona.n=4;
+    }
+    if(n==3 && x>=380){
+      n=4;
+    }
+    if(n==4){
+      x=360;
+      anim.play($pat_sonota+6);
+      anim.pause();
+    }
+    if(n==5){
+      x=392;
+      n=6;
+    }
+    if(n==6){
+      x=x+(3/5);
+      anim.loop($pat_enemy3+20,$pat_enemy3+23,23);
+    }
+    if(n==6 && x>525){
+      n=7;
+    }
+    if(n==7){
+      x=515;
+      y=215;
+      anim.play($pat_sonota+6);
+      anim.pause();  
+    }
+    if(n==8){
+      x=x-(3/5);
+      anim.loop($pat_enemy3+20,$pat_enemy3+23,23);
+    }
+    if(n==8 && x<440){
+      n=9;
+    }
+    if(n==9){
+      x=460;
+      anim.play($pat_sonota+6);
+      anim.pause();  
+    }
+    while(a==1){
+      $mplayer.play($se_piston);
+      wait(40);
+    }
+  }
+  
+  if($end==4){
+    zOrder=50;
+    if(x>$die_riyona.x-10 && a==0){
+      x=x-40;
+      f=1;
+      a=1;
+    }
+  }
+  
+  if($end==5){
+    x=275;
+    y=265;
+    anim.loop($pat_sonota+2,$pat_sonota+3,90);
+    if(a==1){
+      $mplayer.play($se_kabe);  
+      wait(35);
+    }
+    if(a==2){
+      $mplayer.play($se_drill);  
+      wait(240);
+    }
+    if(a==3){
+      $mplayer.play($se_noko);  
+      wait(130);
+    }
+  }
+  
+  if($end==6){
+    if(n==1){
+      f=1;
+      x=x-(3/5);
+      anim.loop($pat_sonota+15,$pat_sonota+18,23);
+    }
+    if(n==1 && x<=280){
+      x=x+(3/5);
+      anim.play($pat_sonota+19);
+      anim.pause();
+    }
+    if(n==2 && a==0){
+      anim.play($pat_sonota+20);
+      anim.pause();
+      appear(new haribote(x,y,$pat_sonota+21,1));
+      a=1;
+    }
+  }
+  
+  update();
+}

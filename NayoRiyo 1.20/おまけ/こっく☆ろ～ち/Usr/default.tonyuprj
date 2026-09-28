@@ -1,0 +1,157 @@
+<resourcelist name="project">
+ <resourcelist name="pages">
+<Page name="$page_end" src="end.cmml"/>
+<Page name="$page_stage1" src="stage1.cmml"/>
+<Page name="$page_title" src="title.cmml"/>
+ </resourcelist>
+ <resourcelist name="params">
+  <param name="commentID" value="29952439"/>
+  <param name="sound_stopOnPageLoad" value="1"/>
+  <param name="savedVersion" value="1240"/>
+  <param name="mainPage" value="$page_title"/>
+  <param name="title" value="‚±‚Á‚­™‚ë`‚¿"/>
+  <param name="author" value="TT"/>
+  <param name="version" value=""/>
+  <param name="mail" value=""/>
+  <param name="web" value=""/>
+  <param name="cond" value=""/>
+ </resourcelist>
+ <resourcelist name="classes">
+  <class name="G" src="G.tonyu" category=""/>
+  <class name="hoihoi" src="hoihoi.tonyu" category=""/>
+  <class name="main" src="main.tonyu" category=""/>
+  <class name="mark" src="mark.tonyu" category=""/>
+  <class name="kumo" src="kumo.tonyu" category=""/>
+  <class name="ito" src="ito.tonyu" category=""/>
+  <class name="oto" src="oto.tonyu" category=""/>
+  <class name="tyotyo" src="tyotyo.tonyu" category=""/>
+  <class name="hachi" src="hachi.tonyu" category=""/>
+  <class name="ari" src="ari.tonyu" category=""/>
+  <class name="ariguntai" src="ariguntai.tonyu" category=""/>
+  <class name="imomusi" src="imomusi.tonyu" category=""/>
+  <class name="tori" src="tori.tonyu" category=""/>
+  <class name="kubi1" src="kubi1.tonyu" category=""/>
+  <class name="kubi2" src="kubi2.tonyu" category=""/>
+  <class name="title" src="title.tonyu" category=""/>
+  <class name="ame1" src="ame1.tonyu" category=""/>
+  <class name="ame2" src="ame2.tonyu" category=""/>
+  <class name="ame3" src="ame3.tonyu" category=""/>
+  <class name="ame4" src="ame4.tonyu" category=""/>
+  <class name="ame5" src="ame5.tonyu" category=""/>
+  <class name="ame6" src="ame6.tonyu" category=""/>
+  <class name="ame7" src="ame7.tonyu" category=""/>
+  <class name="ame8" src="ame8.tonyu" category=""/>
+  <class name="gameover" src="gameover.tonyu" category=""/>
+  <class name="candy1" src="candy1.tonyu" category=""/>
+  <class name="candy2" src="candy2.tonyu" category=""/>
+  <class name="candy3" src="candy3.tonyu" category=""/>
+  <class name="candy4" src="candy4.tonyu" category=""/>
+  <class name="candy5" src="candy5.tonyu" category=""/>
+  <class name="candy6" src="candy6.tonyu" category=""/>
+  <class name="candy7" src="candy7.tonyu" category=""/>
+  <class name="candy8" src="candy8.tonyu" category=""/>
+  <class name="end1" src="end1.tonyu" category=""/>
+  <class name="endmoji" src="endmoji.tonyu" category=""/>
+  <class name="illust1" src="illust1.tonyu" category=""/>
+  <class name="illust2" src="illust2.tonyu" category=""/>
+  <class name="illust3" src="illust3.tonyu" category=""/>
+  <class name="illust4" src="illust4.tonyu" category=""/>
+ </resourcelist>
+ <resourcelist name="sounds">
+<SoundEffect name="$se_asi" src="asi.wav"/>
+<SoundEffect name="$se_hoi" src="hoi.wav"/>
+<SoundEffect name="$se_dosa" src="dosa.wav"/>
+<SoundEffect name="$se_koe" src="koe.wav"/>
+<SoundEffect name="$se_jump" src="jump.wav"/>
+<SoundEffect name="$se_daijump" src="daijump.wav"/>
+<SoundEffect name="$se_asi2" src="asi2.wav"/>
+<SoundEffect name="$se_koe2" src="koe2.wav"/>
+<SoundEffect name="$se_eat" src="eat.wav"/>
+<SoundEffect name="$se_zaku" src="zaku.wav"/>
+<SoundEffect name="$se_gucha" src="gucha.wav"/>
+<SoundEffect name="$se_ari" src="ari.wav"/>
+<SoundEffect name="$se_tori" src="tori.wav"/>
+<SoundEffect name="$se_noru" src="noru.wav"/>
+<SoundEffect name="$se_dosa2" src="dosa2.wav"/>
+<SoundEffect name="$se_gusa" src="gusa.wav"/>
+<SoundEffect name="$se_hachi" src="hachi.wav"/>
+<SoundEffect name="$se_tokuten" src="tokuten.wav"/>
+<SoundEffect name="$se_bell" src="bell.wav"/>
+ </resourcelist>
+ <resourcelist name="filelist">
+<Page name="r_0" src="end.cmml"/>
+<Page name="r_1" src="goki01.png"/>
+<Page name="r_2" src="goki02.png"/>
+<Page name="r_3" src="goki03.png"/>
+<Page name="r_4" src="goki04.png"/>
+<Page name="r_5" src="stage1.cmml"/>
+<Page name="r_6" src="G.png"/>
+<Page name="r_7" src="back.png"/>
+<Page name="r_8" src="trap.png"/>
+<Page name="r_9" src="GS.png"/>
+<Page name="r_10" src="item.png"/>
+<Page name="r_11" src="enemy1.png"/>
+<Page name="r_12" src="effect.png"/>
+<Page name="r_13" src="stage1.map"/>
+<Page name="r_14" src="title.cmml"/>
+<Page name="r_15" src="taitle.png"/>
+<Page name="r_16" src="G.tonyu"/>
+<Page name="r_17" src="hoihoi.tonyu"/>
+<Page name="r_18" src="main.tonyu"/>
+<Page name="r_19" src="mark.tonyu"/>
+<Page name="r_20" src="kumo.tonyu"/>
+<Page name="r_21" src="ito.tonyu"/>
+<Page name="r_22" src="oto.tonyu"/>
+<Page name="r_23" src="tyotyo.tonyu"/>
+<Page name="r_24" src="hachi.tonyu"/>
+<Page name="r_25" src="ari.tonyu"/>
+<Page name="r_26" src="ariguntai.tonyu"/>
+<Page name="r_27" src="imomusi.tonyu"/>
+<Page name="r_28" src="tori.tonyu"/>
+<Page name="r_29" src="kubi1.tonyu"/>
+<Page name="r_30" src="kubi2.tonyu"/>
+<Page name="r_31" src="title.tonyu"/>
+<Page name="r_32" src="ame1.tonyu"/>
+<Page name="r_33" src="ame2.tonyu"/>
+<Page name="r_34" src="ame3.tonyu"/>
+<Page name="r_35" src="ame4.tonyu"/>
+<Page name="r_36" src="ame5.tonyu"/>
+<Page name="r_37" src="ame6.tonyu"/>
+<Page name="r_38" src="ame7.tonyu"/>
+<Page name="r_39" src="ame8.tonyu"/>
+<Page name="r_40" src="gameover.tonyu"/>
+<Page name="r_41" src="candy1.tonyu"/>
+<Page name="r_42" src="candy2.tonyu"/>
+<Page name="r_43" src="candy3.tonyu"/>
+<Page name="r_44" src="candy4.tonyu"/>
+<Page name="r_45" src="candy5.tonyu"/>
+<Page name="r_46" src="candy6.tonyu"/>
+<Page name="r_47" src="candy7.tonyu"/>
+<Page name="r_48" src="candy8.tonyu"/>
+<Page name="r_49" src="end1.tonyu"/>
+<Page name="r_50" src="endmoji.tonyu"/>
+<Page name="r_51" src="illust1.tonyu"/>
+<Page name="r_52" src="illust2.tonyu"/>
+<Page name="r_53" src="illust3.tonyu"/>
+<Page name="r_54" src="illust4.tonyu"/>
+<Page name="r_55" src="asi.wav"/>
+<Page name="r_56" src="hoi.wav"/>
+<Page name="r_57" src="dosa.wav"/>
+<Page name="r_58" src="koe.wav"/>
+<Page name="r_59" src="jump.wav"/>
+<Page name="r_60" src="daijump.wav"/>
+<Page name="r_61" src="asi2.wav"/>
+<Page name="r_62" src="koe2.wav"/>
+<Page name="r_63" src="eat.wav"/>
+<Page name="r_64" src="zaku.wav"/>
+<Page name="r_65" src="gucha.wav"/>
+<Page name="r_66" src="ari.wav"/>
+<Page name="r_67" src="tori.wav"/>
+<Page name="r_68" src="noru.wav"/>
+<Page name="r_69" src="dosa2.wav"/>
+<Page name="r_70" src="gusa.wav"/>
+<Page name="r_71" src="hachi.wav"/>
+<Page name="r_72" src="tokuten.wav"/>
+<Page name="r_73" src="bell.wav"/>
+ </resourcelist>
+</resourcelist>

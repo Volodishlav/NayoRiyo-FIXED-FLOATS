@@ -1,0 +1,37 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_nayori" src="nayori.png"/>
+<cpattern name="$pat_riyona" src="riyona.png"/>
+<cpattern name="$pat_stage" src="stage.png"/>
+<cpattern name="$pat_target" src="target.png"/>
+<cpattern name="$pat_enemy" src="enemy.png"/>
+<cpattern name="$pat_tama" src="tama.png"/>
+<cpattern name="$pat_serifu" src="serifu.png"/>
+<cpattern name="$pat_buki" src="buki.png"/>
+<cpattern name="$pat_item" src="item.png"/>
+<cpattern name="$pat_enemy2" src="enemy2.png"/>
+<cpattern name="$pat_enemy3" src="enemy3.png"/>
+<cpattern name="$pat_enemy4" src="enemy4.png"/>
+<cpattern name="$pat_blood" src="blood.png"/>
+<cpattern name="$pat_black" src="black.png"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="stage" name="$stage" inst_p="$pat_stage" inst_zOrder="500" inst_x="250" inst_y="167"/>
+<generator className="target" name="$target" inst_p="$pat_target" inst_zOrder="-1000" inst_x="214" inst_y="206"/>
+<generator className="nayori" name="$nayori" inst_zOrder="100" inst_p="$pat_nayori" inst_y="286" inst_x="354"/>
+<generator className="zandan" name="$zandan" inst_p="10" inst_col="$cl" inst_text="%22’e”:30%22" inst_bold="1" inst_font="10" inst_size="16" inst_x="329" inst_y="24" inst_zOrder="1"/>
+<generator className="enemy" name="$enemy" inst_f="-1" inst_p="$pat_enemy" inst_t="0" inst_x="39" inst_y="262" inst_zOrder="10"/>
+<generator className="riyona" name="$riyona" inst_zOrder="100" inst_p="$pat_riyona" inst_x="425" inst_y="286"/>
+<generator className="score" name="$score" inst_font="%22‚l‚r ƒSƒVƒbƒN%22" inst_col="$clWhite" inst_text="%22Score:0%22" inst_zOrder="1" inst_size="15" inst_bold="1" inst_x="13" inst_y="9"/>
+<generator className="sodansu" name="$sodansu" inst_p="$pat_tama" inst_x="446" inst_y="37" inst_zOrder="1"/>
+<generator className="kaiwa" name="$kaiwa" inst_p="7" inst_x="290" inst_y="34" inst_zOrder="1000"/>
+<generator className="buki" name="$buki" inst_p="$pat_buki+0" inst_x="226" inst_y="34" inst_zOrder="100"/>
+<generator className="denki" name="$denki" inst_angle="0" inst_p="$pat_black+0" inst_scaleX="1" inst_zOrder="-100" inst_x="754" inst_y="418" inst_alpha="0"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="560"/>
+  <globalvalue name="$screenHeight" value="365"/>
+ </resourcelist>
+</resourcelist>

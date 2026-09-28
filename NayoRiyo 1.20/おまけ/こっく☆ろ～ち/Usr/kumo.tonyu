@@ -1,0 +1,117 @@
+extends SpriteChar;
+anim=newAnimation();
+a=0;
+tx=x;
+time=0;
+state=0;
+zOrder=15;
+while(1){
+  anim.play($pat_enemy1+0);
+  anim.pause();
+  if($G.S==0){
+    if(state==0){
+      anim.loop($pat_enemy1+1,$pat_enemy1+2,25);
+      if(f==-1){
+        this.x=this.x-(4/5);
+        if(tx-100>=x)f=1;
+      }
+      if(f==1){
+        this.x=this.x+(4/5);
+        if(tx+100<=this.x)f=-1;
+      }
+    }
+    if($G.x-this.x>-100 && $G.x-this.x<0 && $G.y>350 && f==-1 && $G.hari==0 && time==0 && $imomusi.state!=1){
+      state=1;
+      anim.play($pat_enemy1+3);
+      anim.pause();
+      wait(20);
+      appear(new ito(this.x-15,this.y+20,$pat_effect+0,-1));
+      wait(50);
+      state=0;
+      time=1;
+    }
+    if($G.x-this.x<100 && $G.x-this.x>0 && $G.y>350 && f==1 && $G.hari==0 && time==0 && $imomusi.state!=1){
+      state=1;
+      anim.play($pat_enemy1+3);
+      anim.pause();
+      wait(20);
+      appear(new ito(this.x+15,this.y+20,$pat_effect+0,1));
+      wait(50);
+      state=0;
+      time=1;
+    }
+         if($G.S==2)a=1;
+    if(time>0 && time<=100){
+      time=time+(1/2);
+      if(time==100){
+        time=0;
+      }
+    }
+    if($G.x-this.x<20 && $G.x-this.x>-20 && $G.y-this.y>=-10 && $imomusi.state!=1){
+            $G.S=3;
+            a=1;
+    }
+    if($G.x-this.x<20 && $G.x-this.x>-20 && $G.y-this.y<-10 && $G.y-this.y>-20){
+      $mplayer.play($se_jump,0,20);
+      $G.vy=-8;
+    } 
+  }
+  if(a==0 && $G.S!=0){
+if($G.x>x)f=1;
+if($G.x<x)f=-1;
+zOrder=50;
+    wait();
+}
+if(a==1){
+  if($G.S==2){
+    $G.y=this.y+10;
+    anim.loop($pat_enemy1+1,$pat_enemy1+2,25);
+    if($G.x-this.x>-250 && $G.x-this.x<0){
+      if($G.x<this.x-28){
+        this.x--;
+      }
+      if($G.x>=this.x-28){
+        if($G.f==-1){$G.a=2;$G.x=this.x-28;}
+        if($G.f==1){$G.a=3;$G.x=this.x-28;}
+        anim.loop($pat_enemy1+1,$pat_enemy1+2,25);
+      }
+                    while($G.a==2 || $G.a==3){
+        appear(new mark(this.x-20,this.y+20,$pat_effect+1));
+        wait(25);
+      }
+    }
+    if($G.x-this.x<250 && $G.x-this.x>0){
+      if($G.x>this.x+28){
+        this.x++;
+      }
+      if($G.x<=this.x+28){
+        if($G.f==1){$G.a=2;$G.x=this.x+28;}
+      if($G.f==-1){$G.a=3;$G.x=this.x+28;}
+        anim.loop($pat_enemy1+1,$pat_enemy1+2,25);
+      }
+              while($G.a==2 || $G.a==3){
+        appear(new mark(this.x+20,this.y+20,$pat_effect+1));
+        wait(25);
+      }
+    }
+  }
+      if($G.S==3){
+       if($G.x<this.x){
+          f=-1;
+        this.x=$G.x+9;
+        
+      }
+              if($G.x>this.x){
+          f=1;
+        this.x=$G.x-9;
+      }
+        anim.loop($pat_enemy1+4,$pat_enemy1+5,20);
+      if($G.a==1){
+        if($G.f==-1){f=-1;this.x=$G.x+30;}
+        if($G.f==1){f=1;this.x=$G.x-30;}
+      anim.loop($pat_enemy1+0,$pat_enemy1+2,20);
+    }
+  }
+}
+  update();
+}

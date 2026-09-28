@@ -1,0 +1,385 @@
+extends SpriteChar;
+anim=newAnimation();
+nyo=0;
+asi=0;
+si=0;
+opai=0;
+randomize();
+while(1){
+  if(si==2){
+    if(asi==0){
+      y=y+1;
+      p=$pat_riyona+21;
+      wait(4);
+      x=x+30;
+      y=y+4;
+      p=$pat_riyona+22;
+      wait(5);
+      x=x+10;
+      y=y+1;
+    }
+    x=x+20;
+    p=$pat_riyona+23;
+    anim.pause();
+    si=3;
+  }
+  if(si==3){p=$pat_riyona+23;
+    wait();  
+  }
+  if(asi==0){
+    anim.loop($pat_riyona+0,$pat_riyona+1,60);
+    if($nayori.jigai==2 || $nayori.jigai==3){anim.play($pat_riyona+28);
+      anim.pause();
+    }
+  }
+  if($buki==0){
+    if ( crashTo( $target ) && $target.x-x<15 && $target.x-x>-8 && $target.y-y<=-20 && asi==0) {
+      if ( $target.shoot == 1 ) {
+        $message=2; 
+        si=1;
+        anim.play($pat_riyona+2,$pat_riyona+3,10);
+        wait(60);
+        $projectmanager.loadpage($page_gameover);
+      } 
+    }
+    if ( crashTo( $target ) && $target.x-x<15 && $target.x-x>-8 && $target.y-y>-20 && $target.y-y<10 && asi==0) {
+      if ( $target.shoot == 1 ) {
+        $message=3;
+        si=1;
+        anim.play($pat_riyona+4,$pat_riyona+5,10);
+        wait(60);
+        $projectmanager.loadpage($page_gameover);  
+      } 
+    }
+    if ( crashTo( $target ) && $target.x-x<15 && $target.x-x>-8 && $target.y-y>=10 && asi==0) {
+      if ( $target.shoot == 1) {
+        $message=3;
+        x=x+3;
+        anim.play($pat_riyona+6);
+        updateEx(10);
+        y=y+5;
+        anim.loop($pat_riyona+7,$pat_riyona+8,30);
+        wait(30);
+        appear(new serifu(this.x-5,this.y-30,$pat_serifu+8));
+        asi=1;
+      }
+    }
+    if ( crashTo( $target ) && $target.x-x<33 && $target.x-x>10 && $target.y-y<17 && $target.y-y>-10 && asi==1) {
+      if ( $target.shoot == 1 ) {
+        $message=6;
+        si=1;
+        anim.play($pat_riyona+9);
+        wait(20);
+        x=x+8;
+        y=y+2;
+        anim.play($pat_riyona+10);
+        anim.pause();
+        wait(60);
+        $projectmanager.loadpage($page_gameover);
+      } 
+    }
+    if ( crashTo( $target ) && $target.x-x<=20 && $target.x-x>-5  && $target.y-y>=17 && asi==1) {
+      if ( $target.shoot == 1 ) {
+        $message=7;
+        si=1;
+        anim.play($pat_riyona+11);
+        wait(20);
+        x=x+8;
+        y=y+2;
+        anim.play($pat_riyona+12);
+        anim.pause();
+        wait(60);
+        $projectmanager.loadpage($page_gameover);
+      } 
+    }
+  }
+  if($buki==1){
+    if ( crashTo( $target ) && $target.x-x<40 && $target.x-x>-40 && asi==0) {
+      if ( $target.shoot == 1 ) {
+        $message=2;
+        si=1;
+        x=x+30;
+        y=y+1;
+        anim.play($pat_riyona+18);
+        wait(12);x=x-10;y=y-1;
+        anim.play($pat_riyona+19);
+        wait(18);x=x-5;
+        anim.play($pat_riyona+20);y=y+6;
+        wait(60);
+        $projectmanager.loadpage($page_gameover);  
+      } 
+    }
+    if ( crashTo( $target ) && $target.x-x<40 && $target.x-x>-40 && asi==1) {
+      if ( $target.shoot == 1 ) {
+        $message=6;
+        si=1;
+        x=x+20;
+        anim.play($pat_riyona+13);
+        wait(20);
+        x=x+5;
+        y=y+2;
+        anim.play($pat_riyona+14);
+        anim.pause();
+        wait(60); 
+        $projectmanager.loadpage($page_gameover);
+      } 
+    }
+  }
+  if ( crashTo( $target ) && $target.x-x<10 && $target.x-x>-4 && $target.y-y>-10 && $target.y-y<-2 && asi==0){
+    if ( $target.push == 1 ) {
+      opai=opai+1;
+      appear(new serifu(this.x-50,this.y-70,$pat_serifu+1));
+      anim.play($pat_riyona+15);
+      anim.pause();
+      wait(20);
+  }}
+  if ( crashTo( $target ) && $target.x-x<=0 && $target.x-x>-20  && $target.y-y>=24 && $target.y-y<45 && asi==1){
+    if ( $target.push == 1 ) {
+      appear(new serifu(this.x-5,this.y-30,$pat_serifu+8));
+  }}
+  
+  if ( crashTo( $target ) && $target.x-x<7 && $target.x-x>-2 && $target.y-y>10 && $target.y-y<20 && asi==0){
+    if ( $target.push == 1 ) {
+      if(nyo==0 || nyo==2){
+      appear(new serifu(this.x-50,this.y-70,$pat_serifu+1));}
+      if(nyo==1 || nyo==3){
+      appear(new serifu(this.x-50,this.y-70,$pat_serifu+2));}
+      if(nyo==4){
+      appear(new serifu(this.x-50,this.y-70,$pat_serifu+3));}
+      if(nyo==5){
+        appear(new serifu(this.x-50,this.y-70,$pat_serifu+4));
+        si=1;
+        $message=4;
+        wait(10);
+        anim.play($pat_riyona+16,$pat_riyona+17,10);
+        wait(70);
+        $projectManager.loadPage($page_gameover);
+      }
+      anim.play($pat_riyona+15);
+      anim.pause();
+      wait(20);
+      nyo=nyo+1;
+    }
+  }
+  if($nayori.n==2 && $buki==0){ //ハンドガン
+    wait(50);
+    appear(new serifu(this.x-50,this.y-70,$pat_serifu+5));
+    wait(30);
+    anim.play($pat_target+3);
+    anim.pause();
+    
+    //イージー
+    if($nanido==0){
+      wait(100);
+      anim.play($pat_riyona+24,$pat_riyona+25,10);
+      appear(new serifu(this.x-50,this.y-70,$pat_serifu+6));
+      wait(50);
+      $zandan=$zandan+30;
+      $nayori.n=1;
+    }
+    
+    //ノーマル
+    if($nanido==1){
+      r=rnd(10);
+      if(r>=8){
+        wait(300);
+        anim.play($pat_riyona+24,$pat_riyona+25,10);
+        appear(new serifu(this.x-50,this.y-70,$pat_serifu+6));
+        wait(50);
+        $zandan=$zandan+30;
+        $nayori.n=1;
+      }
+      if(r<8 && r>=5){
+        wait(300);
+        anim.play($pat_riyona+24,$pat_riyona+25,10);
+        appear(new serifu(this.x-50,this.y-70,$pat_serifu+6));
+        wait(50);
+        $zandan=$zandan+20;
+        $nayori.n=1;
+      }
+      if(r<5 && r>=1){
+        wait(300);
+        anim.play($pat_riyona+24,$pat_riyona+25,10);
+        appear(new serifu(this.x-50,this.y-70,$pat_serifu+6));
+        wait(50);
+        $zandan=$zandan+10;
+        $nayori.n=1;
+      }
+      if(r==0){
+        wait(100);
+        anim.play($pat_riyona+0);
+        appear(new serifu(this.x-50,this.y-70,$pat_serifu+7));
+        wait(50);
+        $nayori.n=1;
+      }
+    }
+    
+    //ハード
+    if($nanido==2){
+      r=rnd(10);
+      if(r==10){
+        wait(300);
+        anim.play($pat_riyona+24,$pat_riyona+25,10);
+        appear(new serifu(this.x-50,this.y-70,$pat_serifu+6));
+        wait(50);
+        $zandan=$zandan+30;
+        $nayori.n=1;
+      }
+      if(r<10 && r>=4){
+        wait(300);
+        anim.play($pat_riyona+24,$pat_riyona+25,10);
+        appear(new serifu(this.x-50,this.y-70,$pat_serifu+6));
+        wait(50);
+        $zandan=$zandan+20;
+        $nayori.n=1;
+      }
+      if(r<4 && r>=1){
+        wait(300);
+        anim.play($pat_riyona+24,$pat_riyona+25,10);
+        appear(new serifu(this.x-50,this.y-70,$pat_serifu+6));
+        wait(50);
+        $zandan=$zandan+10;
+        $nayori.n=1;
+      }
+      if(r==0){
+        wait(150);
+        anim.play($pat_riyona+0);
+        appear(new serifu(this.x-50,this.y-70,$pat_serifu+7));
+        wait(50);
+        $nayori.n=1;
+      }
+    }
+  }
+  
+  if($nayori.n==2 && $buki==1){ //ショットガン
+    wait(50);
+    appear(new serifu(this.x-50,this.y-70,$pat_serifu+5));
+    wait(30);
+    anim.play($pat_target+3);
+    anim.pause();
+    
+    //イージー
+    if($nanido==0){
+      wait(200);
+      anim.play($pat_riyona+26,$pat_riyona+27,10);
+      appear(new serifu(this.x-50,this.y-70,$pat_serifu+6));
+      wait(50);
+      $zandan2=$zandan2+10;
+      $nayori.n=1;
+    }
+    
+    //ノーマル
+    if($nanido==1){
+      r=rnd(10);
+      if(r>=7){
+        wait(400);
+        anim.play($pat_riyona+26,$pat_riyona+27,10);
+        appear(new serifu(this.x-50,this.y-70,$pat_serifu+6));
+        wait(50);
+        $zandan2=$zandan2+10;
+        $nayori.n=1;
+      }
+      if(r<7 && r>=3){
+        wait(400);
+        anim.play($pat_riyona+26,$pat_riyona+27,10);
+        appear(new serifu(this.x-50,this.y-70,$pat_serifu+6));
+        wait(50);
+        $zandan2=$zandan2+5;
+        $nayori.n=1;
+      }
+      if(r<3 && r>=0){
+        wait(100);
+        anim.play($pat_riyona+0);
+        appear(new serifu(this.x-50,this.y-70,$pat_serifu+7));
+        wait(50);
+        $nayori.n=1;
+      }
+    }
+    
+    //ハード
+    if($nanido==2){
+      r=rnd(10);
+      if(r==10){
+        wait(400);
+        anim.play($pat_riyona+26,$pat_riyona+27,10);
+        appear(new serifu(this.x-50,this.y-70,$pat_serifu+6));
+        wait(50);
+        $zandan2=$zandan2+10;
+        $nayori.n=1;
+      }
+      if(r<10 && r>=5){
+        wait(400);
+        anim.play($pat_riyona+26,$pat_riyona+27,10);
+        appear(new serifu(this.x-50,this.y-70,$pat_serifu+6));
+        wait(50);
+        $zandan2=$zandan2+5;
+        $nayori.n=1;
+      }
+      if(r<5 && r>=0){
+        wait(150);
+        anim.play($pat_riyona+0);
+        appear(new serifu(this.x-50,this.y-70,$pat_serifu+7));
+        wait(50);
+        $nayori.n=1;
+      }
+    }
+  }
+  if($nayori.n==2 && $buki==2){
+    wait(50);
+    appear(new serifu(this.x-50,this.y-70,$pat_serifu+5));
+    wait(30);
+    anim.play($pat_target+3);
+    anim.pause();
+    
+    //イージー
+    if($nanido==0){
+      wait(300);
+      anim.play($pat_riyona+26,$pat_riyona+27,10);
+      appear(new serifu(this.x-50,this.y-70,$pat_serifu+6));
+      wait(50);
+      $tama3=$tama3+1;
+      $nayori.n=1;
+    }
+    
+    //ノーマル
+    if($nanido==1){
+      r=rnd(10);
+      if(r>=8){
+        wait(600);
+        anim.play($pat_riyona+26,$pat_riyona+27,10);
+        appear(new serifu(this.x-50,this.y-70,$pat_serifu+6));
+        wait(50);
+        $tama3=$tama3+1;
+        $nayori.n=1;
+      }
+      if(r<8 && r>=0){
+        wait(100);
+        anim.play($pat_riyona+0);
+        appear(new serifu(this.x-50,this.y-70,$pat_serifu+7));
+        wait(50);
+        $nayori.n=1;
+      }
+    }
+    
+    //ハード
+    if($nanido==2){
+      r=rnd(10);
+      if(r>=9){
+        wait(600);
+        anim.play($pat_riyona+26,$pat_riyona+27,10);
+        appear(new serifu(this.x-50,this.y-70,$pat_serifu+6));
+        wait(50);
+        $tama3=$tama3+1;
+        $nayori.n=1;
+      }
+      if(r<9 && r>=0){
+        wait(150);
+        anim.play($pat_riyona+0);
+        appear(new serifu(this.x-50,this.y-70,$pat_serifu+7));
+        wait(50);
+        $nayori.n=1;
+      }
+    }
+  }
+  update();
+}

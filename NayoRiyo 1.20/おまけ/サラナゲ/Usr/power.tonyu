@@ -1,0 +1,22 @@
+extends SpriteChar;
+anim=newAnimation();
+pow=0;
+sw=0;
+a=0;
+while(1){
+  if($move==1){
+    anim.swing($pat_power+0,$pat_power+19,1);  
+    while(pow<20 && sw==0){
+      pow++;
+      if(pow==20)sw=1;
+      update();
+    }
+    while(pow>1 && sw==1){
+      pow--;
+      if(pow==1)sw=0;
+      update();
+    }
+  }
+  
+  update();
+}

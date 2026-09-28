@@ -1,0 +1,24 @@
+extends TextChar;
+while(1){
+  if($switch==0){}
+  if($switch==1){
+    if($move==0){
+      wait(100);
+      $mplayer.play($se_start);
+      wait(60);
+      text="ÇQ";
+      wait(60);
+      text="ÇP";
+      wait(60);
+      text="ÉXÉ^Å[Ég";
+      $move=1;
+      wait(60);
+      died=1;
+    }
+    if($move==10){
+      size=40;
+      text="é∏äi";  
+    }
+  }  
+  update();
+}

@@ -1,0 +1,179 @@
+extends kaiwa;
+anim=newAnimation();
+n=0; //最初の会話用
+sw=0; //ポーズ用
+jigai=0;
+$serifu=0; //セリフ用
+$t=null; //タイムストップ用
+while(1){
+  if(jigai==4){
+    $riyona.si=2;
+    f=-1;
+    x=x-10;
+    y=y+1;
+    p=$pat_nayori+19;
+    wait(5);
+    x=x-30;
+    y=y+4;
+    p=$pat_nayori+20;
+    wait(5);
+    x=x-30;
+    y=y+1;
+    zOrder=400;
+    p=$pat_nayori+21;
+    wait(60);
+    $message=9;
+    $projectmanager.loadpage($page_gameover);
+  }
+  if($target.x<x){
+    x=354;
+    f=-1;
+  }
+  if($target.x>x+30){
+    x=380;
+    f=1;
+  }
+  if(getkey(32)==1 && sw==0 && jigai==0){
+    $t=timeStop();
+  sw=1;}
+  if(sw==1){
+  drawText(140,150,"ＰＡＵＳＥ",$clwhite,30);}
+  if(getkey(32)==1 && sw==1){
+    $t.releaseAll();
+    $t=null;
+  sw=0;}
+  
+  if(n==0){
+    $t=timeStop();
+    if($nanido==0 || $nanido==1 || $nanido==2){
+      message3(" お嬢さん…# かくれんぼはもう終わりですよ",5);
+    }
+    n=1;
+    $t.releaseAll();
+    $t=null;
+    
+  }
+  
+  //ハンドガン
+  if($buki==0){
+    p=$pat_nayori+1;
+    if(getkey(90)>0 && sw==0){
+      if(getkey(1)==1 && $tama>0 && jigai==0){
+        p=$pat_nayori+2; 
+        wait(5);  
+      }
+    }  
+    else{
+      p=$pat_nayori;
+    }
+    if ( getkey(90)>0 && $target.x-x<20 && $target.x-x>-8 && $target.y-y<=-20 && $target.y-y>-50 && f==-1 && sw==0) {
+      jigai=1;
+      if(getkey(1)==1 && $tama>0 && jigai==1){
+        $target.shoot=0;
+        $mplayer.play($se_jusei);
+        jigai=2;
+        anim.play($pat_nayori+14,$pat_nayori+15,20);
+        wait(60);
+        if($riyona.asi==0)$message=5;
+        if($riyona.asi==1)$message=8;
+        $projectmanager.loadpage($page_gameover);
+      }
+      p=$pat_nayori+13;
+      if(jigai==2)p=$pat_nayori+15;
+    }
+    else{jigai=0;}
+    if(getkey(88)==1 && $tama<=5 && $zandan>0 && !getkey(90)>0 && sw==0){
+      p=$pat_nayori+3;
+      updateEx(5);
+    }
+    if(getkey(67)==1 && $zandan<11 && n==1 && $riyona.asi==0){
+      appear(new serifu(this.x-50,this.y-70,$pat_serifu+0));
+      n=2;
+    }
+    if(getkey(67)==1 && $zandan<11 && n==1 && $riyona.asi==1){
+      appear(new serifu($riyona.x,$riyona.y-30,$pat_serifu+8));
+    }
+  }
+  
+  //ショットガン
+  if($buki==1){
+    if(getkey(90)>0 && sw==0){
+      if(getkey(1)==1 && $tama2>0 && jigai==0){
+        p=$pat_nayori+11; 
+        updateEx(5);
+      }
+      p=$pat_nayori+10;
+    }  
+    else{
+      p=$pat_nayori+9;
+    }
+    if ( getkey(90)>0 && $target.x-x<30 && $target.x-x>-10 && $target.y-y<=-20 && $target.y-y>-50 && f==-1 && sw==0) {
+      jigai=1;
+      if(getkey(1)==1 && $tama2>0 && jigai==1){
+        $target.shoot=0;
+        $mplayer.play($se_jusei2);
+        jigai=3;
+        x=x+21;
+        y=y-5;
+        p=$pat_nayori+17;
+        wait(20);
+        x=x-21;
+        y=y+3;
+        p=$pat_nayori+18;
+        wait(60);
+        if($riyona.asi==0)$message=5;
+        if($riyona.asi==1)$message=8;
+        $projectmanager.loadpage($page_gameover);
+      }
+      p=$pat_nayori+16;
+      if(jigai==3)p=$pat_nayori+18;
+    }
+    else{jigai=0;}
+    if(getkey(88)==1 && $tama2<=2 && $zandan2>0 && !getkey(90)>0 && sw==0){  
+      p=$pat_nayori+12;
+      updateEx(10);
+    }
+    if(getkey(67)==1 && $zandan2<6 && n==1 && $nanido==0 && $riyona.asi==0){
+      appear(new serifu(this.x-50,this.y-70,$pat_serifu+0));
+      n=2;
+    }
+    if(getkey(67)==1 && $zandan2<4 && n==1 && $nanido>0 && $riyona.asi==0){
+      appear(new serifu(this.x-50,this.y-70,$pat_serifu+0));
+      n=2;
+    }
+    if(getkey(67)==1 && $zandan2<6 && n==1 && $riyona.asi==1){
+      appear(new serifu($riyona.x,$riyona.y-30,$pat_serifu+8));
+    }
+  }
+  
+  //手榴弾
+  if($buki==2){
+    if(getkey(90)>0 && sw==0){
+      if(getkey(1)==1 && jigai==0){
+        p=$pat_nayori+8; 
+        wait(10);  
+      }
+      p=$pat_nayori+7;
+    }  
+    else{
+      if($tama3>0)p=$pat_nayori+4;
+      if($tama3==0)p=$pat_nayori+5;
+    }
+    if(jigai==4){
+      f=-1;
+      x=x-70;
+      zOrder=400;
+      p=$pat_nayori+21;
+    }
+    if(getkey(67)==1 && $tama3<1 && n==1 && $riyona.asi==0){
+      appear(new serifu(this.x-50,this.y-70,$pat_serifu+0));
+      n=2;
+    }
+    if(getkey(67)==1 && $tama3<1 && n==1 && $riyona.asi==1){
+      appear(new serifu($riyona.x,$riyona.y-30,$pat_serifu+8));
+    }
+    
+  }
+  
+  update(); 
+}

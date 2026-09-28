@@ -1,0 +1,24 @@
+extends SpriteChar;
+$screenWidth = 32*18;
+$screenHeight = 32*13;
+$arigorosi=0;
+$continue=10;
+$tokuten=0;
+$candyH1=0;
+$candyH2=0;
+$candyH3=0;
+$candyH4=0;
+$candyH5=0;
+$candyH6=0;
+$candyH7=0;
+$candyH8=0;
+
+while(1){
+  if(getkey(82)==1){
+    $projectmanager.loadpage($page_title);
+  }
+  if(getkey(32)==1){
+    $projectmanager.loadpage($page_stage1);
+  }
+  update();
+}

@@ -1,0 +1,12 @@
+extends PanelChar;
+while(1){
+  
+  if(getkey(1)==1){
+    if(crashTo($mouse)){
+      $end=4;
+      $projectmanager.loadpage($page_gomon4);
+    }
+  }
+  
+ update(); 
+}

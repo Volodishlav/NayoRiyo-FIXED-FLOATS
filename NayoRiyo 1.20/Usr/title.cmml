@@ -1,0 +1,19 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_nayoriyo" src="nayoriyo.png"/>
+<cpattern name="$pat_target" src="target.png"/>
+<cpattern name="$pat_item" src="item.png"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="title" name="$title" inst_p="6" inst_pat="333" inst_x="545" inst_y="65"/>
+<generator className="gazou" name="$gazou" inst_p="$pat_nayoriyo" inst_zOrder="100" inst_x="244" inst_y="154"/>
+<generator className="mouse" name="$mouse" inst_p="$pat_target+1" inst_zOrder="-1000" inst_x="234" inst_y="194"/>
+<generator className="omake" name="$omake" inst_p="$pat_target+3" inst_x="348" inst_y="317"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="560"/>
+  <globalvalue name="$screenHeight" value="390"/>
+ </resourcelist>
+</resourcelist>

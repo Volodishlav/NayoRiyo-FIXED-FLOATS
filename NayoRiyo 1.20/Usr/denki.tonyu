@@ -1,0 +1,33 @@
+extends DxChar;
+on=0;
+a=0;
+alpha=255;
+while(1){
+  if($end==9 || $end==10 || $end==11){
+    if(a==1){
+      if(on==1){
+        alpha=0;
+        on=0;
+      }
+      x=249;
+      y=170;
+    }else{
+      if(on==0){
+        x=249;
+        y=270;
+      }
+      if(on==1){
+        x=766;
+        y=330;
+      }
+    }
+  }else if($end==12){
+    x=249;
+    y=170;
+  }else{
+    alpha=0;
+    x=249;
+    y=170;
+  }
+  update();
+}

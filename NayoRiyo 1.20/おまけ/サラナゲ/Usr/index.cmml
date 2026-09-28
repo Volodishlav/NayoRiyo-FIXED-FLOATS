@@ -1,0 +1,23 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_kakudo" src="kakudo.png"/>
+<cpattern name="$pat_nageo" src="nageo.png"/>
+<cpattern name="$pat_stage" src="stage.png"/>
+<cpattern name="$pat_power" src="power.png"/>
+<cpattern name="$pat_moji" src="moji.png"/>
+<cpattern name="$pat_p1" src="p1.png"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="main" name="$main" inst_p="4" inst_x="606" inst_y="126"/>
+<generator className="moji" name="$moji" inst_col="$clWhite" inst_bold="1" inst_font="%22‚l‚r –¾’©%22" inst_text="%22‚o‚t‚r‚g@‚r‚o‚`‚b‚d%22" inst_size="12" inst_x="210" inst_y="100"/>
+<generator className="kotoba" name="$kotoba" inst_p="$pat_moji+0" inst_x="288" inst_y="170"/>
+<generator className="switch" name="$switch" inst_p="9" inst_x="606" inst_y="190"/>
+<generator className="player1" name="$player1" inst_angle="0" inst_alpha="255" inst_scalex="1" inst_x="288" inst_y="218" inst_p="$pat_p1+0"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="632"/>
+  <globalvalue name="$screenHeight" value="286"/>
+ </resourcelist>
+</resourcelist>

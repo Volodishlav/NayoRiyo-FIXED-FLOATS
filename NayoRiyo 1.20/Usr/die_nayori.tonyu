@@ -1,0 +1,376 @@
+extends SpriteChar;
+anim=newAnimation();
+$n=0;
+n=0;
+a=0;
+i=0;
+while(1){
+  if($end==1){
+    zOrder=30;
+    if($se==2){
+      $n=1;
+      anim.play($pat_die_nayori+0,$pat_die_nayori+4,20);
+      $mplayer.play($se_naguru1);
+      $se=3;
+    }
+  }
+  
+  if($end==2){
+    x=105;
+    y=220;
+  }
+  if($end==(5/2)){
+    zOrder=20;
+    x=105;
+    y=220;
+    
+    if (crashTo( $mouse ) && getkey(1)==1 && n==0 && $mouse.x-x<35 && $mouse.x-x>0 && $mouse.y-y<40 && $gomonkan2.a==2){
+      $mplayer.play($se_open);
+      anim.play($pat_die_nayori+6,$pat_die_nayori+7,20);
+      wait(50);
+      anim.play($pat_die_nayori+8);
+      $mplayer.play($se_dosa);
+      anim.pause();
+      n=1;
+    }
+  }
+  if($end==3){
+    zOrder=-100;
+    if(n==1){
+      x=x-(3/5);
+      anim.loop($pat_die_nayori+12,$pat_die_nayori+15,23);
+    }
+    if(n==1 && x<430){
+      n=2;
+    }
+    if(n==2){
+      x=430;
+      anim.loop($pat_die_nayori+9,$pat_die_nayori+10,50);  
+    } 
+    if(n==3 && x>260){
+      x=x-(3/5);
+      anim.loop($pat_die_nayori+12,$pat_die_nayori+15,23);
+    }
+    if(x<260){
+      n=4;
+    }  
+    if(n==4){
+      anim.play($pat_die_nayori+11);
+      anim.pause();
+    }
+    if(n==5){
+      this.die();
+    }
+    
+  }
+  
+  if($end==4){
+    x=75;
+    y=275;
+    if(n==0){
+      anim.loop($pat_die_nayori+16,$pat_die_nayori+17,50);
+    }
+    if(n==1){
+      time=time+1;
+      if(time<=250){
+        anim.loop($pat_die_nayori+16,$pat_die_nayori+17,50);
+      }
+      if(time>250 && time<=500){
+        anim.loop($pat_die_nayori+18,$pat_die_nayori+19,50);
+      }
+      if(time>500 && time<=750){
+        anim.loop($pat_die_nayori+20,$pat_die_nayori+21,50);
+      }
+      if(time>750 && time<=1000){
+        anim.loop($pat_die_nayori+22,$pat_die_nayori+23,40);
+      }
+      if(time>1000 && time<=1250){
+        anim.loop($pat_die_nayori+24,$pat_die_nayori+25,40);
+      }
+      if(time>1500 && i==1){
+        anim.loop($pat_die_nayori+24,$pat_die_nayori+25,40);
+      }
+      if(time>1500 && n==1 && i!=1){
+        $die_riyona.i=1;
+        $mplayer.play($se_haretu);
+        $blood.a=1;
+        anim.play($pat_die_nayori+26);
+        wait(60);
+        n=2;
+      }
+    }
+    if(n==2){
+      anim.loop($pat_die_nayori+27,$pat_die_nayori+28,120);
+    }
+    if(n==3){
+      anim.play($pat_die_nayori+28);
+      anim.pause();
+    }
+  }
+  
+  if($end==5 && a==0){
+    anim.loop($pat_die_nayori+29,$pat_die_nayori+30,50);
+    if(n==1){
+      anim.play($pat_die_nayori+57);
+      updateEx(15);
+      anim.play($pat_die_nayori+58);
+      updateEx(15);
+      anim.play($pat_die_nayori+59);
+      updateEx(15);
+      a=1;
+      if(a==1){
+        wait(50);
+        $mplayer.play($se_sasaru0);
+        anim.play($pat_die_nayori+60);
+        anim.pause();
+      }
+    }
+    if(n==2){
+      anim.play($pat_die_nayori+61);
+      updateEx(15);
+      anim.play($pat_die_nayori+62);
+      updateEx(15);
+      anim.play($pat_die_nayori+63);
+      updateEx(15);
+      a=2;
+      if(a==2){
+        anim.play($pat_die_nayori+64);
+        anim.pause();
+      }
+    }
+    if(n==3){
+      anim.play($pat_die_nayori+65);
+      updateEx(30);
+      a=3;
+    }
+    if(n==3 && a==3){
+      anim.loop($pat_die_nayori+66,$pat_die_nayori+67,50);
+    }
+    if(n==4){
+      anim.loop($pat_die_nayori+68,$pat_die_nayori+69,40);
+    }
+    if(n==5){
+      anim.play($pat_die_nayori+70);
+      anim.pause();
+    }
+    if(n==6){
+      anim.play($pat_die_nayori+71);
+      anim.pause();
+    }
+    if(n==7){
+      anim.play($pat_die_nayori+72);
+      updateEx(40);
+      anim.play($pat_die_nayori+73);
+      updateEx(40);
+      anim.play($pat_die_nayori+74);
+      updateEx(40);
+      $blood2.a=1;
+      a=4;
+    }
+    if(n==7 && a==4){
+      anim.play($pat_die_nayori+74);
+      anim.pause();
+    }
+    if(n==8){
+      anim.play($pat_die_nayori+42);
+      anim.pause();
+    }
+    if(n==9){
+      anim.loop($pat_die_nayori+43,$pat_die_nayori+44,30);
+    }
+    if(n==10){
+      anim.play($pat_die_nayori+45);
+      anim.pause();
+    }
+    if(n==11){
+      anim.play($pat_die_nayori+46);
+      updateEx(10);
+      anim.play($pat_die_nayori+47);
+      updateEx(10);
+      anim.play($pat_die_nayori+48);
+      updateEx(20);
+      anim.play($pat_die_nayori+49);
+      updateEx(40);
+      anim.play($pat_die_nayori+50);
+      updateEx(40);
+      a=5;
+    }
+    if(n==11 && a==5){
+      anim.loop($pat_die_nayori+51,$pat_die_nayori+52,40);
+    }
+    if(n==(23/2)){
+      anim.play($pat_die_nayori+53);
+      updateEx(10);
+      anim.play($pat_die_nayori+54);
+      updateEx(10);
+      a=6;
+    }
+    if(n==(23/2) && a==6){
+      anim.loop($pat_die_nayori+55,$pat_die_nayori+56,30);
+    }
+    if(n==12 && a==0){
+      anim.play($pat_die_nayori+31);
+      updateEx(30);
+      anim.play($pat_die_nayori+32);
+      updateEx(30);
+      appear(new haribote(164,193,$pat_item+17));
+      a=7;
+    }
+    if(n==12 && a==7){
+      anim.play($pat_die_nayori+33);
+      anim.pause();
+    }
+    if(n==13){
+      anim.play($pat_die_nayori+33);
+      wait(50);
+      $blood.a=3;
+      $blood.y=224;
+      wait(100);
+      anim.play($pat_die_nayori+34);
+      updateEx(100);
+      anim.play($pat_die_nayori+35);
+      updateEx(90);
+      anim.play($pat_die_nayori+36);
+      updateEx(90);
+      anim.play($pat_die_nayori+37);
+      updateEx(160);
+      $blood.died=1;
+      $gomonkan.a=0;
+      anim.play($pat_die_nayori+38);
+      updateEx(10);
+      anim.play($pat_die_nayori+39);
+      updateEx(10);
+      anim.play($pat_die_nayori+40);
+      updateEx(10);
+      anim.play($pat_die_nayori+41);
+      updateEx(20);
+      a=8;
+      $gomonkan3.s=1;
+    }
+    if(n==13 && a==8){
+      anim.play($pat_die_nayori+41);
+      anim.pause();
+    }
+  }
+  
+  if($end==6){
+    x=126;
+    y=258;
+    anim.loop($pat_nayori+22,$pat_nayori+23,60);
+    if(n==1 && i<=8){
+      x=128;
+      y=259;
+      anim.play($pat_nayori+24);
+      anim.pause();
+    }
+    if(n==1 && getkey(2)==1 && i<=8){
+      i=i+1;
+      $gomonkan4.n=2;
+      $mplayer.play($se_sasu);
+      $blood.a=1;
+      anim.play($pat_nayori+25);
+      anim.pause();
+      $die_riyona.n=1;
+      wait(30);
+    }
+    if(n==1 && i>8){
+      x=128;
+      y=259;
+      anim.play($pat_nayori+26);
+      anim.pause();
+    }
+    if(n==1 && getkey(2)==1 && i>8){
+      i=i+1;
+      $gomonkan4.n=2;
+      $mplayer.play($se_sasu);
+      $blood.a=1;
+      anim.play($pat_nayori+27);
+      anim.pause();
+      $die_riyona.n=1;
+      wait(30);
+    }
+    if(n==2){
+      x=126;
+      y=258;
+      anim.loop($pat_nayori+28,$pat_nayori+29,40);
+    }
+    if(n==3 && a==0){
+      f=1;
+      x=165;
+      anim.play($pat_nayori+30);
+      anim.pause();
+    }
+    if(n==3 && a==1){
+      x=165;
+      anim.play($pat_nayori+28);
+      anim.pause();
+    }
+    if(n==4){
+      f=-1;
+      x=145;
+      anim.play($pat_nayori+28);
+      anim.pause();
+    }
+    if(n==5 && a==0){
+      x=145;
+      y=254;
+      anim.play($pat_nayori+31);
+      anim.pause();
+      wait(150);
+      a=1;
+    }
+    if(n==5 && a==1){
+      x=145;
+      y=257;
+      anim.loop($pat_nayori+32,$pat_nayori+33,50);
+    }
+    if(n==6){
+      x=145;
+      y=257;
+      anim.play($pat_nayori+34);
+      anim.pause();
+    }
+    if(n==7){
+      x=145;
+      y=257;
+      anim.loop($pat_nayori+36,$pat_nayori+37,30);
+    }
+    if(n==8){
+      x=145;
+      y=257;
+      anim.play($pat_nayori+35);
+      anim.pause();
+    }
+    if(n==9 && a==1){
+      x=145;
+      y=257;
+      anim.play($pat_nayori+38);
+      updateEx(30);
+      a=2;
+    }
+    if(n==9 && a==2){
+      x=150;
+      y=257;
+      anim.play($pat_nayori+39);
+      anim.pause();
+    }
+    if(n==9 && a==3){
+      x=150;
+      y=257;
+      anim.play($pat_nayori+40);
+      anim.pause();
+    }
+    if(n==10 && a==3){
+      x=158;
+      y=258;
+      anim.loop($pat_nayori+41,$pat_nayori+42,30);
+    }
+    if(n==10 && a==4){
+      x=150;
+      y=257;
+      anim.loop($pat_nayori+43,$pat_nayori+44,40);
+    }
+  }
+  
+  update();
+}

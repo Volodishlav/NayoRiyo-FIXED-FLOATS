@@ -1,0 +1,57 @@
+extends SpriteChar;
+a=0;
+anim=newAnimation();
+while(1){
+  
+  wait(10);
+die();
+
+  if($end==4){
+    if(a==1){
+      x=58;
+      y=290;
+      wait(10);
+      x=540;
+      a=0;
+    } 
+  }  
+  if($end==5){
+    if(a==1){
+      x=381;
+      y=238;
+      anim.loop($pat_blood+0,$pat_blood+1,10);
+    }
+    if(a==2){
+      x=383;
+      y=224;
+      anim.loop($pat_blood+2,$pat_blood+3,10);
+    }
+    if(a==3){
+      $blood2.a=1;
+      x=165;
+      anim.loop($pat_blood+5,$pat_blood+6,10);
+      y=y+(1/100);
+    }
+    while($die_nayori.n==3 && $die_nayori.a==3){
+      x=163;
+      y=215;
+      $mplayer.play($se_dosa);
+      wait(10);
+      x=530;
+      wait(90);
+    }
+    
+    if(a==10)die();  
+  }
+  
+  if($end==6){
+    if(a==1){
+      x=117;
+      y=280;
+      wait(10);
+      x=530;
+      a=0;
+    }
+  }
+  update();
+}

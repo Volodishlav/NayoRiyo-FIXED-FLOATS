@@ -1,0 +1,35 @@
+extends TextChar;
+Haba = 15;  // 行間
+text="";
+
+while(1){
+  if($G.Skaku==1){
+    text="こんてにゅ～？,  Y:続ける(あと"+$continue+"回),  N:タイトルへ";
+    if(getkey(89)==1 && $continue>0){
+      $continue--;
+      $arigorosi=0;
+      $projectmanager.loadpage($page_stage1);
+    }
+    if(getkey(78)==1){
+      $projectmanager.loadpage($page_title);
+    }
+    
+    draw($G.x,$G.y);
+    
+  }
+  update();
+}
+
+function draw(gx,gy){
+  
+  x=gx+250;
+  y=gy+150;
+  i=0;
+  e=0;
+  t=text.split();  // ,で区切って配列作成
+  for (e in t) {
+    $panel.drawtext(x,y+Haba*i,e,$clBlack,10);  // 1行ずつ描画
+    i++;
+    if(i>2) return;
+  }
+}

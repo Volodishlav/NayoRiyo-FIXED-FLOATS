@@ -1,0 +1,29 @@
+extends SpriteChar;
+anim=newAnimation();
+a=0;
+tx=x;
+ty=y;
+time=0;
+state=0;
+zOrder=30;
+while(1){
+  anim.loop($pat_enemy1+10,$pat_enemy1+11,5);
+  x= tx + cos(a)*100;
+  y= ty + sin(a)*100;
+  if(f==-1)a=a+4;
+  if(f==1)a=a-4;
+  
+  if($G.S==0){
+    
+    if($G.x-this.x<20 && $G.x-this.x>-20 && $G.y-this.y<30 && $G.y-this.y>=-30){
+      $mplayer.play($se_koe2,0,50);
+      $G.S=4;
+      die();
+    }
+    
+    
+    
+  }
+  
+  update();
+}

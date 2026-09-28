@@ -1,0 +1,165 @@
+extends SpriteChar;
+$screenWidth = 32*(31/2);
+$screenHeight = 32*(53/5);
+x=250;y=167;
+n=1;
+randomize();
+$end=0;
+$score=0;
+ono=0;
+nezumi=0;
+while(1){
+  if($nayori.jigai==5){
+    wait(60);
+    $projectmanager.loadpage($page_gameover);  
+  }
+  //敵の出現
+  r=rnd(1000);
+  //イージー
+  if($nanido==0){
+    if($score>=15 && nezumi==0){
+      nezumi=nezumi+1;
+      appear(new item(-20,320,$pat_item+8));
+    }
+    if($score>=30 && nezumi==1){
+      nezumi=nezumi+1;
+      appear(new item(-20,320,$pat_item+8));
+    }
+    if($score>=45 && nezumi==2){
+      nezumi=nezumi+1;
+      appear(new item(-20,320,$pat_item+8));
+    }
+    if($score>=60 && nezumi==3){
+      nezumi=nezumi+1;
+      appear(new item(-20,320,$pat_item+8));
+    }
+    if($score>=75 && nezumi==4){
+      nezumi=nezumi+1;
+      appear(new item(-20,320,$pat_item+8));
+    }
+    if($score>=90 && nezumi==5){
+      nezumi=nezumi+1;
+      appear(new item(-20,320,$pat_item+8));
+    }
+    if($score<20){
+      if(r<8)appear(new enemy(-20,262,$pat_enemy+0));
+    }
+    if($score>=20 && $score<30){
+      if(r<6)appear(new enemy2(-20,275,$pat_enemy2+0));
+    } 
+    if($score>=30 && $score<50){
+      if(r<13)appear(new enemy(-20,262,$pat_enemy+0));
+    }
+    if($score>=50 && $score<70){
+      if(r<4)appear(new enemy3(-20,280,$pat_enemy3+0));
+    }
+    if($score>=70 && $score<100){
+      if(r<12)appear(new enemy(-20,262,$pat_enemy+0));
+      if(r>=12 && r<15)appear(new enemy2(-20,275,$pat_enemy2+0));
+    }
+    if($score>=100){
+      if(r<8)appear(new enemy(-20,262,$pat_enemy+0));
+      if(r>=8 && r<12)appear(new enemy2(-20,275,$pat_enemy2+0));
+      if(r>=12 && r<15)appear(new enemy3(-20,280,$pat_enemy3+0));
+    }
+    
+  }
+  //ノーマルとハード
+  if($nanido==1 || $nanido==2){
+    if($score>=15 && nezumi==0){
+      nezumi=nezumi+1;
+      appear(new item(-20,320,$pat_item+8));
+    }
+    if($score>=30 && nezumi==1){
+      nezumi=nezumi+1;
+      appear(new item(-20,320,$pat_item+8));
+    }
+    if($score>=45 && nezumi==2){
+      nezumi=nezumi+1;
+      appear(new item(-20,320,$pat_item+8));
+    }
+    if($score>=60 && nezumi==3){
+      nezumi=nezumi+1;
+      appear(new item(-20,320,$pat_item+8));
+    }
+    if($score>=75 && nezumi==4){
+      nezumi=nezumi+1;
+      appear(new item(-20,320,$pat_item+8));
+    }
+    if($score>=90 && nezumi==5){
+      nezumi=nezumi+1;
+      appear(new item(-20,320,$pat_item+8));
+    }
+    if($score>=30 && ono==0){
+      ono=1;
+      appear(new enemy4(48,250,$pat_enemy4+0));
+    }
+    if($score>=50 && ono==1){
+      ono=2;
+      appear(new enemy4(48,250,$pat_enemy4+0));
+    }
+    if($score>=75 && ono==2){
+      ono=3;
+      appear(new enemy4(48,250,$pat_enemy4+0));
+    }
+    if($score>=100 && ono==3){
+      ono=4;
+      appear(new enemy4(48,250,$pat_enemy4+0));
+    }
+    if($score<20){
+      if (r<10)appear(new enemy(-20,262,$pat_enemy+0));
+    }
+    if($score>=20 && $score<30){
+      if(r<8)appear(new enemy2(-20,275,$pat_enemy2+0));
+    } 
+    if($score>=30 && $score<50){
+      if(r<14)appear(new enemy(-20,262,$pat_enemy+0));
+    }
+    if($score>=50 && $score<70){
+      if(r<4)appear(new enemy3(-20,280,$pat_enemy3+0));
+    }
+    if($score>=70 && $score<100){
+      if(r<10)appear(new enemy(-20,262,$pat_enemy+0));
+      if(r>=10 && r<13)appear(new enemy2(-20,275,$pat_enemy2+0));
+    }
+    if($score>=100 && $score<120){
+      if(r<10)appear(new enemy(-20,262,$pat_enemy+0));
+      if(r>=10 && r<14)appear(new enemy3(-20,280,$pat_enemy3+0));
+    }
+    if($score>=120 && $score<140){
+      if(r<5)appear(new enemy2(-20,275,$pat_enemy2+0));
+      if(r>=5 && r<9)appear(new enemy3(-20,280,$pat_enemy3+0));
+    }
+    if($score>=140){
+      if(r<8)appear(new enemy(-20,262,$pat_enemy+0));
+      if(r>=8 && r<12)appear(new enemy2(-20,275,$pat_enemy2+0));
+      if(r>=12 && r<15)appear(new enemy3(-20,280,$pat_enemy3+0));
+    }
+  }
+  //カオス
+  if($nanido==3){
+    r1=rnd(1000);
+    r2=rnd(1000);
+    r3=rnd(1000);
+    r4=rnd(1000);
+    r5=rnd(1000);
+    r6=rnd(1000);
+    r7=rnd(1000);
+    r8=rnd(1000);
+    r9=rnd(1000);
+    if (r1<5)appear(new enemy5(-20,150,$pat_item+38));
+    if (r2<5)appear(new enemy5(-20,200,$pat_item+38));
+    if (r3<5)appear(new enemy5(-20,300,$pat_item+38));
+    if (r4<5)appear(new enemy6(-20,100,$pat_item+38));
+    if (r5<5)appear(new enemy6(-20,150,$pat_item+38));
+    if (r6<5)appear(new enemy6(-20,250,$pat_item+38));
+    if (r7<5)appear(new enemy7(-20,120,$pat_item+38));
+    if (r8<5)appear(new enemy7(-20,170,$pat_item+38));
+    if (r9<5)appear(new enemy7(-20,230,$pat_item+38));
+  }
+  
+  if(getkey(82)==1){
+    $projectmanager.loadpage($page_title);
+  }
+  update();
+}

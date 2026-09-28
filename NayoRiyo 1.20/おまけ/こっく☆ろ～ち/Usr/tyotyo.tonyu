@@ -1,0 +1,42 @@
+extends SpriteChar;
+anim=newAnimation();
+a=0;
+tx=x;
+time=0;
+state=0;
+zOrder=30;
+while(1){
+  anim.loop($pat_enemy1+17,$pat_enemy1+18,25);
+  if(f==-1){
+    this.x=this.x-1;
+    if(tx-150>=this.x){
+      f=1;
+    }
+  }
+  if(f==1){
+    this.x=this.x+1;
+    if(tx+150<=this.x){
+      f=-1;  
+    }
+  }
+  
+  if ($G.x-this.x<20 && $G.x-this.x>-20 && $G.y-this.y<0 && $G.y-this.y>=-16) {
+    if(this.f==-1){
+      $G.tyo=1;
+    }
+    if(this.f==1){
+      $G.tyo=2;
+    }
+    $G.p=$pat_G+3;
+    $G.vy=0;
+    $G.y=trunc($G.y/32)*32+3;
+    
+    if(getkey(88)==1){
+      $mplayer.play($se_jump,0,20);
+      $G.vy=-7;
+      $G.tyo=0;
+    }
+  }
+  
+  update();
+}

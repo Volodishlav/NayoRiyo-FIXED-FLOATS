@@ -1,0 +1,9 @@
+extends SpriteChar;
+while(1){
+  if($serifu==1){
+  $serifu=0;}
+  else{
+    wait(40);
+  die();}
+  update();
+}

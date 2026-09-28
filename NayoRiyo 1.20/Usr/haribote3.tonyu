@@ -1,0 +1,26 @@
+extends SpriteChar;
+anim=newAnimation();
+a=0;
+x=189;
+y=269;
+while(1){
+  if($end==9){
+    if(a==1){
+      anim.loop($pat_sonota+31,$pat_sonota+32,30);
+    }
+    if(a==2){
+    anim.play($pat_sonota+33,5);
+    anim.pause();
+    }
+  }
+  if($end==10){
+    anim.play($pat_sonota+29,5);
+    anim.pause();
+  }
+  if($end==11){
+    anim.play($pat_sonota+30,5);
+    anim.pause();
+  }
+
+  update(); 
+}

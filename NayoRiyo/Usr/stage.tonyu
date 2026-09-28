@@ -1,0 +1,74 @@
+extends SpriteChar;
+$screenWidth = 32*(31/2);
+$screenHeight = 32*(53/5);
+x=250;y=167;
+n=1;
+randomize();
+$end=0;
+while(1){
+  
+  //敵の出現
+  r=rnd(1000);
+  //イージー
+  if($nanido==0){
+    if($score<20){
+      if(r<8)appear(new enemy(-20,262,$pat_enemy+0));
+    }
+    if($score>=20 && $score<30){
+      if(r<6)appear(new enemy2(-20,275,$pat_enemy2+0));
+    } 
+    if($score>=30 && $score<50){
+      if(r<13)appear(new enemy(-20,262,$pat_enemy+0));
+    }
+    if($score>=50 && $score<70){
+      if(r<4)appear(new enemy3(-20,280,$pat_enemy3+0));
+    }
+    if($score>=70 && $score<100){
+      if(r<12)appear(new enemy(-20,262,$pat_enemy+0));
+      if(r>=12 && r<15)appear(new enemy2(-20,275,$pat_enemy2+0));
+    }
+    if($score>=100){
+      if(r<8)appear(new enemy(-20,262,$pat_enemy+0));
+      if(r>=8 && r<12)appear(new enemy2(-20,275,$pat_enemy2+0));
+      if(r>=12 && r<15)appear(new enemy3(-20,280,$pat_enemy3+0));
+    }
+    
+  }
+  //ノーマルとハード
+  if($nanido==1 || $nanido==2){
+    if($score<20){
+      if (r<10)appear(new enemy(-20,262,$pat_enemy+0));
+    }
+    if($score>=20 && $score<30){
+      if(r<8)appear(new enemy2(-20,275,$pat_enemy2+0));
+    } 
+    if($score>=30 && $score<50){
+      if(r<14)appear(new enemy(-20,262,$pat_enemy+0));
+    }
+        if($score>=50 && $score<70){
+      if(r<4)appear(new enemy3(-20,280,$pat_enemy3+0));
+    }
+    if($score>=70 && $score<100){
+      if(r<10)appear(new enemy(-20,262,$pat_enemy+0));
+      if(r>=10 && r<13)appear(new enemy2(-20,275,$pat_enemy2+0));
+    }
+    if($score>=100 && $score<120){
+            if(r<10)appear(new enemy(-20,262,$pat_enemy+0));
+                   if(r>=10 && r<14)appear(new enemy3(-20,280,$pat_enemy3+0));
+    }
+    if($score>=120 && $score<140){
+      if(r<5)appear(new enemy2(-20,275,$pat_enemy2+0));
+       if(r>=5 && r<9)appear(new enemy3(-20,280,$pat_enemy3+0));
+    }
+    if($score>=140){
+      if(r<8)appear(new enemy(-20,262,$pat_enemy+0));
+      if(r>=8 && r<12)appear(new enemy2(-20,275,$pat_enemy2+0));
+       if(r>=12 && r<15)appear(new enemy3(-20,280,$pat_enemy3+0));
+    }
+  }
+  
+  if(getkey(82)==1){
+    $projectmanager.loadpage($page_title);
+  }
+  update();
+}

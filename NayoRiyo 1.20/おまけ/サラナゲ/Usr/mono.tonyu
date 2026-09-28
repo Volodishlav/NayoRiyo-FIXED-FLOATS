@@ -1,0 +1,5 @@
+extends SpriteChar;
+while(1){
+  x=$nageo.x+90;
+update();
+}

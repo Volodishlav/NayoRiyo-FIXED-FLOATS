@@ -1,0 +1,85 @@
+extends DxChar;
+a=0;
+alpha=0;
+while(1){
+  
+  if($end==7){
+    zOrder=500;
+    if(a==1){
+      while(alpha<255){
+        alpha=alpha+1;
+        update();
+      }
+    }
+    if(a==2){
+      alpha=0;
+      p=$pat_end7_3+0;
+      while(alpha<255){
+        alpha=alpha+20;
+        update();
+      }
+      wait(10);
+      a=1;
+    }
+    if(a==3){
+      while(alpha>=0){
+        alpha=alpha-1;
+        update();
+      }
+    }
+    if(a==4){
+      p=$pat_end7_5+0;
+      while(alpha<255){
+        alpha=alpha+2;
+        update();
+      }
+    }
+  }
+  
+  if($end==8){
+    zOrder=500;
+    if(a==0){
+      while(alpha>=0){
+        alpha=alpha-3;
+        update();
+      }
+    }
+    if(a==1){
+      while(alpha<255){
+        alpha=alpha+1;
+        update();
+      }
+    }
+    if(a==2){
+      p=$pat_end8_3+0;
+      while(alpha<255){
+        alpha=alpha+1;
+        update();
+      }
+    }
+    if(a==3){
+      while(alpha>=0){
+        alpha=alpha-10;
+        update();
+      }
+      p=$pat_end8_5+0;
+      while(alpha<255){
+        alpha=alpha+10;
+        update();
+      }
+      a=1;
+    }
+    if(a==4){
+      while(alpha>=0){
+        alpha=alpha-2;
+        update();
+      }
+    }
+  }
+  
+  if(getkey(82)==1){
+    $projectmanager.loadpage($page_title);
+  }
+  
+  update();
+}

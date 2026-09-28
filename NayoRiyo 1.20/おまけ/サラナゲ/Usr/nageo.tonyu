@@ -1,0 +1,45 @@
+extends SpriteChar;
+anim=newAnimation();
+while(1){
+  if($move==1){
+    if(getkey(90)==1){
+      $p_date=$power.pow;
+      appear(new mono($nageo.x,$nageo.y,$pat_power+$p_date-1));
+      $power.die();
+      $move=2;
+  }}
+  
+  if(x<5870){
+    $move=10;
+    $mplayer.play($se_boo);
+    appear(new moji(5636,1060));
+    anim.play($pat_nageo+0);
+    anim.pause();
+    wait();
+  }
+  if($move==2){
+    anim.loop($pat_nageo+1,$pat_nageo+4,5);
+    if($p_date<=5)x=x-4;
+    if($p_date>5 && $p_date<=10)x=x-6;
+    if($p_date>10 && $p_date<=15)x=x-8;
+    if($p_date>15 && $p_date<=20)x=x-10;
+    if(getkey(88)>=1){
+      $player1.x=$player1.x-7;
+      $player1.y=$player1.y+12;
+      anim.play($pat_nageo+5);
+      anim.pause();
+      appear(new bar($kakudo.x+37,$kakudo.y+43,$pat_kakudo+1));
+      $move=3;
+    }
+  }
+  if($move==3){
+    if(getkey(88)==0){
+      anim.play($pat_nageo+6);
+      $mplayer.play($se_nage);
+      anim.pause();
+      $move=4;
+    }  
+  }
+  
+  update();  
+}

@@ -1,0 +1,42 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_die_nayori" src="die_nayori.png"/>
+<cpattern name="$pat_enemy" src="enemy.png"/>
+<cpattern name="$pat_riyona" src="riyona.png"/>
+<cpattern name="$pat_gomonroom" src="gomonroom.png"/>
+<cpattern name="$pat_item" src="item.png"/>
+<cpattern name="$pat_die_riyona" src="die_riyona.png"/>
+<cpattern name="$pat_gomonroom2" src="gomonroom2.png"/>
+<cpattern name="$pat_sonota" src="sonota.png"/>
+<cpattern name="$pat_blood" src="blood.png"/>
+<cpattern name="$pat_kao" src="kao.png"/>
+<cpattern name="$pat_kao2" src="kao2.png"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="gomonroom" name="$gomonroom" inst_zOrder="1000" inst_p="$pat_gomonroom2+0" inst_x="250" inst_y="170"/>
+<generator className="die_nayori" name="$die_nayori" inst_y="275" inst_x="75" inst_zOrder="30" inst_p="$pat_die_nayori+16"/>
+<generator className="gomonkan" name="$gomonkan" inst_p="$pat_enemy+0" inst_f="-1" inst_zOrder="30" inst_x="296" inst_y="190"/>
+<generator className="die_riyona" name="$die_riyona" inst_p="$pat_riyona+29" inst_zOrder="10" inst_y="270" inst_x="440"/>
+<generator className="gomonkan3" name="$gomonkan3" inst_p="3" inst_bold="1" inst_x="519" inst_y="112"/>
+<generator className="trap" name="$trap_1" inst_p="$pat_item+11" inst_zOrder="30" inst_y="305" inst_x="334"/>
+<generator className="haribote" name="$haribote" inst_p="$pat_item+13" inst_zOrder="50" inst_y="295" inst_x="387"/>
+<generator className="haribote" name="$haribote_1" inst_p="$pat_item+13" inst_zOrder="50" inst_y="295" inst_x="322"/>
+<generator className="haribote" name="$haribote_2" inst_p="$pat_item+16" inst_y="302" inst_x="240" inst_zOrder="50"/>
+<generator className="trap2" name="$trap2_1" inst_p="$pat_item+14" inst_zOrder="30" inst_y="302" inst_x="210"/>
+<generator className="trap2" name="$trap2_2" inst_p="$pat_item+14" inst_zOrder="30" inst_y="302" inst_x="146"/>
+<generator className="haribote" name="$haribote_3" inst_p="$pat_item+16" inst_zOrder="50" inst_x="192" inst_y="302"/>
+<generator className="trap3" name="$trap3" inst_p="$pat_item+14" inst_zOrder="30" inst_x="178" inst_y="302"/>
+<generator className="trap3" name="$trap3_1" inst_p="$pat_item+14" inst_zOrder="30" inst_y="302" inst_x="242"/>
+<generator className="haribote" name="$haribote_4" inst_p="$pat_item+16" inst_zOrder="50" inst_y="302" inst_x="160"/>
+<generator className="haribote2" name="$haribote2" inst_p="$pat_sonota+25" inst_x="574" inst_y="254"/>
+<generator className="blood" name="$blood" inst_p="$pat_blood+8" inst_x="538" inst_y="306"/>
+<generator className="kao" name="$kao" inst_y="50" inst_x="41" inst_p="$pat_kao+0"/>
+<generator className="kao2" name="$kao2" inst_y="50" inst_x="451" inst_p="$pat_kao2+0"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="560"/>
+  <globalvalue name="$screenHeight" value="381"/>
+ </resourcelist>
+</resourcelist>

@@ -1,0 +1,63 @@
+extends SpriteChar;
+n=0;
+while(1){
+  // イージー
+  if(p==$pat_item+0){
+    if(crashTo($mouse)){
+      p=$pat_item+1;
+    }
+  }
+  if(p==$pat_item+1){
+    if(getkey(1)==1){
+      $nanido=0;
+      $projectmanager.loadpage($page_index);  
+    }
+    if(crashTo($mouse)){
+      p=$pat_item+1;
+    }
+    else{p=$pat_item+0;
+    }
+  }
+  //　ノーマル 
+  if(p==$pat_item+2){
+    if(crashTo($mouse)){
+      p=$pat_item+3;
+    }
+  }
+  if(p==$pat_item+3){
+    if(getkey(1)==1){
+      $nanido=1;
+      $projectmanager.loadpage($page_index);  
+    }
+    if(crashTo($mouse)){
+      p=$pat_item+3;
+    }
+    else{p=$pat_item+2;
+    }
+  }
+  //　ハード
+  if(p==$pat_item+4){
+    if(crashTo($mouse)){
+      p=$pat_item+5;
+    }
+  }
+  if(p==$pat_item+5){
+    if(getkey(1)==1){
+      $nanido=2;
+      $projectmanager.loadpage($page_index);  
+    }
+    if(crashTo($mouse)){
+      p=$pat_item+5;
+    }
+    else{p=$pat_item+4;
+    }
+  }
+  
+  
+  if($mouse.a==1){
+    $mplayer.play($se_jusei);
+    $mouse.a=0;
+  }
+  
+  update();  
+}

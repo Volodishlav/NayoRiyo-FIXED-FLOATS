@@ -1,0 +1,37 @@
+extends SpriteChar;
+zOrder=0;
+i=0;
+a=0;
+p=$pat_item+38;
+while(1){
+  if(a==0){
+    x=x+3;
+  }else{
+    x=x-1;
+  }
+  i++;
+  if(i>30 && a==0){
+    a=1;
+    i=0;
+  }
+  if(i>30 && a==1){
+    a=0;
+    i=0;
+  }
+  
+  if($buki==3){
+    if ( crashTo( $target )) {
+      if ( $target.shoot == 1 ) {
+        $score=$score+1;
+        p=$pat_item+39;
+        wait(5);
+        die();
+    }}
+  }
+  if(x>=350){
+    $message=14;
+    $projectmanager.loadpage($page_gameover);
+  }
+  
+  update();
+}

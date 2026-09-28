@@ -1,0 +1,128 @@
+extends SpriteChar;
+anim=newAnimation();
+zOrder=0;
+while(1){
+  anim.loop($pat_enemy+1,$pat_enemy+4,20);
+  if($nanido==0){
+    if($score>=0 && $score<10)x=x+1;
+    if($score>=10 && $score<20)x=x+2;
+    if($score>=20 && $score<100)x=x+1;
+    if($score>=100)x=x+(3/2);
+  }
+  if($nanido==1){
+    if($score>=0 && $score<10)x=x+(3/2);
+    if($score>=10 && $score<20)x=x+(5/2);
+    if($score>=20 && $score<100)x=x+(3/2);
+    if($score>=100)x=x+2;
+  }
+  if($nanido==2){
+    if($score>=0 && $score<10)x=x+2;
+    if($score>=10 && $score<20)x=x+3;
+    if($score>=20 && $score<60)x=x+(3/2);
+    if($score>=60 && $score<100)x=x+2;
+    if($score>=100)x=x+(5/2);
+  }
+  if($nanido==3){x=x+3;}
+  if($buki==0){
+    if ( crashTo( $target ) && $target.x-x<-2 && $target.x-x>-33 && $target.y-y<-20 && $target.y-y>-58) {
+      if ( $target.shoot == 1 ) {
+        $score=$score+1;
+        zOrder=-100;
+        x=x-30;
+        y=y+5;
+        anim.play($pat_enemy+5,5);
+        wait(5);
+        x=x-15;
+        y=y+5;
+        anim.play($pat_enemy+6,5);
+        wait(5);
+        x=x-20;
+        y=y+10;
+        anim.play($pat_enemy+7,5);
+        anim.pause();
+        wait(30);
+        die();
+    }}
+  }
+  if($buki==1){
+    if ( crashTo( $target ) && $target.x-x<30 && $target.x-x>-100 && $target.x>=220 && $riyona.si==0) {
+      if ( $target.shoot == 1 ) {
+        $score=$score+1;
+        zOrder=-100;
+        x=x-50;
+        anim.play($pat_enemy+8,5);
+        wait(5);
+        x=x-30;
+        anim.play($pat_enemy+9,5);
+        wait(5);
+        x=x-30;
+        y=y+20;
+        anim.play($pat_enemy+10,5);
+        anim.pause();
+        wait(30);
+        die();
+    }}
+  }
+  if($buki==2){
+    if ( $target.a == 1 ) {
+      wait(7);
+      zOrder=-100;
+      x=x-50;
+      y=y+22;
+      anim.play($pat_enemy+11,5);
+      anim.pause();
+      wait(30);
+      die();
+      $target.a=0;
+      $target.shoot=0;
+      $score=$score+1;
+    }
+  }
+  if($buki==3){
+    if ( crashTo( $target ) && $target.x-x<-2 && $target.x-x>-33 && $target.y-y<-20 && $target.y-y>-58) {
+      if ( $target.shoot == 1 ) {
+        $score=$score+1;
+        zOrder=-100;
+        x=x-30;
+        y=y+5;
+        anim.play($pat_enemy+5,5);
+        wait(5);
+        x=x-15;
+        y=y+5;
+        anim.play($pat_enemy+6,5);
+        wait(5);
+        x=x-20;
+        y=y+10;
+        anim.play($pat_enemy+7,5);
+        anim.pause();
+        wait(30);
+        die();
+    }}
+  }
+  if($nayori.jigai<2 && $riyona.si<1){
+    if(crashTo($nayori) && $nayori.x-x<15 && $nayori.x-x>-15){
+      if($riyona.asi==1){
+        $message=1;
+        $projectmanager.loadpage($page_gameover);
+      }
+      if($nezumi>=3){
+        $end=7;
+        $projectmanager.loadpage($page_gomon7);
+      }
+      else if($score>=70){
+        $end=1;
+        $projectmanager.loadpage($page_gomon);
+        if($score>=150 && $nanido!=0){
+          $end=4;
+          $projectmanager.loadpage($page_gomon4);
+        }
+      }
+      else{
+        $message=1;
+        $projectmanager.loadpage($page_gameover);
+      }  
+    }
+  }
+  
+  update();
+}

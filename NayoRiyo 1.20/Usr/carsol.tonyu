@@ -1,0 +1,67 @@
+extends SpriteChar;
+$mousemanager.showcursor(0);
+zOrder=-100;
+off=1;
+while (1) {
+  p=$pat_target+0;
+  if(x-$kuma.x<10 && x-$kuma.x>-10 && y-$kuma.y<20 && y-$kuma.y>-10){
+    $carsol.p=$pat_target+4;
+    if(getkey(1)==1){
+      $nayori2.switch=1;
+      $carsol.off=1;
+    }
+  }
+  if(x-$game.x<10 && x-$game.x>-5 && y-$game.y<20 && y-$game.y>-10){
+    $carsol.p=$pat_target+4;
+    if(getkey(1)==1){
+      $nayori2.switch=2;
+      $carsol.off=1;
+    }
+  }
+  if(x-$switch.x<10 && x-$switch.x>-5 && y-$switch.y<10 && y-$switch.y>-5){
+    $carsol.p=$pat_target+4;
+    if(getkey(1)==1){
+      $nayori2.switch=3;
+      $carsol.off=1;
+    }
+  }
+  if(x-$tokei.x<10 && x-$tokei.x>-5 && y-$tokei.y<20 && y-$tokei.y>-10){
+    $carsol.p=$pat_target+4;
+    if(getkey(1)==1){
+      $nayori2.switch=4;
+      $carsol.off=1;
+    }
+  }
+  if(x-$diary.x<10 && x-$diary.x>-5 && y-$diary.y<10 && y-$diary.y>-5){
+    $carsol.p=$pat_target+4;
+    if(getkey(1)==1){
+      $nayori2.switch=5;
+      $carsol.off=1;
+    }
+  }
+  if(x-$riyona2.x<10 && x-$riyona2.x>-5 && y-$riyona2.y<15 && y-$riyona2.y>-15){
+    $carsol.p=$pat_target+4;
+    if(getkey(1)==1){
+      $nayori2.switch=6;
+      $carsol.off=1;
+    }
+  }
+    if(x-$haribote3.x<20 && x-$haribote3.x>-20 && y-$haribote3.y<30 && y-$haribote3.y>-15){
+    $carsol.p=$pat_target+4;
+    if(getkey(1)==1){
+      $nayori2.switch=7;
+      $carsol.off=1;
+    }
+  }
+  
+
+
+    x = $mouseX;
+    y = $mouseY;
+    if(off==1){
+        x = 555;
+    y = 555;
+  }
+
+  update(); 
+}

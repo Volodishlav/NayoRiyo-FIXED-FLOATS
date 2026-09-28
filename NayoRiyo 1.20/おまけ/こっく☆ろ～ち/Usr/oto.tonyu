@@ -1,0 +1,31 @@
+extends SpriteChar;
+while(1){
+  for (t in $chars) {
+    if(t [[is]] kumo && $G.x-t.x>-200 && $G.x-t.x<200 && t.state==0 && $G.S==0){
+      $mplayer.play($se_asi2,0,20);
+      wait(30);
+    }
+    if(t [[is]] hachi && $G.x-t.x>-150 && $G.x-t.x<150 && $G.y-t.y>-150 && $G.y-t.y<150 && $G.S==0){
+      $mplayer.play($se_hachi,0,20);
+      wait(50);
+    }
+  }
+  if($G.S==2 && ($G.a==2 || $G.a==3)){
+    $mplayer.play($se_eat,0,20);
+    wait(40);
+  }
+  if($G.S==5 && $G.a==4){
+    $mplayer.play($se_eat,0,20);
+    wait(30);
+  }
+  if($G.S==3 && $G.a==1){
+    $mplayer.play($se_asi2,0,20);
+    wait(30);
+  }
+  if($G.S==4 && $G.flg==2){
+    $mplayer.play($se_zaku,0,20);
+    wait(28);
+  }
+  
+  update();
+}

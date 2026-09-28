@@ -1,0 +1,16 @@
+extends SpriteChar;
+a=0;
+anim=newAnimation();
+while(1){
+  if($end==5){
+    if(a==1){
+      x=165;
+      y=268;
+      anim.play($pat_blood2+0,$pat_blood2+5,70);
+      wait();
+    }
+  }  
+  
+  
+  update();
+}

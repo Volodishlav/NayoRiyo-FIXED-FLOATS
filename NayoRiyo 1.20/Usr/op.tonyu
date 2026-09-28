@@ -1,0 +1,21 @@
+extends SpriteChar;
+$screenWidth = 32*(31/2);
+$screenHeight = 32*(53/5);
+a=0;
+$map.setBGColor(color(0,0,0));
+while(1){
+  if(a==0){
+wait(60);
+$mplayer.play($se_warning);
+x=240;
+y=130;
+$gomonkan3.x=80;
+$gomonkan3.y=250;
+wait(150);
+    $projectmanager.loadpage($page_title);
+}
+
+
+  
+update();
+}

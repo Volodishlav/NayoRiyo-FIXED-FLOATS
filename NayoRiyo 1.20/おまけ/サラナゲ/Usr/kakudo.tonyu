@@ -1,0 +1,20 @@
+extends SpriteChar;
+kak=0;
+sw=0;
+a=0;
+while(1){
+  x=$nageo.x+100;
+  if(move==3){
+  while(kak<30 && sw==0){
+      kak++;
+      if(kak==20)sw=1;
+      wait(1);
+    }
+    while(kak>1 && sw==1){
+      kak--;
+      if(kak==1)sw=0;
+      wait(1);
+    }
+  }
+update();
+}

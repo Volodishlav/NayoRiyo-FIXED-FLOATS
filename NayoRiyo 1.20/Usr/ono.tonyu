@@ -1,0 +1,35 @@
+extends DxChar;
+vy=0;
+while(1){
+angle=angle+5;
+x=x+(17/10);
+y=y-3;
+vy=vy+(1/25); 
+y=y+vy;
+ if (crashTo($target)) {
+if ( $target.shoot == 1 ) {
+  if($buki==0){
+      $mplayer.play($se_kakin,0,50);    
+die();
+}
+if($buki==1){
+  if($target.x>=220){
+    if($buki==1){
+      $mplayer.play($se_kakin,0,50);
+      die();
+}}}
+}
+}
+    if ( $target.a == 1 ) {
+  die();  
+  }
+     if (crashTo($nayori)) {
+       $nayori.jigai=5;
+       $target.died=1;
+       die();
+ }
+ if($nayori.jigai>1){
+ die();
+}
+  update();  
+}

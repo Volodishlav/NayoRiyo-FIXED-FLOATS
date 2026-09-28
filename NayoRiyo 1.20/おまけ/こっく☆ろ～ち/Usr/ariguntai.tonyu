@@ -1,0 +1,21 @@
+extends SpriteChar;
+anim=newAnimation();
+a=0;
+tx=x;
+f=-1;
+time=0;
+state=0;
+zOrder=30;
+while(1){
+    anim.loop($pat_enemy1+15,$pat_enemy1+16,5);
+  if(state==0){
+    this.x=this.x+2;
+  }
+    
+    if($G.x-this.x<0 && $G.S==5){
+      x=x;
+      state=1;
+    }
+    
+  update();
+}

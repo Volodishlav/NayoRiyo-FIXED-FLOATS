@@ -1,0 +1,22 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_room2" src="room2.png"/>
+<cpattern name="$pat_sonota" src="sonota.png"/>
+<cpattern name="$pat_black" src="black.png"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="gomonkan4" name="$gomonkan4" inst_font="%22ＭＳ ゴシック%22" inst_text="%22テキスト%22" inst_col="$clWhite" inst_size="20" inst_x="522" inst_y="90"/>
+<generator className="denki" name="$denki" inst_angle="0" inst_alpha="255" inst_scalex="1" inst_zOrder="-50" inst_p="$pat_black+0" inst_x="765" inst_y="341"/>
+<generator className="haribote4" name="$haribote4" inst_zOrder="-10" inst_p="$pat_sonota+34" inst_x="260" inst_y="136"/>
+<generator className="haribote5" name="$haribote5" inst_p="$pat_room2+0" inst_x="250" inst_y="170" inst_zOrder="10"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="580"/>
+  <globalvalue name="$screenHeight" value="385"/>
+ </resourcelist>
+ <resourcelist name="mappat">
+<generator className="Map" name="$map" src="gomon9.map" inst_width="16" inst_height="12" inst_pwidth="32" inst_pheight="32" inst_mpfx="0" inst_mpfy="0"/>
+ </resourcelist>
+</resourcelist>

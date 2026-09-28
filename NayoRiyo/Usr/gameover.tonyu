@@ -1,0 +1,37 @@
+extends TextChar;
+$screenWidth = 32*(31/2);
+$screenHeight = 32*(53/5);
+$map.setBGColor(color(0,0,0));
+time=500;
+while(1){
+  if(getkey(82)==1){
+    $projectmanager.loadpage($page_title);
+  }
+  if($message==1){text="つかまえた…";size=30;}
+  if($message==2){text="お姉ちゃん！！";size=30;}
+  if($message==3){text="なより…何で…";size=20;}
+  if($message==4){text="なよりの…";size=20;wait(50);text="ばかぁ！";x=110;size=60;$message=0;}
+  if($message==5){text="  なより？";size=30;wait(50);text="どうしたのなより！?";x=x-60;size=30;$message=0;}
+  if($message==6){text="お姉さんに恨みでもあるんですか";x=30;size=20;}
+  if($message==7){text="ひどいよ…なより…";size=20;}
+  if($message==8){text="なより…たすけて…";size=20;}
+  if($message==9){text="ばかなことを……";size=20;}
+  if($message==10){
+    text="私…がんばるから…！";
+    x=110;
+    size=20;
+    wait(200);
+    text="一緒に…帰ろうね";
+    $message=0;
+  }
+  if($message==0){
+    if(time>0){
+      time--;
+    }
+    if(time==0){
+      $end=(5/2);
+      $projectmanager.loadpage($page_gomon2);
+    }
+  }
+  update();
+}

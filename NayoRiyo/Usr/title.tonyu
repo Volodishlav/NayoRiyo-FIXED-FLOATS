@@ -1,0 +1,16 @@
+extends SpriteChar;
+$screenWidth = 32*(31/2);
+$screenHeight = 32*(53/5);
+$nanido=0;
+n=0;
+
+while(1){
+  if(n==0){  
+    appear(new nanido(100,140,$pat_item+0));
+    appear(new nanido(100,210,$pat_item+2));
+    appear(new nanido(100,280,$pat_item+4));
+    n=1;
+  }
+  
+  update();
+}

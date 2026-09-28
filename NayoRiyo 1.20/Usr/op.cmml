@@ -1,0 +1,15 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_sonota" src="sonota.png"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="op" name="$op" inst_p="$pat_sonota+27" inst_x="561" inst_y="142"/>
+<generator className="gomonkan3" name="$gomonkan3" inst_size="12" inst_bold="1" inst_font="%22ＭＳ ポップ%22" inst_x="19" inst_y="354" inst_col="$clred" inst_text="%22このゲームはリョナ的成分が含まれています。%22"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="560"/>
+  <globalvalue name="$screenHeight" value="381"/>
+ </resourcelist>
+</resourcelist>

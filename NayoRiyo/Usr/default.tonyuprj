@@ -1,0 +1,207 @@
+<resourcelist name="project">
+ <resourcelist name="pages">
+<Page name="$page_gameover" src="gameover.cmml"/>
+<Page name="$page_gomon" src="gomon.cmml"/>
+<Page name="$page_gomon10" src="gomon10.cmml"/>
+<Page name="$page_gomon2" src="gomon2.cmml"/>
+<Page name="$page_gomon3" src="gomon3.cmml"/>
+<Page name="$page_gomon4" src="gomon4.cmml"/>
+<Page name="$page_gomon5" src="gomon5.cmml"/>
+<Page name="$page_gomon6" src="gomon6.cmml"/>
+<Page name="$page_gomon7" src="gomon7.cmml"/>
+<Page name="$page_gomon8" src="gomon8.cmml"/>
+<Page name="$page_gomon9" src="gomon9.cmml"/>
+<Page name="$page_index" src="index.cmml"/>
+<Page name="$page_title" src="title.cmml"/>
+ </resourcelist>
+ <resourcelist name="params">
+  <param name="commentID" value="29977154"/>
+  <param name="sound_stopOnPageLoad" value="1"/>
+  <param name="savedVersion" value="1240"/>
+  <param name="mainPage" value="$page_title"/>
+  <param name="title" value="-NayoRiyo-"/>
+  <param name="author" value="TT"/>
+  <param name="version" value="ver1.20"/>
+  <param name="mail" value=""/>
+  <param name="web" value=""/>
+  <param name="cond" value=""/>
+ </resourcelist>
+ <resourcelist name="classes">
+  <class name="stage" src="stage.tonyu" category=""/>
+  <class name="target" src="target.tonyu" category=""/>
+  <class name="nayori" src="nayori.tonyu" category=""/>
+  <class name="zandan" src="zandan.tonyu" category=""/>
+  <class name="enemy" src="enemy.tonyu" category=""/>
+  <class name="riyona" src="riyona.tonyu" category=""/>
+  <class name="gameover" src="gameover.tonyu" category=""/>
+  <class name="score" src="score.tonyu" category=""/>
+  <class name="sodansu" src="sodansu.tonyu" category=""/>
+  <class name="gomonroom" src="gomonroom.tonyu" category=""/>
+  <class name="die_nayori" src="die_nayori.tonyu" category=""/>
+  <class name="kaiwa" src="kaiwa.tonyu" category=""/>
+  <class name="gomonkan" src="gomonkan.tonyu" category=""/>
+  <class name="gomonkan2" src="gomonkan2.tonyu" category=""/>
+  <class name="die_riyona" src="die_riyona.tonyu" category=""/>
+  <class name="serifu" src="serifu.tonyu" category=""/>
+  <class name="kao" src="kao.tonyu" category=""/>
+  <class name="kao2" src="kao2.tonyu" category=""/>
+  <class name="enemy2" src="enemy2.tonyu" category=""/>
+  <class name="title" src="title.tonyu" category=""/>
+  <class name="buki" src="buki.tonyu" category=""/>
+  <class name="item" src="item.tonyu" category=""/>
+  <class name="mouse" src="mouse.tonyu" category=""/>
+  <class name="gazou" src="gazou.tonyu" category=""/>
+  <class name="nanido" src="nanido.tonyu" category=""/>
+  <class name="omake" src="omake.tonyu" category=""/>
+  <class name="omake2" src="omake2.tonyu" category=""/>
+  <class name="enemy3" src="enemy3.tonyu" category=""/>
+  <class name="gomonkan3" src="gomonkan3.tonyu" category=""/>
+  <class name="trap" src="trap.tonyu" category=""/>
+  <class name="haribote" src="haribote.tonyu" category=""/>
+  <class name="trap2" src="trap2.tonyu" category=""/>
+  <class name="trap3" src="trap3.tonyu" category=""/>
+  <class name="haribote2" src="haribote2.tonyu" category=""/>
+  <class name="kodougu" src="kodougu.tonyu" category=""/>
+  <class name="gomonkan4" src="gomonkan4.tonyu" category=""/>
+  <class name="text" src="text.tonyu" category=""/>
+  <class name="gomonkan0" src="gomonkan0.tonyu" category=""/>
+  <class name="cg" src="cg.tonyu" category=""/>
+  <class name="cg2" src="cg2.tonyu" category=""/>
+  <class name="blood" src="blood.tonyu" category=""/>
+  <class name="blood2" src="blood2.tonyu" category=""/>
+ </resourcelist>
+ <resourcelist name="sounds">
+<SoundEffect name="$se_jusei" src="jusei.wav"/>
+<SoundEffect name="$se_reload" src="reload.wav"/>
+<SoundEffect name="$se_naguru1" src="naguru1.wav"/>
+<SoundEffect name="$se_dosa" src="dosa.wav"/>
+<SoundEffect name="$se_cursor" src="cursor.wav"/>
+<SoundEffect name="$se_jusei2" src="jusei2.wav"/>
+<SoundEffect name="$se_cursor2" src="cursor2.wav"/>
+<SoundEffect name="$se_reload2" src="reload2.wav"/>
+<SoundEffect name="$se_tamagire" src="tamagire.wav"/>
+<SoundEffect name="$se_bom" src="bom.wav"/>
+<SoundEffect name="$se_swing" src="swing.wav"/>
+<SoundEffect name="$se_open" src="open.wav"/>
+<SoundEffect name="$se_don" src="don.wav"/>
+<SoundEffect name="$se_buun" src="buun.wav"/>
+<SoundEffect name="$se_fumi" src="fumi.wav"/>
+<SoundEffect name="$se_sasaru" src="sasaru.wav"/>
+<SoundEffect name="$se_sasaru0" src="sasaru0.wav"/>
+<SoundEffect name="$se_kiru" src="kiru.wav"/>
+<SoundEffect name="$se_haretu" src="haretu.wav"/>
+<SoundEffect name="$se_kanden" src="kanden.wav"/>
+<SoundEffect name="$se_kabe" src="kabe.wav"/>
+<SoundEffect name="$se_drill" src="drill.wav"/>
+<SoundEffect name="$se_noko" src="noko.wav"/>
+<SoundEffect name="$se_sasu" src="sasu.wav"/>
+<SoundEffect name="$se_buti" src="buti.wav"/>
+<SoundEffect name="$se_piston" src="piston.wav"/>
+ </resourcelist>
+ <resourcelist name="filelist">
+<Page name="r_0" src="gameover.cmml"/>
+<Page name="r_1" src="gomon.cmml"/>
+<Page name="r_2" src="gomonroom.png"/>
+<Page name="r_3" src="enemy.png"/>
+<Page name="r_4" src="die_nayori.png"/>
+<Page name="r_5" src="die_riyona.png"/>
+<Page name="r_6" src="kao.png"/>
+<Page name="r_7" src="sonota.png"/>
+<Page name="r_8" src="gomongu.png"/>
+<Page name="r_9" src="gomon10.cmml"/>
+<Page name="r_10" src="stage.png"/>
+<Page name="r_11" src="nayori.png"/>
+<Page name="r_12" src="riyona.png"/>
+<Page name="r_13" src="gomon2.cmml"/>
+<Page name="r_14" src="target.png"/>
+<Page name="r_15" src="gomon3.cmml"/>
+<Page name="r_16" src="enemy3.png"/>
+<Page name="r_17" src="gomon4.cmml"/>
+<Page name="r_18" src="item.png"/>
+<Page name="r_19" src="gomonroom2.png"/>
+<Page name="r_20" src="blood.png"/>
+<Page name="r_21" src="gomon5.cmml"/>
+<Page name="r_22" src="blood2.png"/>
+<Page name="r_23" src="gomon6.cmml"/>
+<Page name="r_24" src="gomon7.cmml"/>
+<Page name="r_25" src="end7_1.png"/>
+<Page name="r_26" src="end7_2.png"/>
+<Page name="r_27" src="gomon8.cmml"/>
+<Page name="r_28" src="gomon9.cmml"/>
+<Page name="r_29" src="index.cmml"/>
+<Page name="r_30" src="tama.png"/>
+<Page name="r_31" src="serifu.png"/>
+<Page name="r_32" src="buki.png"/>
+<Page name="r_33" src="enemy2.png"/>
+<Page name="r_34" src="title.cmml"/>
+<Page name="r_35" src="nayoriyo.png"/>
+<Page name="r_36" src="stage.tonyu"/>
+<Page name="r_37" src="target.tonyu"/>
+<Page name="r_38" src="nayori.tonyu"/>
+<Page name="r_39" src="zandan.tonyu"/>
+<Page name="r_40" src="enemy.tonyu"/>
+<Page name="r_41" src="riyona.tonyu"/>
+<Page name="r_42" src="gameover.tonyu"/>
+<Page name="r_43" src="score.tonyu"/>
+<Page name="r_44" src="sodansu.tonyu"/>
+<Page name="r_45" src="gomonroom.tonyu"/>
+<Page name="r_46" src="die_nayori.tonyu"/>
+<Page name="r_47" src="kaiwa.tonyu"/>
+<Page name="r_48" src="gomonkan.tonyu"/>
+<Page name="r_49" src="gomonkan2.tonyu"/>
+<Page name="r_50" src="die_riyona.tonyu"/>
+<Page name="r_51" src="serifu.tonyu"/>
+<Page name="r_52" src="kao.tonyu"/>
+<Page name="r_53" src="kao2.tonyu"/>
+<Page name="r_54" src="enemy2.tonyu"/>
+<Page name="r_55" src="title.tonyu"/>
+<Page name="r_56" src="buki.tonyu"/>
+<Page name="r_57" src="item.tonyu"/>
+<Page name="r_58" src="mouse.tonyu"/>
+<Page name="r_59" src="gazou.tonyu"/>
+<Page name="r_60" src="nanido.tonyu"/>
+<Page name="r_61" src="omake.tonyu"/>
+<Page name="r_62" src="omake2.tonyu"/>
+<Page name="r_63" src="enemy3.tonyu"/>
+<Page name="r_64" src="gomonkan3.tonyu"/>
+<Page name="r_65" src="trap.tonyu"/>
+<Page name="r_66" src="haribote.tonyu"/>
+<Page name="r_67" src="trap2.tonyu"/>
+<Page name="r_68" src="trap3.tonyu"/>
+<Page name="r_69" src="haribote2.tonyu"/>
+<Page name="r_70" src="kodougu.tonyu"/>
+<Page name="r_71" src="gomonkan4.tonyu"/>
+<Page name="r_72" src="text.tonyu"/>
+<Page name="r_73" src="gomonkan0.tonyu"/>
+<Page name="r_74" src="cg.tonyu"/>
+<Page name="r_75" src="cg2.tonyu"/>
+<Page name="r_76" src="blood.tonyu"/>
+<Page name="r_77" src="blood2.tonyu"/>
+<Page name="r_78" src="jusei.wav"/>
+<Page name="r_79" src="reload.wav"/>
+<Page name="r_80" src="naguru1.wav"/>
+<Page name="r_81" src="dosa.wav"/>
+<Page name="r_82" src="cursor.wav"/>
+<Page name="r_83" src="jusei2.wav"/>
+<Page name="r_84" src="cursor2.wav"/>
+<Page name="r_85" src="reload2.wav"/>
+<Page name="r_86" src="tamagire.wav"/>
+<Page name="r_87" src="bom.wav"/>
+<Page name="r_88" src="swing.wav"/>
+<Page name="r_89" src="open.wav"/>
+<Page name="r_90" src="don.wav"/>
+<Page name="r_91" src="buun.wav"/>
+<Page name="r_92" src="fumi.wav"/>
+<Page name="r_93" src="sasaru.wav"/>
+<Page name="r_94" src="sasaru0.wav"/>
+<Page name="r_95" src="kiru.wav"/>
+<Page name="r_96" src="haretu.wav"/>
+<Page name="r_97" src="kanden.wav"/>
+<Page name="r_98" src="kabe.wav"/>
+<Page name="r_99" src="drill.wav"/>
+<Page name="r_100" src="noko.wav"/>
+<Page name="r_101" src="sasu.wav"/>
+<Page name="r_102" src="buti.wav"/>
+<Page name="r_103" src="piston.wav"/>
+ </resourcelist>
+</resourcelist>

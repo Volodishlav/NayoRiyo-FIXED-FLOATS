@@ -1,0 +1,14 @@
+extends SpriteChar;
+zOrder=-20;
+while(1){
+  if($candyH7>0){
+    die();
+  }
+  if(crashTo($G)){
+    $mplayer.play($se_tokuten,0,20);
+    $tokuten+=1;
+    $candyH7=1;
+    die();
+  }
+  update();
+}

@@ -1,0 +1,32 @@
+extends DxChar;
+angle=0;
+sw=0;
+zOrder=20;
+while(1){
+  if(getkey(88)==0){
+    sw=2;
+$k_date=angle/4;  
+}
+if(getkey(88)>=1 && sw==0){
+  while(angle<80 && getkey(88)!=0){
+    $player1.angle++;
+    angle++;
+    update();
+    if(angle==80){
+  sw=1;  
+  }
+}
+if(getkey(88)>=1 && sw==1){
+  while(angle>1 && getkey(88)!=0){  
+        $player1.angle--;
+    angle--;
+    update();
+    if(angle==0){
+  sw=0;  
+  }
+}
+}
+}
+  
+update();
+}

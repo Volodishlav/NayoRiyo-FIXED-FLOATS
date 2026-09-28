@@ -1,0 +1,15 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_stage" src="stage.png"/>
+<cpattern name="$pat_nayori" src="nayori.png"/>
+<cpattern name="$pat_riyona" src="riyona.png"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="560"/>
+  <globalvalue name="$screenHeight" value="381"/>
+ </resourcelist>
+</resourcelist>

@@ -1,0 +1,229 @@
+extends text;
+switch=0;
+game=1;
+read=1;
+zOrder=-250;
+$iti=0;
+$mess=0;
+randomize();
+while(1){  
+  if($end==9){
+    wait(50);
+    message("「なより…」",6);
+    wait(50);
+    message("「なより！」",3);
+    while($denki.alpha>=200){
+      $denki.alpha=$denki.alpha-(1/2);
+      update();
+    }
+    wait(80);
+    $haribote3.p=$pat_sonota+31;
+    message("「ひぃゃっ！？」",3);
+    $haribote3.a=1;
+    message("「はぁ…はぁ…はぁ…」",8);
+    message("「なより…大丈夫？#　うなされてたみたいだけど？」",6);
+    $haribote3.a=2;
+    message("「うぅーん…#　何かすっごい怖い夢を#　　見てた気がするんだけど…」",6);
+    wait(100);
+    message("「……思いだせにゃい」",6);
+    message("「暗いからまだ朝じゃないよね？」@「問題ないなら、#　私また寝るけど大丈夫？」",6);
+    message("「うん…#　私は目ぇ覚めちゃったから#　　ちょっと起きるね。」",5);
+    while($denki.alpha<255){
+      $denki.alpha=$denki.alpha+1;
+      update();
+    }
+    wait(50);
+    $end=10;
+    
+    while($denki.alpha>=200){
+      $denki.alpha=$denki.alpha-1;
+      update();
+    }
+    $carsol.off=0;
+  }
+  
+  if($end==10){
+    
+    if(($mess==1 || $mess==2 || $mess==4) && $denki.on==0){
+      message("暗くてよくわからない",4);
+      $mess=0;
+      $carsol.off=0;
+    } 
+    if($mess==5 && $denki.on==0){
+      message("暗くてよくわからない",4);
+      $mess=0;
+      $iti=2;
+      $carsol.off=0;
+    }
+    if($mess==1 && $denki.on==1){
+      if($kuma.a==0){
+        message("私があげたクマのぬいぐるみ@お姉ちゃんのお気に入り",4);
+        if($trueend==1){
+          $kuma.a=1;
+        }
+      }else{
+        message("痛い…痛いよ…なより…",4);
+      }
+      $mess=0;
+      $carsol.off=0;
+    }
+    if($mess==2 && $denki.on==1){
+      if($trueend==0){
+        message("私が最近ハマっている#シューティングゲームが#入っている",4);
+      }else{
+        message("知らないゲームが入っている",4);
+      }
+      game=choise1("遊ぶ","遊ばない");
+      if(game==0){
+        wait(300);
+        $mess=0;
+        game=1;
+        rr=rnd(100);
+      }else{
+        $mess=0;
+      }
+      $carsol.off=0;
+    }
+    
+    if($mess==3 && $denki.on==0){
+      message("電気のスイッチ",4);
+      switch=choise1("点ける","点けない");
+      if(switch==0){
+        $denki.on=1;
+      }
+      $mess=0;
+      $iti=1;
+    }
+    if($mess==3 && $denki.on==1){
+      message("電気のスイッチ",4);
+      switch=choise1("消す","消さない");
+      if(switch==0){
+        $denki.on=0;
+        if($trueend==1 && $riyona2.flag==0){
+          $riyona2.flag=1;
+        }
+      }
+      $mess=0;
+      $iti=1;
+    }
+    
+    if($mess==4 && $denki.on==1){
+      if($trueend==0){
+        message("時計@まだ深夜である。",4);
+      }
+      else{
+        message("「かわいそうに、また来たのかい？」",4);
+      }
+      $mess=0;
+      $carsol.off=0;
+    }
+    
+    if($mess==5 && $denki.on==1){
+      message("私の日記",4);
+      read=choise1("読む","読まない");
+      if(read==1){
+        $mess=0;
+        $iti=2;
+        $carsol.off=0;
+      }else{
+        $mess=6;  
+      }
+    }
+    
+    if($mess==6){
+      if($trueend==0){
+        message("8月5日#海外に単身赴任中のお父さんから#手紙が届いた。@その中にはなんと豪華客船の#旅のペアチケットが入っていたのだ。#お父さんさすが！！@でもこんな高そうなチケット#どうしたんだろう？#くじでも当たったのかな…@電話しても、連絡取れないし…#忙しいのかなぁ。@まぁいいや！#そんなわけで今度#お姉ちゃんと行ってきまーす(＾0＾)/",4);
+        message("8月8日#今日は旅行の準備#ちょっと奮発してワンピ買っちゃった。@お姉ちゃんの服も選んであげたよ。#やっぱり緑系が似合う。@お姉ちゃんふだんあんまり外に#出たがらないけど今回は乗り気みたい#私もうれしい。",4);
+        message("8月9日#……やっぱりこれ以上は内緒",4);
+      }else{
+        message("*月ﾋ日#          こｺは食ﾘｮう庫みﾀい##  ﾓう逃げキレそうもない。@   ﾅﾆカ…ナにかないの…@      …くだものナイフ@  こんナ物で闘うコとなんて…@・・・・・・・・・・・・・・・・",6);
+        message("=月ｴ日#   …お姉ちゃン@##       …ﾜﾀｼ捕まりたくnaiよ@          捕まったら#     ｱの子達みたiに#  ヒドiことサレルノかな・・・・・",6);
+        message("+月ｱ日#   ・・・・・・・・・・・・・・・@なヨり……@…ナいフ…貸しテ…@・・・・・・・・・・・・・・・・@私タチのSaいごのあガき…@みせてやろう……",6);
+      }
+      $mess=0;
+      $iti=2;
+      $carsol.off=0;
+    }
+    
+    if($mess==7){
+      r=rnd(3);
+      if($riyona2.flag==0){
+        if(r==0){
+          $kao.sw=1;
+          message("なよりどうしたの？",4);
+          $kao.sw=0;
+        }
+        if(r==1){
+          $kao.sw=1;
+          message("怖い夢でも見たの？",4);
+          $kao.sw=0;
+        }
+        if(r==2){
+          $kao.sw=1;
+          message("うなされてたみたいだったけど#大丈夫？",4);
+          $kao.sw=0;
+        }
+      }else{
+        if(r==0){
+          $kao.sw=2;
+          message("をえｄじえいｐｚぉぺｐ？",4);
+          $kao.sw=0;
+        }
+        if(r==1){
+          $kao.sw=2;
+          message("てせいｓぃえｔがｑ？",4);
+          $kao.sw=0;
+        }
+        if(r==2){
+          $kao.sw=2;
+          message("えしえｐぃえつぁぇｆしｌｗ？",4);
+          $kao.sw=0;
+        }
+      }
+      $mess=0;
+      $carsol.off=0;
+    }
+    
+    if($mess==8){
+      if($denki.on==1){
+        message("電気消さなくちゃ…",4);
+      }else{
+        message("眠る？",4);
+        sleep=choise1("はい","いいえ");
+        if(sleep==0){
+          $denki.a=1;
+          while($denki.alpha<255){
+            $denki.alpha=$denki.alpha+1;
+            update();
+          }
+          wait(100);
+          $end=11;
+          while($denki.alpha>=200){
+            $denki.alpha=$denki.alpha-1;
+            update();
+          }
+          wait(100);
+          if($trueend==0){
+            $message=12;
+            $projectmanager.loadpage($page_gameover);
+          }else{
+            $riyona2.a=1;
+            wait(65);
+            $denki.alpha=255;
+            $end=12;
+            $mplayer.play($se_dosa);
+            wait(150);
+            $projectmanager.loadpage($page_gomon9);
+          }
+        }else{
+          $mess=0;
+        }
+      }
+      $mess=0;
+      $carsol.off=0;
+    }
+    
+  }
+  
+  update();  
+}

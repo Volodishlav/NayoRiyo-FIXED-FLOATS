@@ -1,0 +1,15 @@
+extends SpriteChar;
+a=0;
+zOrder=30;
+while(1){
+  y=y+5;
+  if($map.getAt(x,y+20)==$pat_back+0){
+    $G.Skaku=1;
+    y=trunc(y/32)*32+16;
+    if(a==0){
+      $mplayer.play($se_dosa2,0,20);
+    }
+    a=1;
+  }
+  update();
+}

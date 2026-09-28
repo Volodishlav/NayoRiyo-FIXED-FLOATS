@@ -1,0 +1,26 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_nageo" src="nageo.png"/>
+<cpattern name="$pat_power" src="power.png"/>
+<cpattern name="$pat_kakudo" src="kakudo.png"/>
+<cpattern name="$pat_p1" src="p1.png"/>
+<cpattern name="$pat_stage" src="stage.png"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="nageo" name="$nageo" inst_p="$pat_nageo+0" inst_zOrder="20" inst_x="6600" inst_y="1230"/>
+<generator className="moji" name="$moji" inst_col="$clWhite" inst_font="%22‚l‚r –¾’©%22" inst_bold="1" inst_text="%22‚R%22" inst_size="50" inst_x="6292" inst_y="1056"/>
+<generator className="power" name="$power" inst_p="$pat_power+0" inst_zOrder="10" inst_x="6690" inst_y="1230"/>
+<generator className="main" name="$main" inst_p="3" inst_x="6868" inst_y="1140"/>
+<generator className="player1" name="$player1" inst_angle="0" inst_alpha="255" inst_scalex="1" inst_zOrder="30" inst_p="$pat_p1+2" inst_x="6602" inst_y="1184"/>
+<generator className="kakudo" name="$kakudo" inst_p="$pat_kakudo+0" inst_zOrder="10" inst_f="-1" inst_x="6684" inst_y="1146"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="624"/>
+  <globalvalue name="$screenHeight" value="318"/>
+ </resourcelist>
+ <resourcelist name="mappat">
+<generator className="Map" name="$map" src="main.map" inst_width="300" inst_height="100" inst_pwidth="32" inst_pheight="32" inst_mpfx="0" inst_mpfy="0"/>
+ </resourcelist>
+</resourcelist>

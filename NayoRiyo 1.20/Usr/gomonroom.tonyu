@@ -1,0 +1,103 @@
+extends SpriteChar;
+$screenWidth = 32*(31/2);
+$screenHeight = 32*(53/5);
+x=250;
+y=170;
+zOrder=100;
+sw=0;
+while(1){
+  if($end==1){
+    if(sw==0){
+      darkness(0,0,$screenWidth,$screenHeight);
+      if($se==1){
+        fade_in(100);
+        $se=2;
+        sw=1;
+        luminous(0,0,$screenWidth,$screenHeight);
+      }
+    }
+    if($se==5){
+      $se=2;
+      fade_out(150);
+      $se=2;
+      flush(0,0,$screenWidth,$screenHeight);
+    }
+    kankaku--;
+    if(kankaku<0 && getkey(2)==1){
+      $se=2;
+      kankaku=100;
+    }
+  }
+
+  if($end==2 || $end==(5/2) || $end==3 || $end==4 || $end==5 || $end==6 || $end==7){
+    if(sw==0){
+      darkness(0,0,$screenWidth,$screenHeight);
+      if($se==1){
+        fade_in(100);
+        $se=2;
+        sw=1;
+        luminous(0,0,$screenWidth,$screenHeight);
+      }
+    }
+    if($se==5){
+      $se=2;
+      fade_out(150);
+      $se=2;
+      flush(0,0,$screenWidth,$screenHeight);
+    }
+    if($se==6){
+      $se=2;
+      fade_out(150);
+      $se=2;
+      darkness(0,0,$screenWidth,$screenHeight);
+      sw=0;
+    }
+  }
+  
+  if(getkey(82)==1){
+    $projectmanager.loadpage($page_title);
+  }
+  update();
+}
+//è≠ÇµÇ∏Ç¬à√Ç≠
+function fade_out(_time){
+  
+  var i;
+  $panel.zOrder=1;
+  $panel.setTransparentColor(color(255,255,255));
+  for(i=0;i<255;i+=255/_time){
+    $panel.alpha=i;
+    update();
+  }
+  $panel.alpha=255;
+}
+
+// è≠ÇµÇ∏Ç¬ñæÇÈÇ≠
+
+function fade_in(_time){
+  
+  var i;
+  for(i=255;i>0;i-=255/_time){
+    $panel.alpha=i;
+    update();
+  }
+  $panel.setTransparentColor(color(0,0,0));
+  $panel.alpha=255;
+  $panel.zOrder=null;
+}
+
+//à√Ç¢
+function darkness(x1,y1,x2,y2){
+  $panel.clear();
+  $panel.fillRect(x1,y1,x2,y2,$clBlack,5); 
+}
+//ñæÇÈÇ¢
+function luminous(x1,y1,x2,y2){
+  $panel.clear();
+  $panel.fillRect(x1,y1,x2,y2,$panel.getTransparentColor(),5); 
+}
+//ê‘Ç≠
+function flush(x1,y1,x2,y2){
+  $panel.clear();
+  $panel.fillRect(x1,y1,x2,y2,color(100,0,0),5); 
+}

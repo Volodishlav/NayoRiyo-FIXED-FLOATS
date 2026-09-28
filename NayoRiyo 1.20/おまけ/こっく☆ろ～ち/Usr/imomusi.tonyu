@@ -1,0 +1,75 @@
+extends SpriteChar;
+anim=newAnimation();
+a=0;
+tx=x;
+f=-1;
+time=0;
+state=0;
+flg=0;
+zOrder=10;
+while(1){
+    anim.loop($pat_enemy1+6,$pat_enemy1+7,25);
+    if(f==-1){
+      this.x=this.x-1;
+      if(tx-260>=x)f=1;
+    }
+    if(f==1){
+      this.x=this.x+1;
+      if(tx+260<=this.x)f=-1;
+    }
+  
+  if(state==0){
+    time=0;
+  }
+  
+  if(state==1){
+    if(a==0){
+      $mplayer.play($se_noru,0,20);
+      a=1;
+    }
+    if(time<=300){
+      if(time==0){
+        if(f==-1)appear(new mark(x+15,y-10,$pat_item+2));
+        if(f==1)appear(new mark(x-15,y-10,$pat_item+2));
+      }
+      if(time==50){
+        if(f==-1)appear(new mark(x+15,y-10,$pat_item+2));
+        if(f==1)appear(new mark(x-15,y-10,$pat_item+2));
+      }
+      if(time==100){
+        if(f==-1)appear(new mark(x+15,y-10,$pat_item+2));
+        if(f==1)appear(new mark(x-15,y-10,$pat_item+2));
+      }
+      if(time==150){
+        if(f==-1)appear(new mark(x+15,y-10,$pat_item+2));
+        if(f==1)appear(new mark(x-15,y-10,$pat_item+2));
+      }
+      if(time==200){
+        if(f==-1)appear(new mark(x+15,y-10,$pat_item+2));
+        if(f==1)appear(new mark(x-15,y-10,$pat_item+2));
+      }
+      if(time==250){
+        if(f==-1)appear(new mark(x+15,y-10,$pat_item+2));
+        if(f==1)appear(new mark(x-15,y-10,$pat_item+2));
+      }
+      time=time+1;
+      if(time==300){
+        $mplayer.play($se_tori,0,20);
+        if(f==-1)appear(new mark(x+15,y-10,$pat_item+0));
+        if(f==1)appear(new mark(x-15,y-10,$pat_item+0));
+        $G.S=6;
+        anim.play($pat_enemy1+8);
+        anim.pause();
+        wait(200);
+        if(f==-1){
+          appear(new tori(this.x+300,this.y-400,$pat_enemy+19,-1));
+        }else{
+          appear(new tori(this.x-300,this.y-400,$pat_enemy+19,1));
+        }
+        wait();
+      }
+    }
+  }
+  
+  update();
+}

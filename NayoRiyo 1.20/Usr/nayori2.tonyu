@@ -1,0 +1,170 @@
+extends SpriteChar;
+anim=newAnimation();
+carsoloff=0;
+on=0;
+switch=0;
+p=$pat_nayori+63;
+zOrder=-50;
+while(1){
+  if($end==11){
+    die();
+  }
+  while($end==10 && on==0){
+    x=255;
+    y=270;
+    on=1;
+  }
+  while($iti==1){
+    y=y+(1/2);
+    anim.loop($pat_nayori+71,$pat_nayori+74);
+    if(y==270){
+      anim.loop($pat_nayori+70,2);
+      $iti=0;
+      $carsol.off=0;
+      $carsol.off=0;
+    }
+    update();
+  }
+  while($iti==2){
+    
+    anim.loop($pat_nayori+75,$pat_nayori+78);
+    y=y-1;
+    update();
+    if(y==270){
+      anim.loop($pat_nayori+68,20);
+      $iti=0;
+      $carsol.off=0;
+    }
+    update();
+  }
+  
+  if (switch==1){
+    if($kuma.x>x){
+      anim.loop($pat_nayori+64,$pat_nayori+67,20);
+      x=x+1;
+      f=1; //Œü‚«
+    }else if ($kuma.x<x){
+      anim.loop($pat_nayori+64,$pat_nayori+67,20); //ˆÚ“®’†‚Ì“®ì
+      x=x-1;
+      f=-1; //Œü‚«
+    }else {
+      anim.loop($pat_nayori+68);
+      x=x;
+      $mess=1;
+      switch=0;
+    }
+  }
+  
+  if (switch==2){
+    if($game.x>x){
+      anim.loop($pat_nayori+64,$pat_nayori+67,20);
+      x=x+1;
+      f=1; //Œü‚«
+    }else if ($game.x<x){
+      anim.loop($pat_nayori+64,$pat_nayori+67,20); //ˆÚ“®’†‚Ì“®ì
+      x=x-1;
+      f=-1; //Œü‚«
+    }else {
+      anim.loop($pat_nayori+68);
+      $mess=2;
+      x=x;
+      switch=0;
+    }
+  }
+  
+  if($room10.game==0){
+    anim.loop($pat_nayori+69);
+    wait(320);
+    anim.loop($pat_nayori+68);
+  }
+  
+  if (switch==3){
+    if($switch.x>x){
+      anim.loop($pat_nayori+64,$pat_nayori+67,20);
+      x=x+1;
+      f=1; //Œü‚«
+    }else if ($switch.x<x){
+      anim.loop($pat_nayori+64,$pat_nayori+67,20); //ˆÚ“®’†‚Ì“®ì
+      x=x-1;
+      f=-1; //Œü‚«
+    }else {
+      if($switch.y<y-40){
+        anim.loop($pat_nayori+75,$pat_nayori+78);
+        x=x;
+        y=y-(1/2);
+      }else{
+        anim.loop($pat_nayori+68,20);
+        $mess=3;
+        switch=0;
+      }
+    }
+  }
+  
+  if (switch==4){
+    if($tokei.x>x){
+      anim.loop($pat_nayori+64,$pat_nayori+67,20);
+      x=x+1;
+      f=1; //Œü‚«
+    }else if ($tokei.x<x){
+      anim.loop($pat_nayori+64,$pat_nayori+67,20); //ˆÚ“®’†‚Ì“®ì
+      x=x-1;
+      f=-1; //Œü‚«
+    }else {
+      anim.loop($pat_nayori+68);
+      $mess=4;
+      x=x;
+      switch=0;
+    }
+  }
+  
+  if (switch==5){
+    if($diary.x>x){
+      anim.loop($pat_nayori+64,$pat_nayori+67,20);
+      x=x+1;
+      f=1; //Œü‚«
+    }else if ($diary.x<x){
+      anim.loop($pat_nayori+64,$pat_nayori+67,20);
+      x=x-1;
+      f=-1; //Œü‚«
+    }else {
+      $carsol.off=1;
+      if($diary.y>y+20){
+        anim.loop($pat_nayori+71,$pat_nayori+74);
+        x=x;
+        y=y+(1/2);
+      }else{
+        anim.loop($pat_nayori+70,20);
+        $mess=5;
+        switch=0;
+      }
+    }
+  }
+  
+  if (switch==6){
+    if(x!=255){
+      anim.loop($pat_nayori+64,$pat_nayori+67,20); //ˆÚ“®’†‚Ì“®ì
+      x=x-1;
+      f=-1; //Œü‚«
+    }else {
+      anim.loop($pat_nayori+63);
+      $mess=7;
+      x=x;
+      switch=0;
+    }
+  }
+  
+  if (switch==7){
+    if(x!=255){
+      anim.loop($pat_nayori+64,$pat_nayori+67,20); //ˆÚ“®’†‚Ì“®ì
+      x=x-1;
+      f=-1; //Œü‚«
+    }else {
+      anim.loop($pat_nayori+63);
+      $mess=8;
+      x=x;
+      switch=0;
+    }
+  }
+  
+  update();
+}

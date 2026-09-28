@@ -1,0 +1,23 @@
+extends SpriteChar;
+anim=newAnimation();
+x=341;
+y=204;
+zOrder=-30;
+p=$pat_item+22;
+randomize();
+while(1){
+  anim.loop($pat_item+22);
+  if($room10.game==0){
+    if($trueend==0){
+      anim.loop($pat_item+23,$pat_item+25,30);
+    }else{
+      if($room10.rr>50){
+        anim.loop($pat_item+30,$pat_item+33,30);
+      }else{
+        anim.loop($pat_item+34,$pat_item+37,30);
+      }
+    }
+    
+  }
+  update(); 
+}

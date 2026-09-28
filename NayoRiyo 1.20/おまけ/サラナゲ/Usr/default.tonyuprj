@@ -1,0 +1,67 @@
+<resourcelist name="project">
+ <resourcelist name="pages">
+<Page name="$page_index" src="index.cmml"/>
+<Page name="$page_main" src="main.cmml"/>
+ </resourcelist>
+ <resourcelist name="params">
+  <param name="commentID" value="24522130"/>
+  <param name="sound_stopOnPageLoad" value="1"/>
+  <param name="savedVersion" value="1240"/>
+  <param name="mainPage" value="$page_index"/>
+  <param name="title" value="ƒTƒ‰ƒiƒQ"/>
+  <param name="author" value="TT"/>
+  <param name="version" value=""/>
+  <param name="mail" value=""/>
+  <param name="web" value=""/>
+  <param name="cond" value=""/>
+ </resourcelist>
+ <resourcelist name="classes">
+  <class name="main" src="main.tonyu" category=""/>
+  <class name="moji" src="moji.tonyu" category=""/>
+  <class name="kotoba" src="kotoba.tonyu" category=""/>
+  <class name="nageo" src="nageo.tonyu" category=""/>
+  <class name="switch" src="switch.tonyu" category=""/>
+  <class name="power" src="power.tonyu" category=""/>
+  <class name="mono" src="mono.tonyu" category=""/>
+  <class name="player1" src="player1.tonyu" category=""/>
+  <class name="kakudo" src="kakudo.tonyu" category=""/>
+  <class name="bar" src="bar.tonyu" category=""/>
+ </resourcelist>
+ <resourcelist name="sounds">
+<SoundEffect name="$se_kati" src="kati.wav"/>
+<SoundEffect name="$se_start" src="start.wav"/>
+<SoundEffect name="$se_nage" src="nage.wav"/>
+<SoundEffect name="$se_asi" src="asi.wav"/>
+<SoundEffect name="$se_rakka" src="rakka.wav"/>
+<SoundEffect name="$se_boo" src="boo.wav"/>
+<SoundEffect name="$se_kiroku" src="kiroku.wav"/>
+ </resourcelist>
+ <resourcelist name="filelist">
+<Page name="r_0" src="index.cmml"/>
+<Page name="r_1" src="kakudo.png"/>
+<Page name="r_2" src="nageo.png"/>
+<Page name="r_3" src="stage.png"/>
+<Page name="r_4" src="power.png"/>
+<Page name="r_5" src="moji.png"/>
+<Page name="r_6" src="p1.png"/>
+<Page name="r_7" src="main.cmml"/>
+<Page name="r_8" src="main.map"/>
+<Page name="r_9" src="main.tonyu"/>
+<Page name="r_10" src="moji.tonyu"/>
+<Page name="r_11" src="kotoba.tonyu"/>
+<Page name="r_12" src="nageo.tonyu"/>
+<Page name="r_13" src="switch.tonyu"/>
+<Page name="r_14" src="power.tonyu"/>
+<Page name="r_15" src="mono.tonyu"/>
+<Page name="r_16" src="player1.tonyu"/>
+<Page name="r_17" src="kakudo.tonyu"/>
+<Page name="r_18" src="bar.tonyu"/>
+<Page name="r_19" src="kati.wav"/>
+<Page name="r_20" src="start.wav"/>
+<Page name="r_21" src="nage.wav"/>
+<Page name="r_22" src="asi.wav"/>
+<Page name="r_23" src="rakka.wav"/>
+<Page name="r_24" src="boo.wav"/>
+<Page name="r_25" src="kiroku.wav"/>
+ </resourcelist>
+</resourcelist>

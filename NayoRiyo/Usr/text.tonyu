@@ -1,0 +1,154 @@
+extends TextChar;
+function message(text,speed){
+  var x1,y1,x2,y2,textOP,textCNT,i;
+  textOP="";
+  CR=0;danraku=0;tim=0;
+  
+  y1=10;
+  x1=81 ;  
+  x2=x1+331;y2=y1+80;
+  //x1,y1：ウインドウ左上座標　x2,y2：ウインドウ右下座標
+  
+  updateEx(1);
+  $panel.fillrect(x1  ,y1  ,x2  ,y2  ,color(150,0,0), 0);
+  $panel.fillrect(x1+3,y1+3,x2-3,y2-3,color(1,0,0),-1);
+  
+  for (i=0;i<=text.length();i++){   //テキスト表示
+    textCNT=text.substring(i,i+1);  //テキストを１文字ずつ代入
+    if (textCNT=="%") {break;}             //「%」であれば中断
+    if (textCNT=="#") {CR=i+1;danraku++;}  //「#」であれば改行
+    if (textCNT=="@") {                    //「@」であれば改ページ
+      while(getkey(90)!=1 && getkey(1)!=1){
+        if (tim<40) 
+        {$panel.drawtext(x2-20,y2-20,"▼",color(255,255,255),8,-2);}
+        if (tim<80 && tim>40)
+        {$panel.drawtext(x2-20,y2-20,"▼",color(  1,  0,  0),8,-2);}
+        if (tim>81)   tim=0;
+        tim++;update();
+      }
+      CR=i+1;danraku=0;
+      $panel.fillrect(x1+3,y1+3,x2-3,y2-3,color(1,0,0),-1); //テキスト消去
+    }
+    textOP=text.substring(CR,i+1);
+    $panel.drawText(x1+7,y1+7+danraku*16,textOP,$clWhite,13);
+    //テキストを指定位置に書く
+    if (speed!=null) updateEx(speed);
+    //ウェイト処理
+  }
+  
+  while(1){
+    if (textCNT=="%"){break;}
+    if(getkey(90)==1 || getkey(1)==1){$panel.clear();break;}//Zか左クリックで抜ける
+    update();
+  }
+}
+function message2(text,speed){
+  var x1,y1,x2,y2,textOP,textCNT,i;
+  textOP="";
+  CR=0;danraku=0;tim=0;
+  zOrder=-100;
+  
+  y1=250;
+  x1=10 ;  
+  x2=x1+476;y2=y1+80;
+  //x1,y1：ウインドウ左上座標　x2,y2：ウインドウ右下座標
+  
+  updateEx(1);
+  $panel.fillrect(x1  ,y1  ,x2  ,y2  ,color(150,0,0), 0);
+  $panel.fillrect(x1+3,y1+3,x2-3,y2-3,color(1,0,0),-1);
+  
+  for (i=0;i<=text.length();i++){   //テキスト表示
+    textCNT=text.substring(i,i+1);  //テキストを１文字ずつ代入
+    if (textCNT=="%") {break;}             //「%」であれば中断
+    if (textCNT=="#") {CR=i+1;danraku++;}  //「#」であれば改行
+    if (textCNT=="@") {                    //「@」であれば改ページ
+      while(getkey(90)!=1 && getkey(1)!=1){
+        if (tim<40) 
+        {$panel.drawtext(x2-20,y2-20,"▼",color(255,255,255),8,-2);}
+        if (tim<80 && tim>40)
+        {$panel.drawtext(x2-20,y2-20,"▼",color(  1,  0,  0),8,-2);}
+        if (tim>81)   tim=0;
+        tim++;update();
+      }
+      CR=i+1;danraku=0;
+      $panel.fillrect(x1+3,y1+3,x2-3,y2-3,color(1,0,0),-1); //テキスト消去
+    }
+    textOP=text.substring(CR,i+1);
+    $panel.drawText(x1+8,y1+8+danraku*19,textOP,$clWhite,14);
+    //テキストを指定位置に書く
+    if (speed!=null) updateEx(speed);
+    //ウェイト処理
+  }
+  
+  while(1){
+    if (textCNT=="%"){break;}
+    if(getkey(90)==1 || getkey(1)==1){$panel.clear();break;}//Zか左クリックで抜ける
+    update();
+  }
+}
+
+
+function choise1(text1,text2){
+  
+  var x1,y1,x2,y2,cursor;
+  
+  x1=395;y1=10;x2=x1+100;y2=y1+80;
+  cursor=0;
+  
+  updateEx(1);
+  $panel.fillrect(x1  ,y1  ,x2  ,y2  ,color(150,0,0), 0);
+  $panel.fillrect(x1+3,y1+3,x2-3,y2-3,color(1  ,  0,  0),-1);
+  
+  while(1){
+    drawtext(x1+10,y1+10+cursor*30,"⇒" ,color(255,255,255),10,-3);
+    drawtext(x1+30,y1+10          ,text1,color(255,255,255),10,-3);
+    drawtext(x1+30,y1+10+       30,text2,color(255,255,255),10,-3);
+    //カーソルと選択肢テキストを書く
+    
+    if(getkey(90)==1){  //Ｚでウインドウを消して終了
+      x1=x1-130;y1=y1-80;
+      $panel.fillrect(x1,y1,x2,y2,color(0,0,0),0);
+      break;
+    }
+    
+    if(getkey(40)==1){cursor++;if(cursor>1) cursor=1;}
+    if(getkey(38)==1){cursor--;if(cursor<0) cursor=0;}
+    //上下でカーソル移動（０か１しか値をとらないようにする）
+    
+    update();
+  }
+  return cursor; //カーソルの値を返す
+}
+
+function choise2(text1,text2,text3){
+  
+  var x1,y1,x2,y2,cursor;
+  
+  x1=395;y1=10;x2=x1+100;y2=y1+100;
+  cursor=0;
+  
+  updateEx(1);
+  $panel.fillrect(x1  ,y1  ,x2  ,y2  ,color(150,0,0), 0);
+  $panel.fillrect(x1+3,y1+3,x2-3,y2-3,color(1  ,  0,  0),-1);
+  
+  while(1){
+    drawtext(x1+10,y1+10+cursor*30,"⇒" ,color(255,255,255),10,-3);
+    drawtext(x1+30,y1+10          ,text1,color(255,255,255),10,-3);
+    drawtext(x1+30,y1+10+       30,text2,color(255,255,255),10,-3);
+    drawtext(x1+30,y1+10+       60,text3,color(255,255,255),10,-3);
+    //カーソルと選択肢テキストを書く
+    
+    if(getkey(90)==1){  //Ｚでウインドウを消して終了
+      x1=x1-130;y1=y1-80;
+      $panel.fillrect(x1,y1,x2,y2,color(0,0,0),0);
+      break;
+    }
+    
+    if(getkey(40)==1){cursor++;if(cursor>2)cursor=2;}
+    if(getkey(38)==1){cursor--;if(cursor<0)cursor=0;}
+    else{cursol=1;}
+    //３つ選択できる
+    update();
+  }
+  return cursor; //カーソルの値を返す
+}

@@ -1,0 +1,27 @@
+extends DxChar;
+alpha=0;
+while(1){
+while(alpha<255){
+  alpha=alpha+10;
+update();
+}
+
+  if(p==$pat_item+6){
+    if(crashTo($mouse)){
+      p=$pat_item+7;
+    }
+  }
+  if(p==$pat_item+7){
+    if(getkey(1)==1){
+      $nanido=3;
+      $projectmanager.loadpage($page_index);  
+    }
+    if(crashTo($mouse)){
+      p=$pat_item+7;
+    }
+    else{p=$pat_item+6;
+    }
+  }
+
+  update();
+}

@@ -1,0 +1,26 @@
+extends SpriteChar;
+  zOrder=10;
+while(1){
+  if(crashTo($G) && $G.S==0 && $imomusi.a==0){
+  $G.S=2;
+  die();
+}
+  if(f==-1){
+    x=x-3;
+    y=y-4;
+    vy=vy+(1/4);
+  }
+  if(f==1){
+    x=x+3;
+    y=y-4;
+    vy=vy+(1/4);
+  }
+  y=y+vy;
+  
+  if($map.getAt(x,y)==$pat_back+0){
+    zOrder=40;
+    wait(50);
+    die();
+  }
+  update();
+}

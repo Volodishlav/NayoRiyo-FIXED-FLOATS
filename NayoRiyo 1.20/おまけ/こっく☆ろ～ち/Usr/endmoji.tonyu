@@ -1,0 +1,27 @@
+extends TextChar;
+while(1){
+  
+  if($end1.flg==0){
+    size=50;
+    text="Congratulation";
+    x=50;
+    y=150;
+  }
+  
+  if($end1.flg==1){
+    y=700;
+  }
+  
+  if($end1.flg==3){
+    size=30;
+    y=60;
+    x=30;
+    text="‚¨‚µ‚Ü‚¢";
+  }
+  
+  if(getkey(82)==1){
+    $projectmanager.loadpage($page_title);
+  }
+  
+  update();
+}

@@ -1,0 +1,27 @@
+extends SpriteChar;
+$end=0;
+a=0;
+b=0;
+while(1){
+  if(getkey(1)==1){
+if(crashTo($mouse)){
+a++;
+}
+if(a>=11)a=11;
+if(a==10){
+  $mplayer.play($se_buun);
+  appear(new omake2(220,210,$pat_item+6));
+a=11;
+}
+}
+
+if(getkey(68)==1){
+b++;
+if(b==5){
+  $end=11;
+$projectmanager.loadpage($page_bk);
+}
+}
+  
+ update(); 
+}

@@ -1,0 +1,92 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_G" src="G.png"/>
+<cpattern name="$pat_back" src="back.png"/>
+<cpattern name="$pat_trap" src="trap.png"/>
+<cpattern name="$pat_GS" src="GS.png"/>
+<cpattern name="$pat_item" src="item.png"/>
+<cpattern name="$pat_enemy1" src="enemy1.png"/>
+<cpattern name="$pat_effect" src="effect.png"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="G" name="$G" inst_p="$pat_G+0" inst_x="2272" inst_y="924"/>
+<generator className="hoihoi" name="$hoihoi" inst_p="$pat_trap+0" inst_x="3324" inst_y="1141"/>
+<generator className="main" name="$main" inst_x="147" inst_y="161" inst_p="$pat_back+2"/>
+<generator className="oto" name="$oto" inst_x="98" inst_y="162" inst_p="$pat_back+2"/>
+<generator className="kumo" name="$kumo_1" inst_p="$pat_enemy1+0" inst_f="-1" inst_x="3036" inst_y="1130"/>
+<generator className="tyotyo" name="$tyotyo" inst_p="$pat_enemy1+17" inst_f="-1" inst_x="489" inst_y="1074"/>
+<generator className="hachi" name="$hachi" inst_p="$pat_enemy1+10" inst_x="3842" inst_y="1018" inst_f="-1"/>
+<generator className="ari" name="$ari" inst_p="$pat_enemy1+12" inst_x="4000" inst_f="1" inst_y="738"/>
+<generator className="imomusi" name="$imomusi" inst_p="$pat_enemy1+6" inst_y="1192" inst_x="3950"/>
+<generator className="ari" name="$ari_2" inst_p="$pat_enemy1+12" inst_x="3911" inst_f="1" inst_y="738"/>
+<generator className="ari" name="$ari_3" inst_p="$pat_enemy1+12" inst_x="3959" inst_f="-1" inst_y="738"/>
+<generator className="ari" name="$ari_4" inst_p="$pat_enemy1+12" inst_x="3863" inst_f="-1" inst_y="738"/>
+<generator className="ari" name="$ari_5" inst_p="$pat_enemy1+12" inst_x="4033" inst_f="-1" inst_y="738"/>
+<generator className="ari" name="$ari_6" inst_p="$pat_enemy1+12" inst_x="4087" inst_f="1" inst_y="738"/>
+<generator className="ari" name="$ari_7" inst_p="$pat_enemy1+12" inst_x="4146" inst_f="-1" inst_y="738"/>
+<generator className="ari" name="$ari_8" inst_p="$pat_enemy1+12" inst_x="4186" inst_f="1" inst_y="738"/>
+<generator className="ari" name="$ari_9" inst_p="$pat_enemy1+12" inst_x="4226" inst_f="-1" inst_y="738"/>
+<generator className="ari" name="$ari_10" inst_p="$pat_enemy1+12" inst_x="4274" inst_f="1" inst_y="738"/>
+<generator className="ari" name="$ari_11" inst_p="$pat_enemy1+12" inst_x="4322" inst_f="-1" inst_y="738"/>
+<generator className="ari" name="$ari_12" inst_p="$pat_enemy1+12" inst_x="4378" inst_f="1" inst_y="738"/>
+<generator className="hachi" name="$hachi_1" inst_p="$pat_enemy1+10" inst_x="3010" inst_y="922" inst_f="-1"/>
+<generator className="tyotyo" name="$tyotyo_7" inst_p="$pat_enemy1+17" inst_f="1" inst_x="476" inst_y="1010"/>
+<generator className="tyotyo" name="$tyotyo_9" inst_p="$pat_enemy1+17" inst_f="-1" inst_x="654" inst_y="946"/>
+<generator className="tyotyo" name="$tyotyo_11" inst_p="$pat_enemy1+17" inst_f="1" inst_x="575" inst_y="882"/>
+<generator className="tyotyo" name="$tyotyo_13" inst_p="$pat_enemy1+17" inst_f="-1" inst_x="721" inst_y="818"/>
+<generator className="tyotyo" name="$tyotyo_15" inst_p="$pat_enemy1+17" inst_f="1" inst_x="742" inst_y="754"/>
+<generator className="tyotyo" name="$tyotyo_17" inst_p="$pat_enemy1+17" inst_f="-1" inst_x="540" inst_y="690"/>
+<generator className="kumo" name="$kumo_2" inst_p="$pat_enemy1+0" inst_f="-1" inst_x="3848" inst_y="1194"/>
+<generator className="kumo" name="$kumo_3" inst_p="$pat_enemy1+0" inst_x="4125" inst_y="1194" inst_f="1"/>
+<generator className="kumo" name="$kumo_5" inst_p="$pat_enemy1+0" inst_x="3984" inst_y="1194" inst_f="1"/>
+<generator className="kumo" name="$kumo_7" inst_p="$pat_enemy1+0" inst_f="-1" inst_x="3920" inst_y="1192"/>
+<generator className="kumo" name="$kumo_8" inst_p="$pat_enemy1+0" inst_f="-1" inst_x="4053" inst_y="1194"/>
+<generator className="hachi" name="$hachi_2" inst_p="$pat_enemy1+10" inst_x="4010" inst_y="1018" inst_f="1"/>
+<generator className="hachi" name="$hachi_3" inst_p="$pat_enemy1+10" inst_x="4194" inst_y="1018" inst_f="-1"/>
+<generator className="hoihoi" name="$hoihoi_1" inst_p="$pat_trap+0" inst_x="4168" inst_y="405"/>
+<generator className="hachi" name="$hachi_4" inst_p="$pat_enemy1+10" inst_x="3010" inst_y="642" inst_f="1"/>
+<generator className="hachi" name="$hachi_5" inst_p="$pat_enemy1+10" inst_x="3010" inst_y="346" inst_f="-1"/>
+<generator className="hachi" name="$hachi_6" inst_p="$pat_enemy1+10" inst_f="1" inst_x="2434" inst_y="314"/>
+<generator className="hachi" name="$hachi_7" inst_p="$pat_enemy1+10" inst_x="2602" inst_y="314" inst_f="-1"/>
+<generator className="hachi" name="$hachi_9" inst_p="$pat_enemy1+10" inst_f="1" inst_x="2437" inst_y="525"/>
+<generator className="hachi" name="$hachi_10" inst_p="$pat_enemy1+10" inst_f="-1" inst_x="2570" inst_y="698"/>
+<generator className="hachi" name="$hachi_11" inst_p="$pat_enemy1+10" inst_f="1" inst_x="2530" inst_y="898"/>
+<generator className="kumo" name="$kumo_9" inst_p="$pat_enemy1+0" inst_f="1" inst_x="1588" inst_y="1194"/>
+<generator className="ari" name="$ari_13" inst_p="$pat_enemy1+12" inst_f="1" inst_x="2931" inst_y="1154"/>
+<generator className="ari" name="$ari_14" inst_f="-1" inst_p="$pat_enemy1+12" inst_x="2427" inst_y="1122"/>
+<generator className="ari" name="$ari_15" inst_p="$pat_enemy1+12" inst_f="-1" inst_x="1931" inst_y="1218"/>
+<generator className="ari" name="$ari_16" inst_p="$pat_enemy1+12" inst_f="1" inst_x="2035" inst_y="1218"/>
+<generator className="ari" name="$ari_17" inst_p="$pat_enemy1+12" inst_f="-1" inst_x="2107" inst_y="1218"/>
+<generator className="ari" name="$ari_18" inst_p="$pat_enemy1+12" inst_x="1819" inst_y="1218" inst_f="1"/>
+<generator className="ame1" name="$ame1" inst_p="$pat_item+4" inst_x="26" inst_y="34"/>
+<generator className="ame2" name="$ame2" inst_x="70" inst_y="30" inst_p="$pat_item+4"/>
+<generator className="ame3" name="$ame3" inst_x="122" inst_y="26" inst_p="$pat_item+4"/>
+<generator className="ame4" name="$ame4" inst_x="174" inst_y="30" inst_p="$pat_item+4"/>
+<generator className="ame5" name="$ame5" inst_x="226" inst_y="34" inst_p="$pat_item+4"/>
+<generator className="ame6" name="$ame6" inst_p="$pat_item+4" inst_x="274" inst_y="35"/>
+<generator className="ame7" name="$ame7" inst_p="$pat_item+4" inst_x="330" inst_y="42"/>
+<generator className="ame8" name="$ame8" inst_p="$pat_item+4" inst_x="382" inst_y="38"/>
+<generator className="ari" name="$ari_20" inst_p="$pat_enemy1+12" inst_f="-1" inst_x="3118" inst_y="1154"/>
+<generator className="ari" name="$ari_21" inst_f="-1" inst_p="$pat_enemy1+12" inst_x="2571" inst_y="1122"/>
+<generator className="hachi" name="$hachi_12" inst_p="$pat_enemy1+10" inst_f="-1" inst_x="1770" inst_y="1050"/>
+<generator className="hachi" name="$hachi_13" inst_p="$pat_enemy1+10" inst_f="1" inst_x="1938" inst_y="1082"/>
+<generator className="gameover" name="$gameover" inst_maxTextWidth="0" inst_text="%22テキスト%22" inst_size="30" inst_col="$clWhite" inst_font="%22ＭＳ ゴシック%22" inst_bold="1" inst_y="82" inst_x="40"/>
+<generator className="candy1" name="$candy1" inst_p="$pat_item+3" inst_x="3162" inst_y="1138"/>
+<generator className="candy2" name="$candy2" inst_p="$pat_item+3" inst_x="4398" inst_y="1206"/>
+<generator className="candy3" name="$candy3" inst_p="$pat_item+3" inst_x="4400" inst_y="727"/>
+<generator className="candy4" name="$candy4" inst_p="$pat_item+3" inst_x="4374" inst_y="406"/>
+<generator className="candy5" name="$candy5" inst_p="$pat_item+3" inst_x="2514" inst_y="314"/>
+<generator className="candy6" name="$candy6" inst_p="$pat_item+3" inst_y="598" inst_x="1935"/>
+<generator className="candy7" name="$candy7" inst_p="$pat_item+3" inst_x="182" inst_y="658"/>
+<generator className="candy8" name="$candy8" inst_p="$pat_item+3" inst_x="179" inst_y="1108"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="745"/>
+  <globalvalue name="$screenHeight" value="452"/>
+ </resourcelist>
+ <resourcelist name="mappat">
+<generator className="Map" name="$map" src="stage1.map" inst_width="200" inst_height="40" inst_pwidth="32" inst_pheight="32" inst_mpfx="0" inst_mpfy="0"/>
+ </resourcelist>
+</resourcelist>

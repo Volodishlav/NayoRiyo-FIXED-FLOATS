@@ -1,0 +1,9 @@
+extends SpriteChar;
+zOrder=-30;
+x=122;
+y=24;
+p=$pat_target+3;
+while(1){
+update();
+
+}

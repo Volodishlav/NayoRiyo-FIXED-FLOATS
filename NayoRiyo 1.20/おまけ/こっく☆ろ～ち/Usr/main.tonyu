@@ -1,0 +1,14 @@
+extends SpriteChar;
+while(1){
+  if(((getkey(37)>1 && getkey(39)==0) || (getkey(37)==0 && getkey(39)>1) || $G.vx==7) && $G.hari==0 && $G.jmp==0 && $G.S==0){
+    $mplayer.play($se_asi,0,10);
+    if($G.vx<=2)wait(12);
+    if($G.vx>2 && $G.vx<=6)wait(10);
+    if($G.vx>6)wait(5);
+  }
+  if(getkey(82)==1){
+    $projectmanager.loadpage($page_title);
+  }
+  
+  update();
+}

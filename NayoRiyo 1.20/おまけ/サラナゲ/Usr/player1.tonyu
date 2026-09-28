@@ -1,0 +1,78 @@
+extends DxChar;
+
+anim=newAnimation();
+mapX=trunc(x/$screenWidth );
+mapY=trunc(y/$screenHeight);
+$map.scrollTo(mapX*$screenWidth,mapY*$screenHeight);
+oto=0;
+
+while(1){
+  if($move==10){
+    wait();  
+  }
+  if($switch==0)anim.loop($pat_p1+0,$pat_p1+1,50);
+  if($switch==1){
+    if($move==2){
+      if($p_date<=5)x=x-4;
+      if($p_date>5 && $p_date<=10)x=x-6;
+      if($p_date>10 && $p_date<=15)x=x-8;
+      if($p_date>15 && $p_date<=20)x=x-10;
+    }
+    if($move==3){
+    }
+    if($move==4){
+      p=$pat_p1+3;
+      if ($map.getAt(x,y+10)==$pat_stage+0){
+        $kyori=trunc((5855-x)/10);
+        if($kyori>=100){
+          if($kyori>=200){
+            p=$pat_p1+6;
+          }else{
+            p=$pat_p1+5;
+          }
+        }else{
+          p=$pat_p1+4;
+        }
+        vy=0;
+        y=trunc(y/16)*16+6;
+        if(x>=5855){
+          $kyori=0;  
+        }
+        if(oto==0){
+          $mplayer.play($se_rakka);
+          wait(100);
+          $mplayer.play($se_kiroku);
+          appear(new moji(x-300,y-100,$kyori+"Ｍ",$clWhite,50));
+          appear(new moji($player1.x-400,$player1.y-150,"Ｒ：タイトル画面へ",$clWhite,12));
+          oto=1;
+        }
+      } else {
+        //ブロックに当たっていなかった場合
+        vy=vy+(1/4); //落下速度を上げる
+        x=x-$p_date;
+        y=y-$k_date;
+        if(vy==$k_date){
+          angle=0;
+        }
+      }
+      y=y+vy;
+    }
+    scrollmap();
+  }
+  update();
+}
+
+//スクロール =======================================
+function scrollmap(){
+  var sx;
+  var sy;
+  sx = x - $screenwidth/(7/5);
+  sy = y - $screenHeight/(17/10);
+  $map.scrollTo(sx,sy);
+}
+
+//画面塗りつぶし ===================================
+function flush(x1,y1,x2,y2){
+  $panel.clear();
+  $panel.fillRect(x1,y1,x2,y2,color(100,0,0),5); 
+}

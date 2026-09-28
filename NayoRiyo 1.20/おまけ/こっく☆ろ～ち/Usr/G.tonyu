@@ -1,0 +1,348 @@
+extends SpriteChar;
+$screenWidth = 32*18;
+$screenHeight = 32*13;
+$map.scrollTo(mapX*$screenWidth,mapY*$screenHeight);
+anim=newAnimation();
+zOrder=0;
+hari=0;
+muki=0;
+S=0;
+a=0;
+flg=0;
+lX=0;
+rX=0;
+tyo=0;
+Skaku=0;
+while(1){
+  if($G.S==0){
+    $mplayer.play($se_bgm,1,10);
+  }
+  if($tokuten==8){
+    x=x;
+    y=y;
+    wait(30);
+    $projectmanager.loadpage($page_end);
+  }
+  if(S!=0){
+    zOrder=30;
+  }
+  if(S==0){
+    //何も操作してない時
+    if(hari==0)anim.loop($pat_G+0,$pat_G+1,50);
+    if(hari==1){
+      if(muki==0)anim.loop($pat_G+7);
+      if(muki==1)anim.loop($pat_G+13);
+      if(muki==2)anim.loop($pat_G+10);
+    }
+    //右移動
+    if(getkey(39)>1 && getkey(37)==0 && $imomusi.state!=1 && rX==0){
+      f=-1;
+      x=x+2+vx;
+      if(hari==0)anim.loop($pat_G+2,$pat_G+3,5);
+      if(hari==1){
+        x=x-1;
+        anim.loop($pat_G+14,$pat_G+15,10);
+        muki=1;  
+      }
+    }
+    //左移動
+    if(getkey(37)>1 && getkey(39)==0 && $imomusi.state!=1 && lX==0){
+      f=1;
+      x=x-2-vx;
+      if(hari==0)anim.loop($pat_G+2,$pat_G+3,5);
+      if(hari==1){
+        x=x+1;
+        anim.loop($pat_G+14,$pat_G+15,10);
+        muki=1;  
+      }
+    }
+    //上移動(はりつき時)
+    if(hari==1){
+      if(getkey(38)>1 && getkey(39)==0 && getkey(37)==0 && getkey(40)==0){
+        f=-1;
+        y=y-(3/2);
+        anim.loop($pat_G+8,$pat_G+9,10);
+        muki=0; 
+      }
+      //下移動(はりつき時)
+      if(hari==1){
+        if(getkey(40)>1 && getkey(39)==0 && getkey(37)==0 && getkey(38)==0){
+          f=-1;
+          y=y+(3/2);
+          anim.loop($pat_G+11,$pat_G+12,10);
+          muki=2; 
+        }
+      } 
+    }
+    //ダッシュ
+    if(getkey(90)>1 && (getkey(39)>5 || getkey(37)>5)){
+      if(fly==1){
+        vx=7;  
+      }
+      if(jmp==0){
+        vx=vx+(1/10);
+      }
+    }
+    else{vx=0;}
+    if(vx>7){
+      vx=7;
+      anim.loop($pat_G+3,$pat_G+4,3);
+    }
+    
+    //壁
+    if($map.getAt(x-5,y)==$pat_back+16 || $map.getAt(x-10,y)==$pat_back+16 || $map.getAt(x-5,y)==$pat_back+19 || $map.getAt(x-10,y)==$pat_back+19){
+      lX=1;
+    }else{
+    lX=0;}
+    if($map.getAt(x+5,y)==$pat_back+15 || $map.getAt(x+10,y)==$pat_back+15 || $map.getAt(x+5,y)==$pat_back+18 || $map.getAt(x+10,y)==$pat_back+18){
+      rX=1;
+    }else{
+    rX=0;}
+    
+    //ブロックがあれば
+    if($map.getAt(x,y+20)==$pat_back+0|| $map.getAt(x,y+16)==$pat_back+15 || $map.getAt(x,y+16)==$pat_back+16 || $map.getAt(x,y+16)==$pat_back+17 || $map.getAt(x,y+16)==$pat_back+18 || $map.getAt(x,y+16)==$pat_back+19){
+      if(jmp==1)vx=0;
+      jmp=0;
+      fly=0;
+      y=trunc(y/32)*32+16;
+      vy=0;//落下速度を0にする
+      
+      //ジャンプ
+      if(getkey(88)==1 && jmp==0){
+        if(vx!=7){
+          $mplayer.play($se_jump,0,20);
+          vy=-5;
+          jmp=1;
+        }
+        if(vx==7){
+          $mplayer.play($se_daijump,0,20);
+          vy=-7; 
+          jmp=1;
+          fly=1;
+        }
+      }
+    }
+    
+    else { //ブロックが無ければ
+      if(hari==0){
+        jmp=1;
+        if(vx!=7)anim.loop($pat_G+5,$pat_G+6,10);
+        if(vx==7)anim.loop($pat_G+5,$pat_G+6,2);
+      }
+      vy=vy+(3/10); //落下速度を上げる
+      if(fly==1){
+        vx=7;
+        vy=vy-(1/10);
+      }
+    }
+    y=y+vy; //yに落下速度を加える
+    
+    //のぼり壁
+    if(($map.getAt(x,y)==$pat_back+3 || $map.getAt(x,y)==$pat_back+4 || $map.getAt(x,y)==$pat_back+5 ||
+    $map.getAt(x,y)==$pat_back+6 || $map.getAt(x,y)==$pat_back+7 || $map.getAt(x,y)==$pat_back+8 ||
+    $map.getAt(x,y)==$pat_back+23 || $map.getAt(x,y)==$pat_back+24 || $map.getAt(x,y)==$pat_back+25) && (getkey(37)==1 || getkey(38)==1 || getkey(39)==1 || getkey(40)==1) && hari==0){
+      hari=1;
+    }
+    if($map.getAt(x,y)==$pat_back+0 || $map.getAt(x,y)==$pat_back+1 || $map.getAt(x,y)==$pat_back+2)hari=0;
+    if(getkey(67)==1 && hari==1)hari=0;
+    if(hari==1){
+      fly=0;
+      jmp=0;
+      vy=-(3/10);
+      vx=0;
+      if(getkey(88)==1 && jmp==0){
+        $mplayer.play($se_jump,0,20);
+        hari=0;
+        vy=-7;
+        jmxxpx=1;
+      }
+    }
+    
+    //いもむし
+    if($imomusi.x-this.x<5 && $imomusi.x-this.x>=-5 && $imomusi.y-this.y<0 && $imomusi.y-this.y>-10){
+      $imomusi.state=1;
+      if($imomusi.f==-1){
+        f=1;
+        x=x-1;
+      }
+      else{
+        f=-1;
+        x=x+1;
+      }
+      if(jmp==1)vx=0;
+      anim.loop($pat_G+16,$pat_G+17,25);
+      jmp=0;
+      fly=0;
+      y=trunc(y/32)*32+10;
+      vy=0;//落下速度を0にする
+      //ジャンプ
+      if(getkey(88)==1 && jmp==0){
+        $mplayer.play($se_jump,0,20);
+        vy=-3;
+        jmp=1;
+        $imomusi.state=0;
+        $imomusi.a=0;
+      }
+    }
+    if($imomusi.x-this.x<45 && $imomusi.x-this.x>=30 && $imomusi.y-this.y<5 && $imomusi.y-this.y>-x5){
+      x=x-5;
+    }
+    if($imomusi.x-this.x<30 && $imomusi.x-this.x>=5 && $imomusi.y-this.y<5 && $imomusi.y-this.y>-x5){
+      x=x+5;
+    }
+    if($imomusi.x-this.x<-15 && $imomusi.x-this.x>=-50 && $imomusi.y-this.y<5 && $imomusi.y-this.y>-x5){
+      x=x+5;
+    }
+    if($imomusi.x-this.x<-5 && $imomusi.x-this.x>=-15 && $imomusi.y-this.y<5 && $imomusi.y-this.y>-x5){
+      x=x-5;
+    }
+    
+    //ちょうちょ
+    if(tyo==1)x=x-1;
+    if(tyo==2)x=x+1;
+    if(vy!=0)tyo=0;
+    
+    scrollmap();//スクロール
+  }
+  
+  //ここまで基本動作
+  
+  //ホイホイ
+  if(S==1){
+    anim.loop($pat_GS+0,$pat_GS+1,30);
+    wait(110);
+    anim.play($pat_GS+1);
+    wait(100);
+    $mplayer.play($se_koe,0,20);
+    if(f==-1)appear(new mark(x-10,y-10,$pat_item+0));
+    if(f==1)appear(new mark(x-20,y-10,$pat_item+0));
+    wait(100);
+    anim.loop($pat_GS+3,$pat_GS+4,15);
+    wait(175);
+    x=x+3;
+    if(f==-1)appear(new mark(x-5,y,$pat_item+1));
+    if(f==1)appear(new mark(x+5,y,$pat_item+1,1));
+    $mplayer.play($se_dosa,0,50);
+    anim.play($pat_GS+5);
+    anim.pause();
+    Skaku=1;
+    wait();
+  }
+  //クモ糸
+  if(S==2){
+    if(a==0){
+      anim.play($pat_GS+6);
+      anim.pause();
+      $mplayer.play($se_koe2,0,50);
+      appear(new mark(x-20,y-25,$pat_item+1));
+      wait(30);
+      if(f==-1){x=x-15;y=y+7;}
+      if(f==1){x=x+15;y=y+7;}
+      a=1;
+    }
+    if(a==1)anim.loop($pat_GS+11,$pat_GS+12,15);
+    if(a==2){
+      Skaku=1;
+      anim.play($pat_GS+13);
+      anim.pause();
+    }
+    if(a==3){
+      Skaku=1;
+      anim.play($pat_GS+14);
+      anim.pause();
+    }
+  }
+  //クモ
+  if(S==3){
+    if(a==0){
+      anim.play($pat_GS+6,$pat_GS+9,30);
+      wait(200);
+      a=1;
+    }
+    if(a==1){
+      Skaku=1;
+      f=-1;
+      anim.loop($pat_GS+10);
+      x=x+1;
+    }
+  }
+  
+  //蜂
+  if(S==4){
+    if(flg==0){
+      f=1;
+      anim.play($pat_GS+16);
+      anim.pause();
+      while($map.getAt(x,y+16)!=$pat_back+0 || $map.getAt(x,y+16)==$pat_back+15 || $map.getAt(x,y+16)==$pat_back+16 ||$map.getAt(x,y+16)==$pat_back+17){
+        y=y+6;
+        update();
+        scrollmap();//スクロール
+      }
+      $mplayer.play($se_dosa2,0,20);
+      flg=1;
+    }
+    if(flg==1){
+      anim.play($pat_GS+17);
+      anim.pause();
+      wait(50);
+      flg=2;
+    }
+    if(flg==2){
+      Skaku=1;
+      anim.loop($pat_GS+18,$pat_GS+19,15);
+      wait();
+    }
+    
+  }
+  
+  //あり
+  if(S==5){
+    anim.loop($pat_G+0);
+    x=x;
+    while($map.getAt(x,y+16)!=$pat_back+0 || $map.getAt(x,y+16)==$pat_back+15 || $map.getAt(x,y+16)==$pat_back+16 ||$map.getAt(x,y+16)==$pat_back+17){
+      y=y+5;
+      update();
+      scrollmap();//スクロール
+    }
+    y=y;
+    wait(200);
+    anim.play($pat_GS+20,$pat_GS+21,30);
+    wait(70);
+    a=4;
+    y=y+7;
+    anim.play($pat_GS+22,$pat_GS+28,40);
+    wait(120);
+    a=5;
+    Skaku=1;
+    wait();
+  }
+  
+  //いもむし
+  if(S==6){
+    die();
+  }
+  
+  //とげ
+  if($map.getAt(x,y+16)==$pat_back+12){
+    S=7;
+    y=y+20;
+    $mplayer.play($se_gusa,0,20);
+    anim.play($pat_GS+29);
+    anim.pause();
+    Skaku=1;
+    wait();
+  }
+  
+  
+  update();
+}
+
+
+//スクロール =======================================
+function scrollmap(){
+  var sx;
+  var sy;
+  sx = x - $screenwidth/3;
+  sy = y - $screenheight/(13/10);
+  $map.scrollTo(sx,sy);
+}

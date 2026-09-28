@@ -1,0 +1,14 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_end7_1" src="end7_1.png"/>
+<cpattern name="$pat_end7_2" src="end7_2.png"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="613"/>
+  <globalvalue name="$screenHeight" value="342"/>
+ </resourcelist>
+</resourcelist>

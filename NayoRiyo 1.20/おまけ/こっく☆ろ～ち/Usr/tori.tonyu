@@ -1,0 +1,50 @@
+extends SpriteChar;
+anim=newAnimation();
+a=0;
+tx=x;
+ty=0;
+time=0;
+state=0;
+zOrder=30;
+while(1){
+  if(state==0){
+    anim.loop($pat_enemy1+19);
+    y=y+8;
+    if($imomusi.f==-1){
+      x=x-8;
+    }else{
+      x=x+8;
+    }
+  }
+  
+  if(crashTo($imomusi)){
+    state=1;
+    $imomusi.die();
+    ty=y;
+  }
+  
+  while(state==1){
+    anim.loop($pat_enemy1+20);
+    x=x;
+    y=y-3;
+    if(y<ty-300){
+      state=2;
+    }
+    update();
+  }
+  if(state==2){
+    if(f==-1){
+      appear(new kubi1(this.x+20,this.y,$pat_GS+15,1));
+      appear(new kubi2(this.x-20,this.y,$pat_enemy1+9,-1));
+    }else{
+      appear(new kubi1(this.x-20,this.y,$pat_GS+15,-1));
+      appear(new kubi2(this.x+20,this.y,$pat_enemy1+9,1));
+    }
+    state=3;
+  }
+  if(state==3){
+    die();
+  }
+  
+  update();
+}

@@ -1,0 +1,30 @@
+extends SpriteChar;
+a=0;
+b=0;
+s=0;
+while(1){
+
+while(a<60 && s==0){
+  a++;
+  if(a==60){
+    s=1;
+    a=0;
+      x=650;
+  }
+  update();
+}
+
+while(b<40 && s==1){
+  b++;
+  if(b==40){
+    s=0;
+    b=0;
+      x=288;
+  } 
+  update();
+}
+
+
+update();
+
+}

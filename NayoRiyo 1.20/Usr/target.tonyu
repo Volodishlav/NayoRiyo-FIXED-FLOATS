@@ -1,0 +1,170 @@
+extends SpriteChar;
+push = 0;
+shoot = 0;
+a=0;
+zOrder= -90;
+$mousemanager.showcursor(0);
+while (1) {
+  if($nayori.jigai==2 || $nayori.jigai==3 || $nayori.jigai==4 || $nayori.jigai==5 || $riyona.si==1){
+    p=$pat_target+3;  
+  wait();}
+  //ハンドガン
+  if($buki==0){
+    //銃を構えた時
+    if(getkey(90)>0){
+      p=$pat_target+1;
+      shoot= 0;
+      x = $mouseX;
+      y = $mouseY;
+      
+      // 左クリックされたときの処理
+      if ( getkey(1) == 1) {
+        if ( $tama > 0 ) {
+          shoot = 1;
+          $tama -= 1;
+          $mplayer.play($se_jusei);
+          p = $pat_target+2;
+          wait(2);
+        }
+        if($tama==0){$mplayer.play($se_tamagire);}
+      } else {
+        p = $pat_target+1;
+      }
+    }
+    //銃を構えてない時
+    else{
+      push=0;
+      x = $mouseX;
+      y = $mouseY;
+      p=$pat_target;  
+      // 左クリックされたときの処理
+      if ( getkey(1) == 1) {
+        push = 1;
+      }
+    }
+    //リロード
+    if(getkey(88)==1 && $zandan>0 && !getkey(90)>0){
+      if($tama<6){
+        $tama += 1;
+        $zandan -= 1;
+        $mplayer.play($se_reload);
+      }
+    }
+  }
+  //ショットガン
+  if($buki==1){
+    //銃を構えた時
+    if(getkey(90)>0){
+      p=$pat_target+5;
+      shoot= 0;
+      x = $mouseX;
+      y = $mouseY;
+      if(x<220 || y<100){
+        p=$pat_target+6;
+      }
+      
+      // 左クリックされたときの処理
+      if ( getkey(1) == 1) {
+        if ( $tama2 > 0 ) {
+          shoot = 1;
+          $tama2 -= 1;
+          $mplayer.play($se_jusei2);
+          wait(2);
+        }
+        if($tama2==0){$mplayer.play($se_tamagire);}
+      }
+    }
+    //銃を構えてない時
+    else{
+      push=0;
+      x = $mouseX;
+      y = $mouseY;
+      p=$pat_target;  
+      // 左クリックされたときの処理
+      if ( getkey(1) == 1) {
+        push = 1;
+      }
+    }
+    //リロード
+    if(getkey(88)==1 && $zandan2>0 && !getkey(90)>0){
+      if($tama2<3){
+        $tama2 += 1;
+        $zandan2 -= 1;
+        $mplayer.play($se_reload2);
+      }
+    }
+  }
+  //手榴弾
+  if($buki==2){
+    x = $mouseX;
+    y = $mouseY;
+    push = 0;
+    if (getkey(90)==0 && getkey(1)==1) {
+      push = 1;
+    }
+    if(getkey(90)>0){
+      p=$pat_target+0;
+      shoot= 0;
+      if ( getkey(1) == 1) {
+        if ( $tama3 > 0 ) {
+          if($nayori.f==-1){
+            $mplayer.play($se_swing);
+            wait(10);
+            a=1;
+            $panel.fillRect(0,0,$screenWidth,$screenHeight,color(200,200,100),-1000);
+            $mplayer.play($se_bom);
+            wait(10);
+            $panel.clear();
+            shoot = 1;
+            $tama3 -= 1;
+            wait(2);
+            a=0;
+          }
+          if($nayori.f==1){
+            $mplayer.play($se_swing);
+            wait(20);
+            $panel.fillRect(0,0,$screenWidth,$screenHeight,color(200,200,100),-1000);
+            $mplayer.play($se_bom);
+            wait(10);
+            $panel.clear();
+            $nayori.jigai=4;
+          }
+        }
+      }     
+    }
+  }
+  
+  //MMガン
+  if($buki==3){
+    //銃を構えた時
+    if(getkey(90)>0){
+      p=$pat_target+1;
+      shoot= 0;
+      x = $mouseX;
+      y = $mouseY;
+      i++;
+      
+      // 左クリックされたときの処理
+      if ( getkey(1) > 1 && i>5) {
+        shoot=1;
+        if($nayori.f==-1)appear(new hikari($nayori.x-40,$nayori.y-15,$pat_item+21));
+        if($nayori.f==1)appear(new hikari($nayori.x+40,$nayori.y-15,$pat_item+21,1));
+        $mplayer.play($se_jusei);
+        wait(2);
+        i=0;
+      }
+    }
+    //銃を構えてない時
+    else{
+      push=0;
+      x = $mouseX;
+      y = $mouseY;
+      p=$pat_target;  
+      // 左クリックされたときの処理
+      if ( getkey(1) == 1) {
+        push = 1;
+      }
+    } 
+  }
+  update();
+}
