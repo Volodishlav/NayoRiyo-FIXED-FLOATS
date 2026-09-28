@@ -18,6 +18,7 @@ Please make sure to run the game with your system locale set to Japanese or by u
 <summary><strong>English</strong></summary>
 "NayoRiyo -Nayoriyo's Luxury Liner Shooting-"
 
+
 CAUTION
 This game contains intense grotesque scenes and sexual descriptions. We do not recommend playing if you dislike that kind of content or find it uncomfortable.
 CAUTION
@@ -164,7 +165,7 @@ Secret Spell
 </details>
 
 <details>
-<summary><strong>English</strong></summary>
+<summary><strong>Japanese</strong></summary>
 「NayoRiyo-なよりとりよなの豪華客船シューティング-」
 
 
