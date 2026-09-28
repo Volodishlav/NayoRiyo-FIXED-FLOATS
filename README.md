@@ -2,11 +2,20 @@
 
 NayoRiyo is an indie Japanese action and shooting game originally released in 2013. The game features combat against various enemies, multiple endings, minigames, illustrations and additional content. It contains gore and ryona-themed content, including imagery depicting violence and injury.
 
+![alt text](README-IMAGES/titlescreen.png)
+
 ### Float Compatibility Fix
 
 Replaced problematic floating-point literals in the original .tonyu files with equivalent fractional values to fix compatibility errors in the game's older Tonyu runtime. For example, 0.5 was replaced with 1/2, 0.2 with 1/5...
 
-Please make sure to run the game with your system locale set to Japanese or by using [Locale Emulator](https://github.com/xupefei/Locale-Emulator/). I have packed a copy of Locale Emulator (v2.5.0.1) in the repository just in case the original one ever goes down in the future.
+![alt text](README-IMAGES/floatserror.png)
+![alt text](README-IMAGES/failed.png)
+
+Please make sure to run the game with your system locale set to Japanese or by using [Locale Emulator](https://github.com/xupefei/Locale-Emulator/).
+
+![alt text](README-IMAGES/image.png)
+
+I have packed a copy of Locale Emulator (v2.5.0.1) in the repository just in case the original one ever goes down in the future.
 
 ### Tested on
 
